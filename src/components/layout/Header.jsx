@@ -8,12 +8,15 @@ import {
   Container,
   Drawer,
   IconButton,
+  List,
+  ListItemButton,
+  ListItemText,
   Stack,
   Toolbar,
   Typography,
 } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { Link as RouterLink, NavLink, useLocation } from 'react-router-dom'
+import { Link as RouterLink, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { business, navItems } from '../../utils/siteData'
 import { useThemeMode } from '../../styles/ThemeContext'
 
@@ -26,11 +29,27 @@ const navLinkStyles = ({ isActive }) => ({
 function Header() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const { mode, toggleTheme } = useThemeMode()
 
   useEffect(() => {
     setOpen(false)
+
+    // Defensive cleanup for mobile browsers when modal transitions race route changes.
+    document.body.classList.remove('MuiModal-open')
+    document.body.style.removeProperty('overflow')
+    document.body.style.removeProperty('padding-right')
+    document.body.style.removeProperty('touch-action')
   }, [location.pathname])
+
+  const handleMobileNavigate = (path) => {
+    setOpen(false)
+
+    // Wait one frame so the drawer can start closing before navigating.
+    requestAnimationFrame(() => {
+      navigate(path)
+    })
+  }
 
   return (
     <AppBar
@@ -111,15 +130,28 @@ function Header() {
         </Toolbar>
       </Container>
 
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)} ModalProps={{ keepMounted: true }}>
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={() => setOpen(false)}
+        ModalProps={{ keepMounted: false, disableScrollLock: true }}
+      >
         <Box role="navigation" sx={{ width: 260, p: 3 }}>
-          <Stack spacing={2}>
+          <List sx={{ p: 0 }}>
             {navItems.map((item) => (
-              <NavLink key={item.path} to={item.path} style={navLinkStyles} onClick={() => setOpen(false)}>
-                {item.label}
-              </NavLink>
+              <ListItemButton key={item.path} onClick={() => handleMobileNavigate(item.path)} sx={{ borderRadius: 1.5 }}>
+                <ListItemText
+                  primary={item.label}
+                  primaryTypographyProps={{
+                    sx: {
+                      color: location.pathname === item.path ? '#2dd4bf' : 'text.primary',
+                      fontWeight: location.pathname === item.path ? 700 : 500,
+                    },
+                  }}
+                />
+              </ListItemButton>
             ))}
-          </Stack>
+          </List>
         </Box>
       </Drawer>
     </AppBar>
