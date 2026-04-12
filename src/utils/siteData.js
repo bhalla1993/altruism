@@ -1,9 +1,9 @@
 export const business = {
-  name: 'Altruism Digital Studio',
+  name: 'AltruDigiTech',
   tagline: 'We build your online presence—simple, fast, and affordable.',
   shortDescription:
     'Affordable and high-quality single-page websites, resumes, portfolios, and custom web applications for modern professionals and small businesses.',
-  email: 'hello@altruismstudio.dev',
+  email: 'shiva.bhalla@gmail.com',
   phone: '+1 (555) 010-2398',
   location: 'Toronto GTA',
   googleFormUrl: 'https://docs.google.com/forms',

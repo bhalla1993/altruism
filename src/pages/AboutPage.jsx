@@ -1,11 +1,13 @@
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import BoltIcon from '@mui/icons-material/Bolt'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
+import Diversity3Icon from '@mui/icons-material/Diversity3'
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined'
 import LaptopMacOutlinedIcon from '@mui/icons-material/LaptopMacOutlined'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import PublicIcon from '@mui/icons-material/Public'
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
+import SpeedIcon from '@mui/icons-material/Speed'
 import { Box, Button, Card, CardContent, Divider, Grid, Stack, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import { Link as RouterLink } from 'react-router-dom'
@@ -58,18 +60,50 @@ function AboutPage() {
           </AnimatedBlock>
 
           <Grid container spacing={2.2}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
               <AnimatedBlock delay={0.05}>
                 <Card sx={{ height: '100%' }}>
-                  <CardContent>
-                    <Stack spacing={1.15}>
+                  <CardContent sx={{ pb: '20px !important' }}>
+                    <Stack spacing={1.6}>
                       <Stack direction="row" spacing={1} alignItems="center">
                         <HandshakeOutlinedIcon color="primary" />
                         <Typography variant="h5">Who We Are</Typography>
                       </Stack>
-                      <Typography color="text.secondary">
-                        We are a focused digital studio helping students, job seekers, and freelancers launch professional resume and portfolio SPAs without technical overhead.
-                      </Typography>
+                      <Grid container spacing={0}>
+                        <Grid item xs={12} md={6}>
+                          <Stack spacing={1.15} sx={{ pr: { md: 3.5 }, pb: { xs: 2.5, md: 0 } }}>
+                            <Typography color="text.secondary">
+                              We are a focused digital studio helping students, job seekers, and freelancers launch professional resume and portfolio SPAs without technical overhead.
+                            </Typography>
+                            <Typography color="text.secondary">
+                              Our team blends design clarity, frontend engineering, and practical content strategy so every launch feels polished, personal, and easy to share.
+                            </Typography>
+                          </Stack>
+                        </Grid>
+
+                        <Grid item xs={12} md="auto" sx={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center' }}>
+                          <Divider
+                            orientation="vertical"
+                            flexItem
+                            sx={{ display: { xs: 'none', md: 'block' }, mx: 0, opacity: 0.5 }}
+                          />
+                          <Divider sx={{ display: { xs: 'block', md: 'none' }, mb: 2.5, opacity: 0.5 }} />
+                        </Grid>
+
+                        <Grid item xs={12} md>
+                          <Stack spacing={1.1} sx={{ pl: { md: 3.5 } }}>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <Diversity3Icon sx={{ color: 'primary.main', fontSize: 20 }} />
+                              <Typography variant="subtitle2" sx={{ fontWeight: 700, color: 'primary.main', letterSpacing: 0.4 }}>
+                                Built For Real Career Journeys
+                              </Typography>
+                            </Stack>
+                            <Typography color="text.secondary">
+                              We support fresh graduates, experienced professionals, consultants, and small teams who need a credible online presence that opens doors quickly.
+                            </Typography>
+                          </Stack>
+                        </Grid>
+                      </Grid>
                     </Stack>
                   </CardContent>
                 </Card>
@@ -158,6 +192,42 @@ function AboutPage() {
                       </Stack>
                       <Typography color="text.secondary">
                         To make professional online presence accessible to everyone by offering affordable, high-quality Single Page Applications (SPAs) that require no hosting fees, no maintenance costs, and no technical knowledge.
+                      </Typography>
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </AnimatedBlock>
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <AnimatedBlock delay={0.25}>
+                <Card sx={{ height: '100%' }}>
+                  <CardContent>
+                    <Stack spacing={1.15}>
+                      <Stack direction="row" spacing={1} alignItems="center">
+                        <SpeedIcon color="primary" />
+                        <Typography variant="h5">How We Work</Typography>
+                      </Stack>
+                      <Typography color="text.secondary">
+                        We keep delivery fast and transparent: clarify scope, build in iterations, share previews early, and launch with practical guidance so you can update content confidently.
+                      </Typography>
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </AnimatedBlock>
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <AnimatedBlock delay={0.3}>
+                <Card sx={{ height: '100%' }}>
+                  <CardContent>
+                    <Stack spacing={1.15}>
+                      <Stack direction="row" spacing={1} alignItems="center">
+                        <LaptopMacOutlinedIcon color="primary" />
+                        <Typography variant="h5">What You Get</Typography>
+                      </Stack>
+                      <Typography color="text.secondary">
+                        Every project includes responsive design, clean deployment, and a share-ready URL so your profile, portfolio, or business presence looks professional on any screen.
                       </Typography>
                     </Stack>
                   </CardContent>

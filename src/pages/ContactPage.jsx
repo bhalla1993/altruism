@@ -4,7 +4,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { Box, Card, CardContent, Grid, IconButton, Link, Stack, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import Seo from '../components/common/Seo'
-import ContactForm from '../components/forms/ContactForm'
 import { business } from '../utils/siteData'
 
 const socialItems = [
@@ -45,7 +44,39 @@ function ContactPage() {
                 Tell us what you are trying to launch. We usually respond within one business day.
               </Typography>
 
-              <ContactForm />
+              <Box
+                sx={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  borderRadius: 3,
+                  overflow: 'hidden',
+                  border: '1px solid',
+                  borderColor: 'divider',
+                  boxShadow: (theme) =>
+                    theme.palette.mode === 'dark'
+                      ? '0 14px 32px rgba(0, 0, 0, 0.35)'
+                      : '0 12px 28px rgba(15, 23, 42, 0.12)',
+                }}
+              >
+                <Box
+                  component="iframe"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSeZv_icELxEe9nB4n6NU4JeAT0R1eW9XfvO2eXYwFCC16sIZA/viewform?embedded=true"
+                  title="Contact Form"
+                  frameBorder="0"
+                  marginHeight="0"
+                  marginWidth="0"
+                  loading="lazy"
+                  sx={{
+                    width: '100%',
+                    minHeight: { xs: 1120, sm: 1040, md: 992 },
+                    border: 0,
+                    display: 'block',
+                    backgroundColor: 'background.default',
+                  }}
+                >
+                  Loading...
+                </Box>
+              </Box>
             </Stack>
           </Grid>
 
