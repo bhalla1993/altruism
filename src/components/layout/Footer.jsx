@@ -157,7 +157,7 @@ function Footer() {
             sx={{ pt: 0.4 }}
           >
             <Typography variant="body2" color="text.secondary" sx={{ opacity: 0.82 }}>
-              © {new Date().getFullYear()} {business.name}
+              © {new Date().getFullYear()} {business.name}. All rights reserved.
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ opacity: 0.82 }}>
               Serving clients across Canada, specializing in the Greater Toronto Area (GTA).

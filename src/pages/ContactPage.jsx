@@ -87,7 +87,6 @@ function ContactPage() {
                   <Stack spacing={1.2}>
                     <Typography variant="h5">Contact Details</Typography>
                     <Typography color="text.secondary">Email: {business.email}</Typography>
-                    <Typography color="text.secondary">Phone: {business.phone}</Typography>
                     <Typography color="text.secondary">Location: {business.location}</Typography>
                   </Stack>
                 </CardContent>
