@@ -1,0 +1,1 @@
+import{j as t}from"./index-BdYsFa7z.js";import r from"./index-Dy7e1tB5.js";import"./templatesData-JEZyaSuo.js";import"./proxy-Sa6h7AOI.js";function a({data:o}){return t.jsx(r,{data:o})}export{a as default};
