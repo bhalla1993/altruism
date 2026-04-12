@@ -2,9 +2,11 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import BoltIcon from '@mui/icons-material/Bolt'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined'
+import LaptopMacOutlinedIcon from '@mui/icons-material/LaptopMacOutlined'
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import PublicIcon from '@mui/icons-material/Public'
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
-import { Box, Button, Card, CardContent, Grid, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, Divider, Grid, Stack, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import { Link as RouterLink } from 'react-router-dom'
 import Seo from '../components/common/Seo'
@@ -74,21 +76,53 @@ function AboutPage() {
               </AnimatedBlock>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
               <AnimatedBlock delay={0.1}>
                 <Card sx={{ height: '100%' }}>
-                  <CardContent>
-                    <Stack spacing={1.15}>
+                  <CardContent sx={{ pb: '20px !important' }}>
+                    <Stack spacing={1.6}>
                       <Stack direction="row" spacing={1} alignItems="center">
                         <BoltIcon color="primary" />
                         <Typography variant="h5">What We Do</Typography>
                       </Stack>
-                      <Typography color="text.secondary">
-                        We build modern, single-page resumes, portfolios, and personal SPAs that are optimized for sharing, clarity, and strong first impressions.
-                      </Typography>
-                      <Typography color="text.secondary">
-                        In addition to personal SPAs, we also build custom web applications such as CRM systems, dashboards, and internal tools for small businesses. These solutions are tailored to your needs and priced based on your requirements.
-                      </Typography>
+                      <Grid container spacing={0}>
+                        <Grid item xs={12} md={6}>
+                          <Stack spacing={1.2} sx={{ pr: { md: 3.5 }, pb: { xs: 2.5, md: 0 } }}>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <PersonOutlineOutlinedIcon sx={{ color: 'primary.main', fontSize: 20 }} />
+                              <Typography variant="subtitle2" sx={{ fontWeight: 700, color: 'primary.main', letterSpacing: 0.4 }}>
+                                Personal SPAs &amp; Portfolios
+                              </Typography>
+                            </Stack>
+                            <Typography color="text.secondary">
+                              We build modern, single-page resumes, portfolios, and personal websites optimized for sharing, clarity, and strong first impressions — deployed instantly with no hosting fees.
+                            </Typography>
+                          </Stack>
+                        </Grid>
+
+                        <Grid item xs={12} md="auto" sx={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center' }}>
+                          <Divider
+                            orientation="vertical"
+                            flexItem
+                            sx={{ display: { xs: 'none', md: 'block' }, mx: 0, opacity: 0.5 }}
+                          />
+                          <Divider sx={{ display: { xs: 'block', md: 'none' }, mb: 2.5, opacity: 0.5 }} />
+                        </Grid>
+
+                        <Grid item xs={12} md>
+                          <Stack spacing={1.2} sx={{ pl: { md: 3.5 } }}>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <LaptopMacOutlinedIcon sx={{ color: 'primary.main', fontSize: 20 }} />
+                              <Typography variant="subtitle2" sx={{ fontWeight: 700, color: 'primary.main', letterSpacing: 0.4 }}>
+                                Custom Web Applications
+                              </Typography>
+                            </Stack>
+                            <Typography color="text.secondary">
+                              We also build custom web apps such as CRM systems, dashboards, and internal tools for small businesses — tailored to your needs and scoped to your budget.
+                            </Typography>
+                          </Stack>
+                        </Grid>
+                      </Grid>
                     </Stack>
                   </CardContent>
                 </Card>
