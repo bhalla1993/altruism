@@ -1,0 +1,1 @@
+import{j as n}from"./index-CXHC13Cw.js";import{m as o}from"./createSvgIcon-GMcaqhqv.js";const e={hidden:{opacity:0,y:28},visible:{opacity:1,y:0,transition:{duration:.6,ease:[.16,1,.3,1]}}};function s({children:i,delay:t=0}){return n.jsx(o.div,{initial:"hidden",whileInView:"visible",viewport:{once:!0,amount:.2},variants:e,transition:{delay:t},children:i})}export{s as A};
