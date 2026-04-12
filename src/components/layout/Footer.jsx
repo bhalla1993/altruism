@@ -88,7 +88,7 @@ function Footer() {
                     </Link>
                     {index < quickLinks.length - 1 ? (
                       <Typography component="span" color="text.disabled" sx={{ lineHeight: 1 }}>
-                        |
+                        •
                       </Typography>
                     ) : null}
                   </Box>
