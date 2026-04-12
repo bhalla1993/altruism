@@ -17,6 +17,9 @@ import spaPortfolioThumbnail from '../templates/spa-portfolio/thumbnail.jpg'
 import sapProResumeThumbnail from '../templates/sap-pro-resume/thumbnail.jpg'
 import sapShowcasePortfolioThumbnail from '../templates/sap-showcase-portfolio/thumbnail.jpg'
 import modernCareerKitThumbnail from '../templates/modern-career-kit/thumbnail.jpg'
+import { lawyerPortfolio01SampleData } from '../templates/lawyer-portfolio-01/sampleData'
+import realEstateAgent01Thumbnail from '../templates/real-estate-agent-01/thumbnail.svg'
+import { realEstateAgent01SampleData } from '../templates/real-estate-agent-01/sampleData'
 
 export const templates = [
   {
@@ -309,6 +312,34 @@ export const templates = [
       ],
       skills: ['React', 'JavaScript', 'Node.js'],
     },
+  },
+  {
+    id: 'lawyer-portfolio-01',
+    title: 'Lawyer Portfolio — Template 01',
+    category: 'Legal & Professional',
+    filterCategory: 'Portfolio',
+    tags: ['Lawyer', 'Portfolio', 'Legal', 'Professional', 'SPA'],
+    shortDescription: 'Elegant single-page attorney portfolio with hero, practice areas, case studies, testimonials, awards, and contact form.',
+    thumbnail: 'https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    layout: 'lawyerPortfolio01',
+    sampleData: lawyerPortfolio01SampleData,
+    popularity: 88,
+    createdAt: '2026-04-12',
+    recommended: true,
+  },
+  {
+    id: 'real-estate-agent-01',
+    title: 'Real Estate Agent — Template 01',
+    category: 'Real Estate & Agents',
+    filterCategory: 'Portfolio',
+    tags: ['Real Estate', 'Agent', 'Listings', 'SPA'],
+    shortDescription: 'Clean, modern real-estate agent template with featured listings and contact flow.',
+    thumbnail: realEstateAgent01Thumbnail,
+    layout: 'realEstateAgent01',
+    sampleData: realEstateAgent01SampleData,
+    popularity: 85,
+    createdAt: '2026-04-12',
+    recommended: true,
   },
 ]
 

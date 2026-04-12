@@ -6,6 +6,8 @@ import TechnicalResumeTemplate01 from '../../templates/technical-resume-01'
 import StudentResumeTemplate01 from '../../templates/student-resume-01'
 import BusinessResumeTemplate01 from '../../templates/business-resume-01'
 import PortfolioSpaTemplate01 from '../../templates/portfolio-spa-01'
+import LawyerPortfolio01 from '../../templates/lawyer-portfolio-01'
+import RealEstateAgent01 from '../../templates/real-estate-agent-01'
 
 function SapResumeTemplate({ data }) {
   return (
@@ -143,6 +145,14 @@ function TemplateRenderer({ template, data }) {
 
   if (template.layout === 'portfolioSpa01') {
     return <PortfolioSpaTemplate01 data={data} />
+  }
+
+  if (template.layout === 'lawyerPortfolio01') {
+    return <LawyerPortfolio01 data={data} />
+  }
+
+  if (template.layout === 'realEstateAgent01') {
+    return <RealEstateAgent01 data={data} />
   }
 
   return <ModernComboTemplate data={data} />

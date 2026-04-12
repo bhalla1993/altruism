@@ -21,6 +21,8 @@ const templateComponentMap = {
   'sap-pro-resume': lazy(() => import('./sap-pro-resume/index.jsx')),
   'sap-showcase-portfolio': lazy(() => import('./sap-showcase-portfolio/index.jsx')),
   'modern-career-kit': lazy(() => import('./modern-career-kit/index.jsx')),
+  'lawyer-portfolio-01': lazy(() => import('./lawyer-portfolio-01/index.jsx')),
+  'real-estate-agent-01': lazy(() => import('./real-estate-agent-01/index.jsx')),
 }
 
 const templateDemoMap = {
@@ -36,6 +38,8 @@ const templateDemoMap = {
   'sap-pro-resume': lazy(() => import('./sap-pro-resume/demo.jsx')),
   'sap-showcase-portfolio': lazy(() => import('./sap-showcase-portfolio/demo.jsx')),
   'modern-career-kit': lazy(() => import('./modern-career-kit/demo.jsx')),
+  'lawyer-portfolio-01': lazy(() => import('./lawyer-portfolio-01/demo.jsx')),
+  'real-estate-agent-01': lazy(() => import('./real-estate-agent-01/demo.jsx')),
 }
 
 export function getLazyTemplateComponent(templateId) {
