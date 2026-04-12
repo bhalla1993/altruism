@@ -10,8 +10,10 @@ import {
   Select,
   Stack,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material'
-import { useMemo, useState } from 'react'
+import { startTransition, useDeferredValue, useMemo, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import AnimatedSection from '../components/common/AnimatedSection'
 import Seo from '../components/common/Seo'
@@ -23,22 +25,26 @@ import { templateFilters, templateSortOptions, templates } from '../utils/templa
 function TemplatesPage() {
   const [selectedFilter, setSelectedFilter] = useState('All')
   const [selectedSort, setSelectedSort] = useState('Most Popular')
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const deferredFilter = useDeferredValue(selectedFilter)
+  const deferredSort = useDeferredValue(selectedSort)
 
   const visibleTemplates = useMemo(() => {
-    const filtered = selectedFilter === 'All'
+    const filtered = deferredFilter === 'All'
       ? templates
-      : templates.filter((template) => template.filterCategory === selectedFilter)
+      : templates.filter((template) => template.filterCategory === deferredFilter)
 
-    if (selectedSort === 'Newest') {
+    if (deferredSort === 'Newest') {
       return [...filtered].sort((a, b) => new Date(b.createdAt || '2024-01-01') - new Date(a.createdAt || '2024-01-01'))
     }
 
-    if (selectedSort === 'Recommended') {
+    if (deferredSort === 'Recommended') {
       return [...filtered].sort((a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)))
     }
 
     return [...filtered].sort((a, b) => (b.popularity || 0) - (a.popularity || 0))
-  }, [selectedFilter, selectedSort])
+  }, [deferredFilter, deferredSort])
 
   const recommendedTemplates = useMemo(
     () => templates.filter((template) => template.recommended).slice(0, 3),
@@ -70,7 +76,7 @@ function TemplatesPage() {
                     key={filter}
                     variant={selectedFilter === filter ? 'contained' : 'outlined'}
                     size="small"
-                    onClick={() => setSelectedFilter(filter)}
+                    onClick={() => startTransition(() => setSelectedFilter(filter))}
                   >
                     {filter}
                   </Button>
@@ -83,7 +89,7 @@ function TemplatesPage() {
                   labelId="template-sort-label"
                   value={selectedSort}
                   label="Sort"
-                  onChange={(event) => setSelectedSort(event.target.value)}
+                  onChange={(event) => startTransition(() => setSelectedSort(event.target.value))}
                 >
                   {templateSortOptions.map((option) => (
                     <MenuItem key={option} value={option}>{option}</MenuItem>
@@ -103,7 +109,15 @@ function TemplatesPage() {
         </AnimatedSection>
       </Box>
 
-      <Box component="section" aria-labelledby="recommended-templates-title" sx={{ mt: { xs: 8, md: 10 } }}>
+      <Box
+        component="section"
+        aria-labelledby="recommended-templates-title"
+        sx={{
+          mt: { xs: 8, md: 10 },
+          contentVisibility: 'auto',
+          containIntrinsicSize: isMobile ? '1px 1200px' : '1px 900px',
+        }}
+      >
         <AnimatedSection>
           <Stack spacing={3}>
             <Typography id="recommended-templates-title" variant="h2" sx={{ fontSize: { xs: '1.75rem', md: '2.4rem' } }}>
@@ -120,7 +134,15 @@ function TemplatesPage() {
         </AnimatedSection>
       </Box>
 
-      <Box component="section" aria-labelledby="showcase-title" sx={{ mt: { xs: 10, md: 14 } }}>
+      <Box
+        component="section"
+        aria-labelledby="showcase-title"
+        sx={{
+          mt: { xs: 10, md: 14 },
+          contentVisibility: 'auto',
+          containIntrinsicSize: isMobile ? '1px 1600px' : '1px 1100px',
+        }}
+      >
         <AnimatedSection>
           <Stack spacing={4}>
             <Stack spacing={1.5}>

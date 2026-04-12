@@ -12,8 +12,8 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import { useState } from 'react'
-import { Link as RouterLink, NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link as RouterLink, NavLink, useLocation } from 'react-router-dom'
 import { business, navItems } from '../../utils/siteData'
 import { useThemeMode } from '../../styles/ThemeContext'
 
@@ -25,7 +25,12 @@ const navLinkStyles = ({ isActive }) => ({
 
 function Header() {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
   const { mode, toggleTheme } = useThemeMode()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
 
   return (
     <AppBar
@@ -106,7 +111,7 @@ function Header() {
         </Toolbar>
       </Container>
 
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+      <Drawer anchor="right" open={open} onClose={() => setOpen(false)} ModalProps={{ keepMounted: true }}>
         <Box role="navigation" sx={{ width: 260, p: 3 }}>
           <Stack spacing={2}>
             {navItems.map((item) => (

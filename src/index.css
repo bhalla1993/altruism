@@ -19,6 +19,12 @@ body,
 
 body {
   min-width: 320px;
+  overflow-x: hidden;
+}
+
+img,
+iframe {
+  max-width: 100%;
 }
 
 

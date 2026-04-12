@@ -1,37 +1,40 @@
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined'
-import { Box, Button, Card, CardContent, Chip, Link, Stack, Typography } from '@mui/material'
-import { motion } from 'framer-motion'
+import { Box, Button, Card, CardContent, Chip, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { motion, useReducedMotion } from 'framer-motion'
 
 function LiveProjectCard({ project, index = 0 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, delay: index * 0.08, ease: 'easeOut' }}
-      viewport={{ once: true, amount: 0.22 }}
-      style={{ height: '100%' }}
-    >
-      <Card
-        sx={{
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          borderColor: 'primary.main',
-          borderWidth: 1,
-          transition: 'transform 260ms ease, box-shadow 260ms ease',
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const reduceMotion = useReducedMotion()
+  const disableMotion = reduceMotion || isMobile
+
+  const card = (
+    <Card
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+        borderColor: 'primary.main',
+        borderWidth: 1,
+        transition: disableMotion ? 'box-shadow 200ms ease' : 'transform 260ms ease, box-shadow 260ms ease',
+        '@media (hover: hover)': {
           '&:hover': {
-            transform: 'translateY(-10px)',
-            boxShadow: (theme) =>
-              theme.palette.mode === 'dark' ? '0 20px 48px rgba(0,0,0,0.55)' : '0 16px 40px rgba(15,23,42,0.14)',
+            transform: disableMotion ? 'none' : 'translateY(-10px)',
+            boxShadow: (currentTheme) =>
+              currentTheme.palette.mode === 'dark' ? '0 20px 48px rgba(0,0,0,0.55)' : '0 16px 40px rgba(15,23,42,0.14)',
           },
-        }}
-      >
+        },
+      }}
+    >
         <Box
           sx={{
             position: 'relative',
             overflow: 'hidden',
-            '&:hover img': { transform: 'scale(1.03)' },
+            '@media (hover: hover)': {
+              '&:hover img': { transform: disableMotion ? 'none' : 'scale(1.03)' },
+            },
           }}
         >
           <Box
@@ -39,6 +42,8 @@ function LiveProjectCard({ project, index = 0 }) {
             src={project.thumbnail}
             alt={project.title}
             loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             sx={{
               width: '100%',
               height: { xs: 210, md: 220 },
@@ -84,7 +89,22 @@ function LiveProjectCard({ project, index = 0 }) {
             {project.ctaLabel || 'View Live Demo'}
           </Button>
         </CardContent>
-      </Card>
+    </Card>
+  )
+
+  if (disableMotion) {
+    return card
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, delay: index * 0.05, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.22 }}
+      style={{ height: '100%' }}
+    >
+      {card}
     </motion.div>
   )
 }

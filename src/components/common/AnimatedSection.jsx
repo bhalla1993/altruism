@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { Box, useMediaQuery, useTheme } from '@mui/material'
+import { motion, useReducedMotion } from 'framer-motion'
 
 const variants = {
   hidden: { opacity: 0, y: 28 },
@@ -10,6 +11,14 @@ const variants = {
 }
 
 function AnimatedSection({ children, delay = 0 }) {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const reduceMotion = useReducedMotion()
+
+  if (reduceMotion || isMobile) {
+    return <Box>{children}</Box>
+  }
+
   return (
     <motion.div
       initial="hidden"

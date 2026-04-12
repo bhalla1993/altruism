@@ -1,5 +1,5 @@
-import resumeThumbnail from '../assets/images/Resume.png'
-import sparkShotsThumbnail from '../assets/images/SparkShots.png'
+import resumeThumbnail from '../assets/images/Resume-optimized.jpg'
+import sparkShotsThumbnail from '../assets/images/SparkShots-optimized.jpg'
 
 export const liveProjects = [
   {
