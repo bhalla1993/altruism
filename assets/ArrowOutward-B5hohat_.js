@@ -1,1 +1,0 @@
-import{j as e,i as t}from"./index-BCBEeqTV.js";import{r as a}from"./createSvgIcon-C2tJRPIa.js";var r={},o=t;Object.defineProperty(r,"__esModule",{value:!0});var u=r.default=void 0,i=o(a()),d=e;u=r.default=(0,i.default)((0,d.jsx)("path",{d:"M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z"}),"ArrowOutward");export{u as d};
