@@ -1,7 +1,4 @@
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import DownloadIcon from '@mui/icons-material/Download'
-import LightModeIcon from '@mui/icons-material/LightMode'
 import {
   Box,
   Button,
@@ -14,9 +11,8 @@ import {
 } from '@mui/material'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Suspense, useMemo } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getLazyTemplateDemo } from '../templates/templateRegistry'
-import { useThemeMode } from '../styles/ThemeContext'
 import { getTemplateById } from '../utils/templatesData'
 
 function DemoLoader() {
@@ -59,8 +55,8 @@ function FloatingButton({ children, sx, ...props }) {
 
 function TemplateFullscreenDemo() {
   const { templateId } = useParams()
+  const navigate = useNavigate()
   const template = getTemplateById(templateId)
-  const { mode, toggleTheme } = useThemeMode()
   const theme = useTheme()
   const isCompactMobile = useMediaQuery('(max-width:420px)')
 
@@ -80,6 +76,21 @@ function TemplateFullscreenDemo() {
     )
   }
 
+  const handleBackToTemplates = () => {
+    // Behave like "close preview" when opened in a separate tab/window.
+    if (window.history.length > 1) {
+      navigate(-1)
+      return
+    }
+
+    window.close()
+
+    // Fallback for browsers that block closing tabs not opened via script.
+    setTimeout(() => {
+      navigate('/templates')
+    }, 120)
+  }
+
   return (
     <Box sx={{ minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
       {!isCompactMobile && (
@@ -94,43 +105,16 @@ function TemplateFullscreenDemo() {
           }}
         >
           <FloatingButton
-            component="a"
-            href={`${import.meta.env.BASE_URL}templates`}
+            onClick={handleBackToTemplates}
             startIcon={<ArrowBackIcon />}
             sx={{
-              background: mode === 'dark' ? 'rgba(15,23,42,0.88)' : 'rgba(255,255,255,0.9)',
-              color: mode === 'dark' ? '#f8fafc' : '#0f172a',
+              background: 'rgba(255,255,255,0.9)',
+              color: '#0f172a',
               border: `1px solid ${theme.palette.divider}`,
-              '&:hover': { background: mode === 'dark' ? 'rgba(15,23,42,0.96)' : 'rgba(255,255,255,1)' },
+              '&:hover': { background: 'rgba(255,255,255,1)' },
             }}
           >
             Back to Templates
-          </FloatingButton>
-        </Box>
-      )}
-
-      {!isCompactMobile && (
-        <Box
-          sx={{
-            position: 'fixed',
-            top: { xs: 10, md: 16 },
-            right: { xs: 10, md: 16 },
-            zIndex: 1200,
-            display: 'grid',
-            gap: 1,
-            justifyItems: 'end',
-          }}
-        >
-          <FloatingButton
-            startIcon={<DownloadIcon />}
-            onClick={() => window.alert('Download template will be enabled in a future release.')}
-            sx={{
-              background: 'primary.main',
-              color: 'common.white',
-              '&:hover': { background: 'primary.dark' },
-            }}
-          >
-            Download Template
           </FloatingButton>
         </Box>
       )}
@@ -148,25 +132,6 @@ function TemplateFullscreenDemo() {
           </Suspense>
         </motion.div>
       </AnimatePresence>
-
-      {!isCompactMobile && (
-        <Box sx={{ position: 'fixed', right: { xs: 10, md: 16 }, bottom: { xs: 10, md: 16 }, zIndex: 1200 }}>
-          <FloatingButton
-            onClick={toggleTheme}
-            startIcon={mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
-            sx={{
-              minWidth: 52,
-              px: 1.2,
-              background: mode === 'dark' ? 'rgba(15,23,42,0.88)' : 'rgba(255,255,255,0.9)',
-              color: mode === 'dark' ? '#f8fafc' : '#0f172a',
-              border: `1px solid ${theme.palette.divider}`,
-              '&:hover': { background: mode === 'dark' ? 'rgba(15,23,42,0.96)' : 'rgba(255,255,255,1)' },
-            }}
-          >
-            Theme
-          </FloatingButton>
-        </Box>
-      )}
 
       {isCompactMobile && (
         <Box
@@ -186,24 +151,14 @@ function TemplateFullscreenDemo() {
             display: 'flex',
             alignItems: 'center',
             gap: 0.5,
-            background: mode === 'dark' ? 'rgba(15,23,42,0.9)' : 'rgba(255,255,255,0.95)',
+            background: 'rgba(255,255,255,0.95)',
             border: `1px solid ${theme.palette.divider}`,
             boxShadow: 4,
             backdropFilter: 'blur(8px)',
           }}
         >
-          <IconButton size="small" component="a" href={`${import.meta.env.BASE_URL}templates`} aria-label="Back to templates">
+          <IconButton size="small" onClick={handleBackToTemplates} aria-label="Back to templates">
             <ArrowBackIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            size="small"
-            onClick={() => window.alert('Download template will be enabled in a future release.')}
-            aria-label="Download template"
-          >
-            <DownloadIcon fontSize="small" />
-          </IconButton>
-          <IconButton size="small" onClick={toggleTheme} aria-label="Toggle theme">
-            {mode === 'dark' ? <LightModeIcon fontSize="small" /> : <DarkModeIcon fontSize="small" />}
           </IconButton>
         </Box>
       )}

@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Chip,
   Stack,
   Typography,
 } from '@mui/material'
@@ -29,6 +30,9 @@ function TemplatePreviewCard({ template, index = 0 }) {
         <CardMedia component="img" height="185" image={template.thumbnail} alt={template.title} loading="lazy" />
         <CardContent>
           <Stack spacing={1.25}>
+            <Stack direction="row" spacing={1}>
+              <Chip label={template.filterCategory || template.category} size="small" variant="outlined" />
+            </Stack>
             <Typography variant="h6">{template.title}</Typography>
             <Typography variant="body2" color="text.secondary">
               {template.shortDescription}

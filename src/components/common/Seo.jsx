@@ -3,7 +3,7 @@ import { business } from '../../utils/siteData'
 
 function Seo({ title, description, path = '/' }) {
   const siteTitle = `${title} | ${business.name}`
-  const canonical = `https://your-username.github.io/altruism${path}`
+  const canonical = `https://bhalla1993.github.io/altruism${path}`
 
   return (
     <Helmet>

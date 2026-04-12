@@ -5,8 +5,17 @@ import { lazy } from 'react'
 // 1) Load this mapping from a JSON manifest file.
 // 2) Resolve template bundles from a separate GitHub repository.
 // 3) Resolve template bundles from a CDN and map remote module URLs.
+// 4) Add more SPA resume variants by creating /templates/spa-resume-XX/ and mapping IDs below.
+// 5) Add new categories by creating /templates/[template-id]/ with index, demo, sampleData, styles, thumbnail.
 // Keep stable template IDs because routes depend on /templates/:templateId/demo.
 const templateComponentMap = {
+  'modern-resume-01': lazy(() => import('./modern-resume-01/index.jsx')),
+  'creative-resume-01': lazy(() => import('./creative-resume-01/index.jsx')),
+  'technical-resume-01': lazy(() => import('./technical-resume-01/index.jsx')),
+  'student-resume-01': lazy(() => import('./student-resume-01/index.jsx')),
+  'business-resume-01': lazy(() => import('./business-resume-01/index.jsx')),
+  'portfolio-spa-01': lazy(() => import('./portfolio-spa-01/index.jsx')),
+  'spa-resume-01': lazy(() => import('./spa-resume-01/index.jsx')),
   'spa-resume': lazy(() => import('./spa-resume/index.jsx')),
   'spa-portfolio': lazy(() => import('./spa-portfolio/index.jsx')),
   'sap-pro-resume': lazy(() => import('./sap-pro-resume/index.jsx')),
@@ -15,6 +24,13 @@ const templateComponentMap = {
 }
 
 const templateDemoMap = {
+  'modern-resume-01': lazy(() => import('./modern-resume-01/demo.jsx')),
+  'creative-resume-01': lazy(() => import('./creative-resume-01/demo.jsx')),
+  'technical-resume-01': lazy(() => import('./technical-resume-01/demo.jsx')),
+  'student-resume-01': lazy(() => import('./student-resume-01/demo.jsx')),
+  'business-resume-01': lazy(() => import('./business-resume-01/demo.jsx')),
+  'portfolio-spa-01': lazy(() => import('./portfolio-spa-01/demo.jsx')),
+  'spa-resume-01': lazy(() => import('./spa-resume-01/demo.jsx')),
   'spa-resume': lazy(() => import('./spa-resume/demo.jsx')),
   'spa-portfolio': lazy(() => import('./spa-portfolio/demo.jsx')),
   'sap-pro-resume': lazy(() => import('./sap-pro-resume/demo.jsx')),

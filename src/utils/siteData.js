@@ -1,20 +1,20 @@
 export const business = {
   name: 'Altruism Digital Studio',
-  tagline: 'Build Better Digital Presence',
+  tagline: 'We build your online presence—simple, fast, and affordable.',
   shortDescription:
-    'We design, build, and launch practical digital solutions for founders, freelancers, and small teams.',
+    'Affordable and high-quality single-page websites, resumes, portfolios, and custom web applications for modern professionals and small businesses.',
   email: 'hello@altruismstudio.dev',
   phone: '+1 (555) 010-2398',
-  location: 'Serving clients across Canada, specializing in the Greater Toronto Area (GTA).',
+  location: 'Toronto GTA',
 }
 
 export const navItems = [
   { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Templates', path: '/templates' },
-  { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Live Projects', path: '/live-projects' },
   { label: 'Pricing', path: '/pricing' },
-  { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ]
 

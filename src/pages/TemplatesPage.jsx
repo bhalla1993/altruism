@@ -1,95 +1,55 @@
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
-import { Box, Button, Card, CardContent, Chip, Grid, Stack, Typography } from '@mui/material'
-import { motion } from 'framer-motion'
+import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined'
+import {
+  Box,
+  Button,
+  Divider,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Stack,
+  Typography,
+} from '@mui/material'
+import { useMemo, useState } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import AnimatedSection from '../components/common/AnimatedSection'
 import Seo from '../components/common/Seo'
+import LiveProjectCard from '../components/cards/LiveProjectCard'
 import TemplatePreviewCard from '../components/templates/TemplatePreviewCard'
-import { templates } from '../utils/templatesData'
-
-const externalTemplates = [
-  {
-    id: 'sparkshots',
-    title: 'Sparkshots Portfolio',
-    description: 'Professional portfolio showcase featuring modern design patterns, smooth animations, and responsive layouts.',
-    url: 'https://www.sparkshots.ca',
-    tags: ['Portfolio', 'SPA', 'Modern', 'Professional'],
-    thumbnail: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-  {
-    id: 'sap-resume-example',
-    title: 'SAP Consultant Resume',
-    description: 'Example resume for SAP professionals highlighting enterprise experience, technical skills, and implementation success stories.',
-    url: 'https://bhalla1993.github.io/shivabhallaportfolio.github.io',
-    tags: ['Resume', 'SAP', 'Professional'],
-    thumbnail: 'https://images.pexels.com/photos/6804074/pexels-photo-6804074.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-]
-
-function ExternalTemplateCard({ template, index }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      viewport={{ once: true }}
-    >
-      <Card
-        sx={{
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          transition: 'all 300ms ease',
-          '&:hover': {
-            transform: 'translateY(-8px)',
-            boxShadow: 6,
-          },
-        }}
-      >
-        <Box
-          component="img"
-          src={template.thumbnail}
-          alt={template.title}
-          sx={{
-            width: '100%',
-            height: 200,
-            objectFit: 'cover',
-            transition: 'transform 300ms ease',
-          }}
-        />
-        <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-          <Stack direction="row" spacing={1} sx={{ mb: 1.25 }}>
-            <Chip label="External Template" size="small" color="warning" />
-          </Stack>
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-            {template.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, flexGrow: 1 }}>
-            {template.description}
-          </Typography>
-          <Button
-            component="a"
-            href={template.url}
-            target="_blank"
-            rel="noreferrer"
-            variant="contained"
-            endIcon={<OpenInNewIcon />}
-            fullWidth
-            size="small"
-          >
-            Visit Live Demo
-          </Button>
-        </CardContent>
-      </Card>
-    </motion.div>
-  )
-}
+import { liveProjects } from '../utils/liveProjectsData'
+import { templateFilters, templateSortOptions, templates } from '../utils/templatesData'
 
 function TemplatesPage() {
+  const [selectedFilter, setSelectedFilter] = useState('All')
+  const [selectedSort, setSelectedSort] = useState('Most Popular')
+
+  const visibleTemplates = useMemo(() => {
+    const filtered = selectedFilter === 'All'
+      ? templates
+      : templates.filter((template) => template.filterCategory === selectedFilter)
+
+    if (selectedSort === 'Newest') {
+      return [...filtered].sort((a, b) => new Date(b.createdAt || '2024-01-01') - new Date(a.createdAt || '2024-01-01'))
+    }
+
+    if (selectedSort === 'Recommended') {
+      return [...filtered].sort((a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)))
+    }
+
+    return [...filtered].sort((a, b) => (b.popularity || 0) - (a.popularity || 0))
+  }, [selectedFilter, selectedSort])
+
+  const recommendedTemplates = useMemo(
+    () => templates.filter((template) => template.recommended).slice(0, 3),
+    [],
+  )
+
   return (
     <>
       <Seo
         title="Templates"
-        description="Browse starter resume and portfolio templates including SAP-focused and modern designs with live demos."
+        description="Browse customizable resume and portfolio SPA templates, then explore real deployed work in our live projects showcase."
         path="/templates"
       />
 
@@ -100,11 +60,40 @@ function TemplatesPage() {
               Resume and Portfolio Templates
             </Typography>
             <Typography color="text.secondary" sx={{ maxWidth: 860 }}>
-              Choose from industry-focused starter templates and preview each with live sample data. Add new templates by updating one configuration file.
+              Browse customizable SPA templates for resumes and portfolios. These are design starting points that we tailor to your profile.
             </Typography>
 
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={1.2} alignItems={{ xs: 'flex-start', md: 'center' }}>
+              <Stack direction="row" spacing={0.8} flexWrap="wrap" useFlexGap>
+                {templateFilters.map((filter) => (
+                  <Button
+                    key={filter}
+                    variant={selectedFilter === filter ? 'contained' : 'outlined'}
+                    size="small"
+                    onClick={() => setSelectedFilter(filter)}
+                  >
+                    {filter}
+                  </Button>
+                ))}
+              </Stack>
+
+              <FormControl size="small" sx={{ minWidth: 180 }}>
+                <InputLabel id="template-sort-label">Sort</InputLabel>
+                <Select
+                  labelId="template-sort-label"
+                  value={selectedSort}
+                  label="Sort"
+                  onChange={(event) => setSelectedSort(event.target.value)}
+                >
+                  {templateSortOptions.map((option) => (
+                    <MenuItem key={option} value={option}>{option}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Stack>
+
             <Grid container spacing={3}>
-              {templates.map((template, index) => (
+              {visibleTemplates.map((template, index) => (
                 <Grid key={template.id} item xs={12} md={6} lg={4}>
                   <TemplatePreviewCard template={template} index={index} />
                 </Grid>
@@ -114,26 +103,73 @@ function TemplatesPage() {
         </AnimatedSection>
       </Box>
 
-      {/* External Templates Section */}
-      <Box component="section" aria-labelledby="external-templates-title" sx={{ mt: { xs: 8, md: 12 } }}>
+      <Box component="section" aria-labelledby="recommended-templates-title" sx={{ mt: { xs: 8, md: 10 } }}>
         <AnimatedSection>
-          <Stack spacing={4}>
-            <Box>
-              <Typography id="external-templates-title" variant="h2" sx={{ fontSize: { xs: '1.75rem', md: '2.5rem' }, mb: 1 }}>
-                External Professional Templates
-              </Typography>
-              <Typography color="text.secondary" sx={{ maxWidth: 860 }}>
-                Explore real-world examples of professional portfolios and resumes built with modern technologies.
-              </Typography>
-            </Box>
-
+          <Stack spacing={3}>
+            <Typography id="recommended-templates-title" variant="h2" sx={{ fontSize: { xs: '1.75rem', md: '2.4rem' } }}>
+              Recommended Templates
+            </Typography>
             <Grid container spacing={3}>
-              {externalTemplates.map((template, index) => (
+              {recommendedTemplates.map((template, index) => (
                 <Grid key={template.id} item xs={12} md={6} lg={4}>
-                  <ExternalTemplateCard template={template} index={index} />
+                  <TemplatePreviewCard template={template} index={index} />
                 </Grid>
               ))}
             </Grid>
+          </Stack>
+        </AnimatedSection>
+      </Box>
+
+      <Box component="section" aria-labelledby="showcase-title" sx={{ mt: { xs: 10, md: 14 } }}>
+        <AnimatedSection>
+          <Stack spacing={4}>
+            <Stack spacing={1.5}>
+              <Stack direction="row" spacing={1.2} alignItems="center">
+                <WorkspacePremiumOutlinedIcon color="primary" sx={{ fontSize: 28 }} />
+                <Typography
+                  id="showcase-title"
+                  variant="h2"
+                  sx={{ fontSize: { xs: '1.75rem', md: '2.4rem' } }}
+                >
+                  Live Projects & Portfolio Showcase
+                </Typography>
+              </Stack>
+              <Typography color="text.secondary" sx={{ maxWidth: 860 }}>
+                This section highlights real deployed client work. These are live builds, not template previews.
+              </Typography>
+            </Stack>
+
+            <Grid container spacing={3}>
+              {liveProjects.map((project, index) => (
+                <Grid key={project.id} item xs={12} md={6}>
+                  <LiveProjectCard project={project} index={index} />
+                </Grid>
+              ))}
+            </Grid>
+
+            <Divider sx={{ opacity: 0.45 }} />
+
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={1.4}
+              alignItems={{ xs: 'flex-start', sm: 'center' }}
+              justifyContent="space-between"
+            >
+              <Typography color="text.secondary" sx={{ maxWidth: 620, lineHeight: 1.7 }}>
+                Interested in creating your own single-page resume or website? Explore our templates or contact us for a custom project.
+              </Typography>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} flexShrink={0}>
+                <Button component={RouterLink} to="/templates" variant="outlined" size="small">
+                  Browse Templates
+                </Button>
+                <Button component={RouterLink} to="/live-projects" variant="outlined" size="small">
+                  View All Live Projects
+                </Button>
+                <Button component={RouterLink} to="/contact" variant="contained" size="small">
+                  Start a Project
+                </Button>
+              </Stack>
+            </Stack>
           </Stack>
         </AnimatedSection>
       </Box>

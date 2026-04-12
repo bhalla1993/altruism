@@ -1,4 +1,11 @@
 import { Box, Chip, Divider, Grid, Paper, Stack, Typography } from '@mui/material'
+import SpaResumeTemplate01 from '../../templates/spa-resume-01'
+import ModernResumeTemplate01 from '../../templates/modern-resume-01'
+import CreativeResumeTemplate01 from '../../templates/creative-resume-01'
+import TechnicalResumeTemplate01 from '../../templates/technical-resume-01'
+import StudentResumeTemplate01 from '../../templates/student-resume-01'
+import BusinessResumeTemplate01 from '../../templates/business-resume-01'
+import PortfolioSpaTemplate01 from '../../templates/portfolio-spa-01'
 
 function SapResumeTemplate({ data }) {
   return (
@@ -108,6 +115,34 @@ function TemplateRenderer({ template, data }) {
 
   if (template.layout === 'sapPortfolio') {
     return <SapPortfolioTemplate data={data} />
+  }
+
+  if (template.layout === 'spaResume01') {
+    return <SpaResumeTemplate01 data={data} />
+  }
+
+  if (template.layout === 'modernResume01') {
+    return <ModernResumeTemplate01 data={data} />
+  }
+
+  if (template.layout === 'creativeResume01') {
+    return <CreativeResumeTemplate01 data={data} />
+  }
+
+  if (template.layout === 'technicalResume01') {
+    return <TechnicalResumeTemplate01 data={data} />
+  }
+
+  if (template.layout === 'studentResume01') {
+    return <StudentResumeTemplate01 data={data} />
+  }
+
+  if (template.layout === 'businessResume01') {
+    return <BusinessResumeTemplate01 data={data} />
+  }
+
+  if (template.layout === 'portfolioSpa01') {
+    return <PortfolioSpaTemplate01 data={data} />
   }
 
   return <ModernComboTemplate data={data} />

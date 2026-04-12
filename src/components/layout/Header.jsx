@@ -28,7 +28,29 @@ function Header() {
   const { mode, toggleTheme } = useThemeMode()
 
   return (
-    <AppBar position="sticky" color="transparent" elevation={0} sx={{ borderBottom: '1px solid', borderColor: 'divider', backdropFilter: 'blur(8px)' }}>
+    <AppBar
+      position="sticky"
+      color="transparent"
+      elevation={0}
+      sx={{
+        background: (theme) =>
+          theme.palette.mode === 'dark'
+            ? 'rgba(20, 32, 54, 0.92)'
+            : 'rgba(255, 255, 255, 0.96)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid',
+        borderColor: (theme) =>
+          theme.palette.mode === 'dark'
+            ? 'rgba(159, 177, 204, 0.22)'
+            : 'rgba(15, 23, 42, 0.1)',
+        boxShadow: (theme) =>
+          theme.palette.mode === 'dark'
+            ? '0 1px 32px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255,255,255,0.04) inset'
+            : '0 1px 18px rgba(15, 23, 42, 0.07)',
+        transition: 'background 300ms ease, box-shadow 300ms ease',
+      }}
+    >
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between', py: 1 }}>
           <Typography

@@ -1,0 +1,19 @@
+.portfolio-spa {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  color: #0f172a;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.portfolio-spa__shell { max-width: 1100px; margin: 0 auto; padding: 2rem 1.2rem 3rem; }
+.portfolio-spa__hero { background: #fff; border: 1px solid #dbe2ea; border-radius: 14px; padding: 1.6rem; box-shadow: 0 12px 26px rgba(15,23,42,0.08); }
+.portfolio-spa__hero h1 { margin: 0; font-size: 2.1rem; }
+.portfolio-spa__hero p { margin: 0.5rem 0 0; color: #475569; line-height: 1.75; }
+.portfolio-spa__nav { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1rem; }
+.portfolio-spa__nav button { border: 1px solid #cbd5e1; background: #fff; border-radius: 999px; padding: 0.32rem 0.8rem; cursor: pointer; }
+.portfolio-spa__section { margin-top: 1.3rem; background: #fff; border: 1px solid #dbe2ea; border-radius: 14px; padding: 1.4rem; }
+.portfolio-spa__section h3 { margin: 0 0 0.65rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: #0f4c81; }
+.portfolio-spa__skills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.portfolio-spa__chip { background: #eff6ff; color: #1e3a8a; border: 1px solid #bfdbfe; border-radius: 999px; padding: 0.28rem 0.62rem; font-size: 0.83rem; }
+.portfolio-spa__project { border-left: 3px solid #0f4c81; padding-left: 0.8rem; margin-bottom: 0.9rem; }
+@media (max-width: 740px) { .portfolio-spa__shell { padding: 1.2rem 0.8rem 2rem; } .portfolio-spa__hero h1 { font-size: 1.7rem; } }
+@media print { .portfolio-spa { background: #fff; } .portfolio-spa__hero, .portfolio-spa__section { box-shadow: none; } }

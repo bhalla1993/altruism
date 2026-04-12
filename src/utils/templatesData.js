@@ -1,12 +1,126 @@
+import spaResume01Thumbnail from '../templates/spa-resume-01/thumbnail.jpg'
+import { spaResume01MinimalData, spaResume01SampleData } from '../templates/spa-resume-01/sampleData'
+import modernResume01Thumbnail from '../templates/modern-resume-01/thumbnail.jpg'
+import { modernResume01SampleData } from '../templates/modern-resume-01/sampleData'
+import creativeResume01Thumbnail from '../templates/creative-resume-01/thumbnail.jpg'
+import { creativeResume01SampleData } from '../templates/creative-resume-01/sampleData'
+import technicalResume01Thumbnail from '../templates/technical-resume-01/thumbnail.jpg'
+import { technicalResume01SampleData } from '../templates/technical-resume-01/sampleData'
+import studentResume01Thumbnail from '../templates/student-resume-01/thumbnail.jpg'
+import { studentResume01SampleData } from '../templates/student-resume-01/sampleData'
+import businessResume01Thumbnail from '../templates/business-resume-01/thumbnail.jpg'
+import { businessResume01SampleData } from '../templates/business-resume-01/sampleData'
+import portfolioSpa01Thumbnail from '../templates/portfolio-spa-01/thumbnail.jpg'
+import { portfolioSpa01SampleData } from '../templates/portfolio-spa-01/sampleData'
+import spaResumeThumbnail from '../templates/spa-resume/thumbnail.jpg'
+import spaPortfolioThumbnail from '../templates/spa-portfolio/thumbnail.jpg'
+import sapProResumeThumbnail from '../templates/sap-pro-resume/thumbnail.jpg'
+import sapShowcasePortfolioThumbnail from '../templates/sap-showcase-portfolio/thumbnail.jpg'
+import modernCareerKitThumbnail from '../templates/modern-career-kit/thumbnail.jpg'
+
 export const templates = [
+  {
+    id: 'modern-resume-01',
+    title: 'Modern Resume - Template 01',
+    category: 'Modern Resume Templates',
+    filterCategory: 'Modern',
+    tags: ['Modern', 'Resume', 'Minimal', 'Professional'],
+    shortDescription: 'Clean minimal resume template with strong typography and balanced spacing for professional use.',
+    thumbnail: modernResume01Thumbnail,
+    layout: 'modernResume01',
+    sampleData: modernResume01SampleData,
+    popularity: 95,
+    createdAt: '2026-04-12',
+    recommended: true,
+  },
+  {
+    id: 'creative-resume-01',
+    title: 'Creative Resume - Template 01',
+    category: 'Creative Resume Templates',
+    filterCategory: 'Creative',
+    tags: ['Creative', 'Resume', 'Visual', 'Design'],
+    shortDescription: 'Visual resume layout with color blocks and expressive structure for creative professionals.',
+    thumbnail: creativeResume01Thumbnail,
+    layout: 'creativeResume01',
+    sampleData: creativeResume01SampleData,
+    popularity: 89,
+    createdAt: '2026-04-12',
+    recommended: true,
+  },
+  {
+    id: 'technical-resume-01',
+    title: 'Technical Resume - Template 01',
+    category: 'Technical Resume Templates',
+    filterCategory: 'Technical',
+    tags: ['Technical', 'Resume', 'Engineering', 'Grid'],
+    shortDescription: 'Structured grid-style resume with dedicated sections for core skills, tools, and technical projects.',
+    thumbnail: technicalResume01Thumbnail,
+    layout: 'technicalResume01',
+    sampleData: technicalResume01SampleData,
+    popularity: 98,
+    createdAt: '2026-04-12',
+    recommended: true,
+  },
+  {
+    id: 'student-resume-01',
+    title: 'Student Resume - Template 01',
+    category: 'Student Resume Templates',
+    filterCategory: 'Student',
+    tags: ['Student', 'Resume', 'Entry Level', 'Recruiter Friendly'],
+    shortDescription: 'Simple and readable student-focused resume emphasizing education, projects, and achievements.',
+    thumbnail: studentResume01Thumbnail,
+    layout: 'studentResume01',
+    sampleData: studentResume01SampleData,
+    popularity: 91,
+    createdAt: '2026-04-12',
+    recommended: true,
+  },
+  {
+    id: 'business-resume-01',
+    title: 'Business Resume - Template 01',
+    category: 'Business Professional Templates',
+    filterCategory: 'Business',
+    tags: ['Business', 'Professional', 'Corporate', 'Conservative'],
+    shortDescription: 'Corporate resume with conservative visual language ideal for finance, HR, and admin roles.',
+    thumbnail: businessResume01Thumbnail,
+    layout: 'businessResume01',
+    sampleData: businessResume01SampleData,
+    popularity: 86,
+    createdAt: '2026-04-12',
+    recommended: false,
+  },
+  {
+    id: 'portfolio-spa-01',
+    title: 'Portfolio SPA - Template 01',
+    category: 'Portfolio SPA Templates',
+    filterCategory: 'Portfolio',
+    tags: ['Portfolio', 'SPA', 'Modern', 'Showcase'],
+    shortDescription: 'Single-page portfolio template with smooth scrolling sections for skills, projects, and contact.',
+    thumbnail: portfolioSpa01Thumbnail,
+    layout: 'portfolioSpa01',
+    sampleData: portfolioSpa01SampleData,
+    popularity: 93,
+    createdAt: '2026-04-12',
+    recommended: true,
+  },
+  {
+    id: 'spa-resume-01',
+    title: 'SPA Resume - Template 01',
+    category: 'SPA Resume',
+    tags: ['SPA', 'Resume', 'Professional', 'Student Friendly'],
+    shortDescription: 'A standalone single-page resume template designed for polished online CV sharing.',
+    thumbnail: spaResume01Thumbnail,
+    layout: 'spaResume01',
+    sampleData: spaResume01SampleData,
+    minimalData: spaResume01MinimalData,
+  },
   {
     id: 'spa-resume',
     title: 'SPA Modern Resume',
     category: 'SPA Resume',
     tags: ['SPA', 'Resume', 'Modern', 'Professional'],
     shortDescription: 'Interactive single-page resume with smooth scroll navigation and modern gradient design.',
-    thumbnail:
-      'https://images.pexels.com/photos/6804074/pexels-photo-6804074.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    thumbnail: spaResumeThumbnail,
     layout: 'spaResume',
     sampleData: {
       name: 'Anika Sharma',
@@ -46,8 +160,7 @@ export const templates = [
     category: 'SPA Portfolio',
     tags: ['SPA', 'Portfolio', 'Modern', 'Project Showcase'],
     shortDescription: 'Elegant portfolio template showcasing featured projects, tech stack, and professional achievements.',
-    thumbnail:
-      'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    thumbnail: spaPortfolioThumbnail,
     layout: 'spaPortfolio',
     sampleData: {
       name: 'Rohan Iyer',
@@ -92,8 +205,7 @@ export const templates = [
     category: 'Resume',
     tags: ['SAP', 'Resume', 'Professional', 'Minimal'],
     shortDescription: 'Enterprise-ready resume template for SAP consultants and analysts.',
-    thumbnail:
-      'https://images.pexels.com/photos/6804074/pexels-photo-6804074.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    thumbnail: sapProResumeThumbnail,
     layout: 'sapResume',
     sampleData: {
       name: 'Anika Sharma',
@@ -131,8 +243,7 @@ export const templates = [
     category: 'Portfolio',
     tags: ['SAP', 'Portfolio', 'Case Study', 'Modern'],
     shortDescription: 'Case-study focused portfolio template for SAP implementation experts.',
-    thumbnail:
-      'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    thumbnail: sapShowcasePortfolioThumbnail,
     layout: 'sapPortfolio',
     sampleData: {
       name: 'Rohan Iyer',
@@ -174,8 +285,7 @@ export const templates = [
     category: 'Resume & Portfolio',
     tags: ['Modern', 'Resume', 'Portfolio', 'Minimal'],
     shortDescription: 'A versatile modern template for tech professionals and creators.',
-    thumbnail:
-      'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    thumbnail: modernCareerKitThumbnail,
     layout: 'modernCombo',
     sampleData: {
       name: 'Maya Chen',
@@ -202,7 +312,9 @@ export const templates = [
   },
 ]
 
-export const templateFilters = ['All', 'SPA', 'SAP', 'Resume', 'Portfolio', 'Modern', 'Professional']
+export const templateFilters = ['All', 'Modern', 'Creative', 'Technical', 'Student', 'Portfolio', 'Business']
+
+export const templateSortOptions = ['Most Popular', 'Newest', 'Recommended']
 
 export function getTemplateById(templateId) {
   return templates.find((template) => template.id === templateId)

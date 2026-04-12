@@ -6,6 +6,7 @@ import {
   Box,
   Chip,
   Container,
+  Divider,
   IconButton,
   Link,
   Stack,
@@ -13,7 +14,6 @@ import {
 } from '@mui/material'
 import { motion } from 'framer-motion'
 import { Link as RouterLink } from 'react-router-dom'
-import { useThemeMode } from '../../styles/ThemeContext'
 import { business } from '../../utils/siteData'
 
 const quickLinks = [
@@ -28,16 +28,6 @@ const quickLinks = [
 const techBadges = ['React', 'JavaScript', 'Vite']
 
 function Footer() {
-  const { mode } = useThemeMode()
-
-  const getFooterBackground = () => {
-    if (mode === 'dark') {
-      return 'linear-gradient(180deg, rgba(9,14,26,0.08) 0%, rgba(17,26,43,0.65) 40%, rgba(14,20,34,0.95) 100%)'
-    }
-    // Light theme: subtle gradient from light to slightly lighter slate
-    return 'linear-gradient(180deg, rgba(248,250,252,0.5) 0%, rgba(226,232,240,0.4) 40%, rgba(203,213,225,0.35) 100%)'
-  }
-
   return (
     <Box
       component={motion.footer}
@@ -46,11 +36,18 @@ function Footer() {
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.55 }}
       sx={{
+        background: (theme) =>
+          theme.palette.mode === 'dark'
+            ? 'linear-gradient(180deg, #0c1526 0%, #080c1c 100%)'
+            : 'linear-gradient(180deg, #e8eef8 0%, #dce6f2 100%)',
         borderTop: '1px solid',
-        borderColor: 'divider',
+        borderColor: (theme) =>
+          theme.palette.mode === 'dark'
+            ? 'rgba(159, 177, 204, 0.35)'
+            : 'rgba(15, 23, 42, 0.18)',
         mt: 10,
-        py: 5,
-        background: getFooterBackground(),
+        pt: { xs: 7, md: 9 },
+        pb: { xs: 5, md: 6 },
         transition: 'background 500ms ease',
       }}
     >
@@ -60,6 +57,9 @@ function Footer() {
             <Stack spacing={1.2} sx={{ maxWidth: 460 }}>
               <Typography variant="h6" sx={{ fontFamily: 'Space Grotesk, Sora, sans-serif' }}>
                 {business.name}
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 600 }}>
+                {business.tagline}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 We build websites, resume portfolios, and software systems that help professionals and small businesses ship confidently.
@@ -135,9 +135,22 @@ function Footer() {
             </Stack>
           </Stack>
 
-          <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center', width: '100%' }}>
-            © {new Date().getFullYear()} {business.name}. All rights reserved.
-          </Typography>
+          <Divider sx={{ opacity: 0.45 }} />
+
+          <Stack
+            direction={{ xs: 'column', md: 'row' }}
+            spacing={1}
+            justifyContent="space-between"
+            alignItems={{ xs: 'flex-start', md: 'center' }}
+            sx={{ pt: 0.4 }}
+          >
+            <Typography variant="body2" color="text.secondary" sx={{ opacity: 0.82 }}>
+              © {new Date().getFullYear()} {business.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ opacity: 0.82 }}>
+              Serving clients across Canada, specializing in the Greater Toronto Area (GTA).
+            </Typography>
+          </Stack>
         </Stack>
       </Container>
     </Box>
