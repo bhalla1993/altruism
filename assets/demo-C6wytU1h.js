@@ -1,0 +1,1 @@
+import{j as m}from"./index-Bc6otvhS.js";import r from"./index-C__rPKXI.js";import"./CheckCircleOutline-CHNwhOHC.js";import"./createSvgIcon-EHKfqT8r.js";import"./Stack-DHevChSV.js";import"./Email-CvE3UaVV.js";import"./Button-De1yoTWq.js";import"./Container-DXjs8wy6.js";function f({data:t}){return m.jsx(r,{data:t})}export{f as default};

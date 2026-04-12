@@ -1,0 +1,1 @@
+import{j as m}from"./index-Bc6otvhS.js";import s from"./index-DSPUgDSH.js";import"./templatesData-JEZyaSuo.js";import"./createSvgIcon-EHKfqT8r.js";import"./Stack-DHevChSV.js";function u({data:e}){return m.jsx(s,{data:e})}export{u as default};
