@@ -1,8 +1,7 @@
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
-import { Box, Button, Card, CardContent, Grid, IconButton, Link, Stack, Typography } from '@mui/material'
+import { Box, Card, CardContent, Grid, IconButton, Link, Stack, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import Seo from '../components/common/Seo'
 import ContactForm from '../components/forms/ContactForm'
@@ -45,32 +44,6 @@ function ContactPage() {
               <Typography color="text.secondary">
                 Tell us what you are trying to launch. We usually respond within one business day.
               </Typography>
-
-              <Card>
-                <CardContent>
-                  <Stack spacing={1.2}>
-                    <Typography variant="h6">Prefer Google Form?</Typography>
-                    <Typography color="text.secondary">
-                      Share your requirements through our Google Form and we will follow up with you shortly.
-                    </Typography>
-                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.2} alignItems={{ xs: 'flex-start', sm: 'center' }}>
-                      <Button
-                        component={Link}
-                        href={business.googleFormUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="outlined"
-                        endIcon={<OpenInNewIcon />}
-                      >
-                        Open Google Form
-                      </Button>
-                      <Typography variant="body2" color="text.secondary">
-                        Prefer social media? Connect with us directly on Facebook, Instagram, or LinkedIn.
-                      </Typography>
-                    </Stack>
-                  </Stack>
-                </CardContent>
-              </Card>
 
               <ContactForm />
             </Stack>

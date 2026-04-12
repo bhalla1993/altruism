@@ -1,5 +1,6 @@
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
-import GitHubIcon from '@mui/icons-material/GitHub'
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded'
+import InstagramIcon from '@mui/icons-material/Instagram'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined'
 import {
@@ -94,7 +95,29 @@ function Footer() {
               <Stack direction="row" spacing={0.8}>
                 <IconButton
                   component={Link}
-                  href="https://www.linkedin.com"
+                  href={business.socialLinks.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  color="inherit"
+                  aria-label="Facebook"
+                  sx={{ '&:hover': { color: 'primary.main', transform: 'translateY(-1px)' }, transition: 'all 180ms ease' }}
+                >
+                  <FacebookRoundedIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  component={Link}
+                  href={business.socialLinks.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  color="inherit"
+                  aria-label="Instagram"
+                  sx={{ '&:hover': { color: 'primary.main', transform: 'translateY(-1px)' }, transition: 'all 180ms ease' }}
+                >
+                  <InstagramIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  component={Link}
+                  href={business.socialLinks.linkedin}
                   target="_blank"
                   rel="noreferrer"
                   color="inherit"
@@ -102,17 +125,6 @@ function Footer() {
                   sx={{ '&:hover': { color: 'primary.main', transform: 'translateY(-1px)' }, transition: 'all 180ms ease' }}
                 >
                   <LinkedInIcon fontSize="small" />
-                </IconButton>
-                <IconButton
-                  component={Link}
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  color="inherit"
-                  aria-label="GitHub"
-                  sx={{ '&:hover': { color: 'primary.main', transform: 'translateY(-1px)' }, transition: 'all 180ms ease' }}
-                >
-                  <GitHubIcon fontSize="small" />
                 </IconButton>
                 <IconButton
                   component={Link}
