@@ -6,6 +6,12 @@ export const business = {
   email: 'hello@altruismstudio.dev',
   phone: '+1 (555) 010-2398',
   location: 'Toronto GTA',
+  googleFormUrl: 'https://docs.google.com/forms',
+  socialLinks: {
+    facebook: 'https://www.facebook.com/altruismdigitalstudio',
+    instagram: 'https://www.instagram.com/altruismdigitalstudio',
+    linkedin: 'https://www.linkedin.com/company/altruism-digital-studio',
+  },
 }
 
 export const navItems = [

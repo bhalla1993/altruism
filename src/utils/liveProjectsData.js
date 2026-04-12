@@ -1,3 +1,6 @@
+import resumeThumbnail from '../assets/images/Resume.png'
+import sparkShotsThumbnail from '../assets/images/SparkShots.png'
+
 export const liveProjects = [
   {
     id: 'single-page-resume-example',
@@ -6,7 +9,7 @@ export const liveProjects = [
     badge: 'Live Project',
     ctaLabel: 'View Live Demo',
     url: 'https://bhalla1993.github.io/shivabhallaportfolio.github.io',
-    thumbnail: 'https://image.thum.io/get/width/1200/noanimate/https://bhalla1993.github.io/shivabhallaportfolio.github.io/',
+    thumbnail: resumeThumbnail,
   },
   {
     id: 'sparkshots-photography-website',
@@ -15,6 +18,6 @@ export const liveProjects = [
     badge: 'Live Project',
     ctaLabel: 'Visit Live Site',
     url: 'https://www.sparkshots.ca',
-    thumbnail: 'https://image.thum.io/get/width/1200/noanimate/https://www.sparkshots.ca/',
+    thumbnail: sparkShotsThumbnail,
   },
 ]
