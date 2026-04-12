@@ -1,1 +1,0 @@
-import{j as t}from"./index-CLYHnxZj.js";import r from"./index-DxNxz0l8.js";import"./Code-Y_3KTSvr.js";import"./createSvgIcon-CSXSgm88.js";import"./Stack-XLmfPEwj.js";import"./Email-CIgaDQqw.js";import"./Button-DuQczNob.js";import"./Container-Dsbc_YNh.js";import"./Chip-CC24dSl_.js";function u({data:o}){return t.jsx(r,{data:o})}export{u as default};
