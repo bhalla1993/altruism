@@ -74,18 +74,24 @@ function Footer() {
 
             <Stack spacing={1.2}>
               <Typography variant="subtitle1">Quick Links</Typography>
-              <Stack direction={{ xs: 'row', md: 'column' }} spacing={1.2} flexWrap="wrap" useFlexGap>
-                {quickLinks.map((item) => (
-                  <Link
-                    key={item.path}
-                    component={RouterLink}
-                    to={item.path}
-                    underline="none"
-                    color="text.secondary"
-                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 180ms ease' }}
-                  >
-                    {item.label}
-                  </Link>
+              <Stack direction="row" spacing={0.8} flexWrap="wrap" useFlexGap alignItems="center">
+                {quickLinks.map((item, index) => (
+                  <Box key={item.path} sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.8 }}>
+                    <Link
+                      component={RouterLink}
+                      to={item.path}
+                      underline="none"
+                      color="text.secondary"
+                      sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 180ms ease' }}
+                    >
+                      {item.label}
+                    </Link>
+                    {index < quickLinks.length - 1 ? (
+                      <Typography component="span" color="text.disabled" sx={{ lineHeight: 1 }}>
+                        |
+                      </Typography>
+                    ) : null}
+                  </Box>
                 ))}
               </Stack>
             </Stack>
@@ -159,8 +165,17 @@ function Footer() {
             <Typography variant="body2" color="text.secondary" sx={{ opacity: 0.82 }}>
               © {new Date().getFullYear()} {business.name}. All rights reserved.
             </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ opacity: 0.82 }}>
-              Serving clients across Canada, specializing in the Greater Toronto Area (GTA).
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ opacity: 0.82, maxWidth: { xs: '100%', md: 420 }, textWrap: 'balance' }}
+            >
+              <Box component="span" sx={{ display: { xs: 'inline', md: 'none' } }}>
+                Serving clients across Canada, focused on the GTA.
+              </Box>
+              <Box component="span" sx={{ display: { xs: 'none', md: 'inline' } }}>
+                Serving clients across Canada, specializing in the Greater Toronto Area (GTA).
+              </Box>
             </Typography>
           </Stack>
         </Stack>
