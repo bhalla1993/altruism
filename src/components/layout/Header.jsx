@@ -13,8 +13,9 @@ import {
   ListItemText,
   Stack,
   Toolbar,
-  Typography,
 } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Link as RouterLink, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { business, navItems } from '../../utils/siteData'
@@ -26,11 +27,89 @@ const navLinkStyles = ({ isActive }) => ({
   fontWeight: isActive ? 700 : 500,
 })
 
+const brandContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.045 } },
+}
+const brandLetter = {
+  hidden: { opacity: 0, y: -14, rotateX: -60 },
+  visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } },
+}
+
+function AnimatedBrand({ reduceMotion }) {
+  const theme = useTheme()
+  const isDark = theme.palette.mode === 'dark'
+  // Professional theme-aware palette: text colour ↔ brand primary, no neon
+  const shimmerFrom = isDark ? '#e6edf8' : '#0f172a'
+  const shimmerMid  = theme.palette.primary.main
+  const gradient = `linear-gradient(90deg, ${shimmerFrom} 0%, ${shimmerMid} 45%, ${shimmerFrom} 100%)`
+
+  const letters = business.name.split('')
+  const gradientStyle = {
+    background: gradient,
+    backgroundSize: '200% auto',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    display: 'inline-block',
+    fontFamily: 'Space Grotesk, Sora, sans-serif',
+    fontWeight: 800,
+    fontSize: '1.22rem',
+    letterSpacing: '-0.01em',
+  }
+
+  return (
+    <Box
+      component={RouterLink}
+      to="/"
+      sx={{
+        textDecoration: 'none',
+        display: 'inline-flex',
+        alignItems: 'center',
+        '@keyframes brandShimmer': {
+          '0%':   { backgroundPosition: '0% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
+        '& .brand-text': {
+          animation: reduceMotion ? 'none' : 'brandShimmer 7s ease-in-out infinite',
+        },
+        transition: 'opacity 200ms ease',
+        '&:hover': { opacity: 0.78 },
+      }}
+    >
+      {reduceMotion ? (
+        <Box component="span" className="brand-text" sx={gradientStyle}>
+          {business.name}
+        </Box>
+      ) : (
+        <motion.span
+          style={{ display: 'inline-flex', perspective: 400 }}
+          variants={brandContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          {letters.map((char, i) => (
+            <motion.span
+              key={i}
+              variants={brandLetter}
+              className="brand-text"
+              style={{ ...gradientStyle, display: 'inline-block' }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </motion.span>
+          ))}
+        </motion.span>
+      )}
+    </Box>
+  )
+}
+
 function Header() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
   const { mode, toggleTheme } = useThemeMode()
+  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
     setOpen(false)
@@ -77,14 +156,7 @@ function Header() {
     >
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between', py: 1 }}>
-          <Typography
-            component={RouterLink}
-            to="/"
-            variant="h6"
-            sx={{ textDecoration: 'none', color: 'text.primary', fontFamily: 'Space Grotesk, Sora, sans-serif', fontWeight: 700 }}
-          >
-            {business.name}
-          </Typography>
+          <AnimatedBrand reduceMotion={reduceMotion} />
 
           <Stack direction="row" spacing={3} sx={{ display: { xs: 'none', md: 'flex' } }}>
             {navItems.map((item) => (

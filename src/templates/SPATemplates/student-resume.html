@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Rivera - Computer Science Student</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2d3748;
+            background-color: #f7fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== COLOR PALETTE ===== */
+        :root {
+            --primary: #4299e1;
+            --primary-dark: #3182ce;
+            --secondary: #48bb78;
+            --accent: #ed8936;
+            --text-dark: #2d3748;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+            --bg-white: #ffffff;
+            --bg-light: #f7fafc;
+            --bg-subtle: #edf2f7;
+            --border: #e2e8f0;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        .hero-greeting {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .hero-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .hero-title {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+        
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 6rem 5%;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--bg-subtle);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        #about {
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .about-image-wrapper {
+            position: relative;
+        }
+        
+        .about-image {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .about-bio {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        
+        .about-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .info-item:hover {
+            background: var(--bg-subtle);
+            transform: translateY(-2px);
+        }
+        
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .info-details h4 {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        
+        .info-details p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .info-details a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .info-details a:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* ===== EDUCATION SECTION ===== */
+        #education {
+            background: var(--bg-light);
+        }
+        
+        .education-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .education-title h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .education-title p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .education-date {
+            background: var(--bg-subtle);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: var(--text-medium);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .education-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .detail-item i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .detail-item div h4 {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .detail-item div p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .education-list {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .education-list h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .education-list ul {
+            list-style: none;
+            display: grid;
+            gap: 0.8rem;
+        }
+        
+        .education-list li {
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+        
+        .education-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        /* ===== PROJECTS SECTION ===== */
+        #projects {
+            background: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .project-description {
+            font-size: 1rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+            padding: 0.4rem 1rem;
+            background: var(--bg-subtle);
+            color: var(--primary);
+            font-size: 0.85rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            gap: 0.8rem;
+            color: var(--primary-dark);
+        }
+        
+        /* ===== SKILLS SECTION ===== */
+        #skills {
+            background: var(--bg-light);
+        }
+        
+        .skills-container {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .skill-category h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .skill-category h3 i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            padding: 1rem 1.5rem;
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* ===== EXPERIENCE SECTION ===== */
+        #experience {
+            background: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: var(--border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--border);
+            z-index: 1;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--bg-subtle);
+            border-radius: 50px;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .timeline-company {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .timeline-description {
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-achievements {
+            list-style: none;
+        }
+        
+        .timeline-achievements li {
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-medium);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-achievements li {
+            padding-left: 0;
+            padding-right: 1.5rem;
+        }
+        
+        .timeline-achievements li::before {
+            content: '\f101';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            color: var(--secondary);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-achievements li::before {
+            left: auto;
+            right: 0;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-achievements li::before {
+            left: 0;
+        }
+        
+        /* ===== EXTRACURRICULARS SECTION ===== */
+        #extracurriculars {
+            background: var(--bg-light);
+        }
+        
+        .extracurricular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .extracurricular-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .extracurricular-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .extracurricular-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary), #38a169);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .extracurricular-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .extracurricular-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .extracurricular-description {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        #contact {
+            background: white;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-intro p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.3rem;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(66, 153, 225, 0.4);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--text-dark);
+            color: var(--bg-subtle);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-text {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text span {
+            color: var(--primary);
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, 10px);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 65px;
+                left: -100%;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                border-top: 1px solid var(--border);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                align-items: flex-start;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-name {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image-wrapper {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row !important;
+                padding-left: 70px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content {
+                text-align: left;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-achievements li {
+                padding-left: 1.5rem;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-achievements li::before {
+                left: 0;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            section {
+                padding: 4rem 5%;
+            }
+            
+            .hero-name {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-info-grid,
+            .education-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid,
+            .extracurricular-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">AR</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <p class="hero-greeting">👋 Hello, I'm</p>
+            <h1 class="hero-name">Alex Rivera</h1>
+            <p class="hero-title">Computer Science Student</p>
+            <p class="hero-tagline">
+                Passionate about building innovative software solutions and exploring emerging technologies. Aspiring full-stack developer with a love for problem-solving.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#" class="btn-primary" onclick="alert('Resume download functionality would be implemented here'); return false;">
+                    <i class="fas fa-download"></i>
+                    <span>Download Resume</span>
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact Me</span>
+                </a>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Get to Know Me</div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image-wrapper fade-in">
+                    <div class="about-image">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Alex Rivera">
+                    </div>
+                </div>
+                
+                <div class="about-text fade-in">
+                    <h3>Hi there! 👋</h3>
+                    <p class="about-bio">
+                        I'm a third-year Computer Science student at State University with a deep passion for software development and technology. I love building projects that solve real-world problems, and I'm constantly learning new frameworks and tools. When I'm not coding, you'll find me participating in hackathons, contributing to open-source projects, or exploring the latest tech trends.
+                    </p>
+                    
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-details">
+                                <h4>Location</h4>
+                                <p>San Francisco, CA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:alex.rivera@email.com">alex.rivera@email.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-details">
+                                <h4>Phone</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="info-details">
+                                <h4>LinkedIn</h4>
+                                <p><a href="#">/in/alexrivera</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="info-details">
+                                <h4>GitHub</h4>
+                                <p><a href="#">@alexrivera</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="info-details">
+                                <h4>Portfolio</h4>
+                                <p><a href="#">alexrivera.dev</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Academic Background</div>
+                <h2 class="section-title">Education</h2>
+            </div>
+            
+            <div class="education-card fade-in">
+                <div class="education-header">
+                    <div class="education-title">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <p>State University</p>
+                    </div>
+                    <div class="education-date">
+                        Expected May 2027
+                    </div>
+                </div>
+                
+                <div class="education-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>GPA</h4>
+                            <p>3.85 / 4.0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h4>Honors</h4>
+                            <p>Dean's List (3 semesters)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-trophy"></i>
+                        <div>
+                            <h4>Scholarship</h4>
+                            <p>Computer Science Merit Award</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-list">
+                    <h4>Relevant Coursework</h4>
+                    <ul>
+                        <li>Data Structures & Algorithms</li>
+                        <li>Object-Oriented Programming (Java)</li>
+                        <li>Database Management Systems</li>
+                        <li>Web Development (HTML/CSS/JavaScript)</li>
+                        <li>Computer Networks</li>
+                        <li>Software Engineering Principles</li>
+                    </ul>
+                </div>
+                
+                <div class="education-list">
+                    <h4>Academic Achievements</h4>
+                    <ul>
+                        <li>1st Place - University Hackathon 2025 (Team Lead)</li>
+                        <li>Outstanding Student in Computer Science Award</li>
+                        <li>Published research paper on machine learning applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">My Work</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    A selection of personal projects and team collaborations that showcase my skills
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Task Manager App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Manager Pro</h3>
+                        <p class="project-description">
+                            A full-stack web application for managing tasks and projects with real-time collaboration features. Users can create teams, assign tasks, and track progress.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View on GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Weather Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather Dashboard</h3>
+                        <p class="project-description">
+                            An interactive weather application that provides real-time forecasts, historical data, and weather alerts for any location worldwide.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View Demo <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800" alt="E-commerce Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Campus Marketplace</h3>
+                        <p class="project-description">
+                            A student-focused e-commerce platform for buying and selling textbooks, electronics, and dorm essentials with integrated payment processing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View on GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fitness Tracker">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">FitTrack Mobile App</h3>
+                        <p class="project-description">
+                            A mobile fitness tracking application with workout logging, nutrition tracking, and progress visualization features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View Demo <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI Chatbot">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Study Buddy</h3>
+                        <p class="project-description">
+                            An AI-powered chatbot that helps students with homework questions, study tips, and exam preparation using natural language processing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View on GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Code Editor">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CodeShare Editor</h3>
+                        <p class="project-description">
+                            A collaborative online code editor with syntax highlighting, real-time collaboration, and support for 15+ programming languages.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Monaco Editor</span>
+                            <span class="tech-tag">Express</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View Demo <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">What I Know</div>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">C++</div>
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">Django</div>
+                        <div class="skill-item">HTML/CSS</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">Git/GitHub</div>
+                        <div class="skill-item">REST APIs</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-lightbulb"></i> Soft Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Problem Solving</div>
+                        <div class="skill-item">Team Collaboration</div>
+                        <div class="skill-item">Communication</div>
+                        <div class="skill-item">Time Management</div>
+                        <div class="skill-item">Leadership</div>
+                        <div class="skill-item">Adaptability</div>
+                        <div class="skill-item">Critical Thinking</div>
+                        <div class="skill-item">Creativity</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">VS Code</div>
+                        <div class="skill-item">PyCharm</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Firebase</div>
+                        <div class="skill-item">Postman</div>
+                        <div class="skill-item">Figma</div>
+                        <div class="skill-item">Jira</div>
+                        <div class="skill-item">Linux</div>
+                        <div class="skill-item">Vercel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Work History</div>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2026 - Present</div>
+                        <h3 class="timeline-title">Software Engineering Intern</h3>
+                        <p class="timeline-company">TechCorp Solutions</p>
+                        <p class="timeline-description">
+                            Working on the development team to build and maintain web applications for enterprise clients.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Developed new features for customer dashboard using React and TypeScript</li>
+                            <li>Optimized database queries, reducing load times by 35%</li>
+                            <li>Collaborated with cross-functional teams in Agile environment</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2025 - May 2026</div>
+                        <h3 class="timeline-title">Teaching Assistant</h3>
+                        <p class="timeline-company">State University - CS Department</p>
+                        <p class="timeline-description">
+                            Assisted professor with Intro to Programming course for 150+ students.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Led weekly lab sessions teaching Python fundamentals</li>
+                            <li>Graded assignments and provided detailed feedback</li>
+                            <li>Held office hours for one-on-one student support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jun 2025 - Aug 2025</div>
+                        <h3 class="timeline-title">Web Development Intern</h3>
+                        <p class="timeline-company">StartupXYZ</p>
+                        <p class="timeline-description">
+                            Contributed to the redesign of company website and internal tools.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Built responsive landing pages with modern UI/UX principles</li>
+                            <li>Implemented RESTful API endpoints using Node.js</li>
+                            <li>Participated in daily standups and sprint planning</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan 2025 - May 2025</div>
+                        <h3 class="timeline-title">Volunteer Developer</h3>
+                        <p class="timeline-company">Code for Good - Nonprofit Initiative</p>
+                        <p class="timeline-description">
+                            Volunteered to build websites for local nonprofits and community organizations.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Created donation platform for animal shelter, increasing donations by 40%</li>
+                            <li>Trained team members on version control with Git</li>
+                            <li>Managed project timelines and client communications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurriculars Section -->
+    <section id="extracurriculars">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Beyond the Classroom</div>
+                <h2 class="section-title">Extracurriculars & Leadership</h2>
+            </div>
+            
+            <div class="extracurricular-grid">
+                <div class="extracurricular-card fade-in">
+                    <div class="extracurricular-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="extracurricular-title">Computer Science Club</h3>
+                    <p class="extracurricular-role">President (2025-2026)</p>
+                    <p class="extracurricular-description">
+                        Led a club of 80+ members organizing weekly coding workshops, guest speaker events, and technical interview prep sessions. Increased membership by 60% through strategic outreach initiatives.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-card fade-in">
+                    <div class="extracurricular-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="extracurricular-title">HackState 2025</h3>
+                    <p class="extracurricular-role">1st Place Winner</p>
+                    <p class="extracurricular-description">
+                        Led a team of 4 to build an AI-powered study scheduler that won first place among 45 competing teams. Developed the full-stack application in 36 hours using React, Flask, and machine learning algorithms.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-card fade-in">
+                    <div class="extracurricular-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="extracurricular-title">Open Source Contributor</h3>
+                    <p class="extracurricular-role">Active Contributor</p>
+                    <p class="extracurricular-description">
+                        Contributed to 12+ open source projects on GitHub, including documentation improvements, bug fixes, and new features. Focused on projects related to education and developer tools.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-card fade-in">
+                    <div class="extracurricular-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="extracurricular-title">Peer Mentor Program</h3>
+                    <p class="extracurricular-role">Mentor</p>
+                    <p class="extracurricular-description">
+                        Mentored 6 first-year CS students, providing academic guidance, career advice, and emotional support. Helped mentees maintain a 3.5+ GPA average and find internship opportunities.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-card fade-in">
+                    <div class="extracurricular-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="extracurricular-title">Competitive Programming</h3>
+                    <p class="extracurricular-role">Team Member</p>
+                    <p class="extracurricular-description">
+                        Competed in ICPC regional competition, placing in top 15. Regularly practice on LeetCode and Codeforces to sharpen problem-solving skills and algorithmic thinking.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-card fade-in">
+                    <div class="extracurricular-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="extracurricular-title">Tech Blog Writer</h3>
+                    <p class="extracurricular-role">Content Creator</p>
+                    <p class="extracurricular-description">
+                        Maintain a personal tech blog with 20+ articles on web development, algorithms, and career advice. Reach of 5K+ monthly readers with articles featured on Medium and Dev.to.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Let's Connect</div>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-intro">
+                    <p>
+                        I'm always open to new opportunities, collaborations, or just a friendly chat about tech! Feel free to reach out through any of the platforms below or send me a message using the form.
+                    </p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="mailto:alex.rivera@email.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Your Name</label>
+                        <input class="form-input" id="name" type="text" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Your Email</label>
+                        <input class="form-input" id="email" type="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Subject</label>
+                        <input class="form-input" id="subject" type="text" placeholder="Internship Opportunity" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea class="form-textarea" id="message" placeholder="Tell me about your opportunity or project..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">
+                Designed & Built by <span>Alex Rivera</span>
+            </p>
+            <p class="footer-text">
+                © 2026 Alex Rivera. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== CONTACT FORM =====
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            
+            alert(`Thank you for your message, ${name}! While this is a demo form, in a real implementation, your message about "${subject}" would be sent to alex.rivera@email.com. I'll get back to you soon!`);
+            contactForm.reset();
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>

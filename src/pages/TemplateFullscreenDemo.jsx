@@ -60,10 +60,14 @@ function TemplateFullscreenDemo() {
   const theme = useTheme()
   const isCompactMobile = useMediaQuery('(max-width:420px)')
 
-  const TemplateComponent = useMemo(() => getLazyTemplateDemo(templateId), [templateId])
+  const isSpaHtml = template?.type === 'spa-html'
+  const TemplateComponent = useMemo(
+    () => (isSpaHtml ? null : getLazyTemplateDemo(templateId)),
+    [isSpaHtml, templateId],
+  )
   const currentData = template?.sampleData
 
-  if (!template || !TemplateComponent) {
+  if (!template || (!isSpaHtml && !TemplateComponent)) {
     return (
       <Box sx={{ minHeight: '100vh', display: 'grid', placeItems: 'center', p: 2 }}>
         <Stack spacing={2} alignItems="center">
@@ -77,15 +81,11 @@ function TemplateFullscreenDemo() {
   }
 
   const handleBackToTemplates = () => {
-    // Behave like "close preview" when opened in a separate tab/window.
     if (window.history.length > 1) {
       navigate(-1)
       return
     }
-
     window.close()
-
-    // Fallback for browsers that block closing tabs not opened via script.
     setTimeout(() => {
       navigate('/templates')
     }, 120)
@@ -119,19 +119,33 @@ function TemplateFullscreenDemo() {
         </Box>
       )}
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`${templateId}-sample`}
-          initial={{ opacity: 0.35 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0.35 }}
-          transition={{ duration: 0.28 }}
-        >
-          <Suspense fallback={<DemoLoader />}>
-            <TemplateComponent data={currentData} />
-          </Suspense>
-        </motion.div>
-      </AnimatePresence>
+      {isSpaHtml ? (
+        <Box
+          component="iframe"
+          src={template.demoUrl}
+          title={`${template.title} full demo`}
+          sx={{
+            display: 'block',
+            width: '100%',
+            height: '100vh',
+            border: 'none',
+          }}
+        />
+      ) : (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`${templateId}-sample`}
+            initial={{ opacity: 0.35 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.35 }}
+            transition={{ duration: 0.28 }}
+          >
+            <Suspense fallback={<DemoLoader />}>
+              <TemplateComponent data={currentData} />
+            </Suspense>
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       {isCompactMobile && (
         <Box

@@ -1,13 +1,10 @@
-import { Box, Chip, Divider, Grid, Paper, Stack, Typography } from '@mui/material'
-import SpaResumeTemplate01 from '../../templates/spa-resume-01'
-import ModernResumeTemplate01 from '../../templates/modern-resume-01'
-import CreativeResumeTemplate01 from '../../templates/creative-resume-01'
-import TechnicalResumeTemplate01 from '../../templates/technical-resume-01'
-import StudentResumeTemplate01 from '../../templates/student-resume-01'
-import BusinessResumeTemplate01 from '../../templates/business-resume-01'
-import PortfolioSpaTemplate01 from '../../templates/portfolio-spa-01'
-import LawyerPortfolio01 from '../../templates/lawyer-portfolio-01'
-import RealEstateAgent01 from '../../templates/real-estate-agent-01'
+// TemplateRenderer is unused. SPA HTML templates are rendered via iframes.
+function TemplateRenderer() {
+  return null
+}
+
+export default TemplateRenderer
+
 
 function SapResumeTemplate({ data }) {
   return (

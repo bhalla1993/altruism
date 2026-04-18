@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Lens | Adventure Photographer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #e0e0e0;
+            background-color: #0a0a0a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 5%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .navbar.scrolled {
+            padding: 0.8rem 5%;
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 3px;
+            position: relative;
+        }
+        
+        .nav-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30%;
+            height: 3px;
+            background: #ff6b35;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+        
+        .nav-link {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #ff6b35;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff;
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-image: url('https://images.pexels.com/photos/869258/pexels-photo-869258.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: brightness(0.6);
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 107, 53, 0.2) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            max-width: 1100px;
+            padding: 2rem;
+            opacity: 0;
+            animation: heroFadeIn 1.5s ease forwards 0.5s;
+        }
+        
+        .hero-title {
+            font-size: 7rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 8px;
+            text-shadow: 3px 3px 30px rgba(0, 0, 0, 0.8);
+            line-height: 1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: #e0e0e0;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 3px solid #ff6b35;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #ff6b35;
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .hero-cta:hover::before {
+            left: 0;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.5);
+        }
+        
+        /* ===== SECTION COMMON STYLES ===== */
+        section {
+            padding: 6rem 5%;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 4px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, #ff6b35 50%, transparent 100%);
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #909090;
+            margin-top: 2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== PORTFOLIO SECTION ===== */
+        #portfolio {
+            background: #0a0a0a;
+            padding: 6rem 5% 8rem;
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            color: #909090;
+            border: 2px solid #2a2a2a;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #ff6b35;
+            color: #fff;
+            border-color: #ff6b35;
+            transform: translateY(-3px);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #1a1a1a;
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.15);
+            filter: brightness(0.5);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            padding: 2rem;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-category {
+            font-size: 0.9rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .portfolio-title {
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        
+        .portfolio-icon {
+            font-size: 3rem;
+            color: #fff;
+            margin-top: 1.5rem;
+        }
+        
+        /* ===== LIGHTBOX MODAL ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: lightboxZoom 0.4s ease;
+        }
+        
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            color: #ff6b35;
+            transform: rotate(90deg);
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        #about {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            filter: grayscale(0.3);
+            transition: all 0.6s ease;
+        }
+        
+        .about-image-wrapper:hover .about-image {
+            transform: scale(1.05);
+            filter: grayscale(0);
+        }
+        
+        .about-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+        
+        .about-image-text {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: #ff6b35;
+            letter-spacing: 3px;
+        }
+        
+        .about-content {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-heading {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+        
+        .about-highlight {
+            color: #ff6b35;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: #b0b0b0;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            background: rgba(255, 107, 53, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: #ff6b35;
+            letter-spacing: 2px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #909090;
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        #services {
+            background: #0a0a0a;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 3rem 2rem;
+            border: 1px solid #2a2a2a;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            border-color: #ff6b35;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            color: #ff6b35;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-name {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .service-description {
+            color: #909090;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .service-features li {
+            color: #b0b0b0;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: 700;
+        }
+        
+        .service-cta {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: #ff6b35;
+            border: 2px solid #ff6b35;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .service-cta:hover {
+            background: #ff6b35;
+            color: #fff;
+        }
+        
+        /* ===== EXPEDITIONS SECTION ===== */
+        #expeditions {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+        
+        .expeditions-scroll {
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-top: 3rem;
+            padding-bottom: 2rem;
+            scrollbar-width: thin;
+            scrollbar-color: #ff6b35 #1a1a1a;
+        }
+        
+        .expeditions-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .expeditions-scroll::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        .expeditions-scroll::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+            border-radius: 10px;
+        }
+        
+        .expeditions-wrapper {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+        }
+        
+        .expedition-card {
+            width: 450px;
+            height: 550px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .expedition-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+        }
+        
+        .expedition-card:hover .expedition-image {
+            transform: scale(1.1);
+        }
+        
+        .expedition-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 60%);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: all 0.4s ease;
+        }
+        
+        .expedition-card:hover .expedition-overlay {
+            background: linear-gradient(to top, rgba(255, 107, 53, 0.85) 0%, rgba(0, 0, 0, 0.7) 60%);
+        }
+        
+        .expedition-location {
+            font-size: 0.9rem;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .expedition-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+        
+        .expedition-story {
+            color: #e0e0e0;
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .expedition-card:hover .expedition-story {
+            opacity: 1;
+            max-height: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .expedition-date {
+            color: #b0b0b0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        #contact {
+            background: #0a0a0a;
+            padding: 6rem 5% 4rem;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+        
+        .contact-info.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .contact-heading {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+        }
+        
+        .contact-text {
+            font-size: 1.1rem;
+            color: #909090;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 3rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid #ff6b35;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+            transform: translateX(10px);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            margin-right: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .contact-item-text {
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #909090;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: #ff6b35;
+            border-color: #ff6b35;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .contact-form.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            color: #909090;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: #ff6b35;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-submit:hover {
+            background: #ff7f4f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: #000;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+        }
+        
+        .footer-text {
+            color: #606060;
+            font-size: 0.9rem;
+        }
+        
+        .footer-text span {
+            color: #ff6b35;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes lightboxZoom {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image {
+                height: 500px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-item {
+                height: 400px;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .expedition-card {
+                width: 350px;
+                height: 500px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section {
+                padding: 4rem 5%;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-cta {
+                padding: 1rem 2.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-filters {
+                gap: 1rem;
+            }
+            
+            .filter-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .portfolio-item {
+                height: 350px;
+            }
+            
+            .about-heading,
+            .contact-heading {
+                font-size: 2.5rem;
+            }
+            
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .expedition-card {
+                width: 300px;
+                height: 450px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">WILD LENS</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#expeditions" class="nav-link">Expeditions</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">ADVENTURE AWAITS</h1>
+            <p class="hero-subtitle">Capturing The Wild · One Frame At A Time</p>
+            <a href="#portfolio" class="hero-cta">See The Wild</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Portfolio</h2>
+                <p class="section-subtitle">Moments From The Edge</p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="mountains">Mountains</button>
+                <button class="filter-btn" data-filter="climbing">Climbing</button>
+                <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+                <button class="filter-btn" data-filter="expeditions">Expeditions</button>
+            </div>
+            
+            <div class="portfolio-grid" id="portfolioGrid">
+                <div class="portfolio-item fade-in-up" data-category="mountains">
+                    <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mountain Peak" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Mountains</span>
+                        <h3 class="portfolio-title">Summit Dreams</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="climbing">
+                    <img src="https://images.pexels.com/photos/2524368/pexels-photo-2524368.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rock Climbing" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Climbing</span>
+                        <h3 class="portfolio-title">Vertical Limits</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="wildlife">
+                    <img src="https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wildlife" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Wildlife</span>
+                        <h3 class="portfolio-title">Raw Nature</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="expeditions">
+                    <img src="https://images.pexels.com/photos/1497582/pexels-photo-1497582.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Desert Expedition" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Expeditions</span>
+                        <h3 class="portfolio-title">Desert Chronicles</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="mountains">
+                    <img src="https://images.pexels.com/photos/1559821/pexels-photo-1559821.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Snow Peak" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Mountains</span>
+                        <h3 class="portfolio-title">Frozen Heights</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="climbing">
+                    <img src="https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ice Climbing" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Climbing</span>
+                        <h3 class="portfolio-title">Ice Warriors</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="wildlife">
+                    <img src="https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Eagle" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Wildlife</span>
+                        <h3 class="portfolio-title">Freedom Flight</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="expeditions">
+                    <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Camping" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Expeditions</span>
+                        <h3 class="portfolio-title">Camp Stories</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="mountains">
+                    <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mountain Range" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Mountains</span>
+                        <h3 class="portfolio-title">Endless Ridges</h3>
+                        <i class="fas fa-search-plus portfolio-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <img src="" alt="Lightbox Image" class="lightbox-image" id="lightboxImage">
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image-wrapper fade-in-up">
+                    <img src="https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Adventure Photographer" class="about-image">
+                    <div class="about-image-overlay">
+                        <p class="about-image-text">THE EXPLORER</p>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <h2 class="about-heading">Chasing <span class="about-highlight">Adrenaline</span><br>Through The Lens</h2>
+                    <p class="about-text">
+                        For the past 12 years, I've dedicated my life to documenting the world's most extreme environments. From scaling frozen waterfalls in Iceland to tracking jaguars through the Amazon, my mission is simple: capture the raw, unfiltered beauty of adventure.
+                    </p>
+                    <p class="about-text">
+                        Every expedition pushes boundaries. Every shot tells a story of survival, determination, and the human spirit's endless quest for discovery. I've summited peaks on six continents, spent months in remote wilderness, and learned that the best stories are found where comfort ends.
+                    </p>
+                    <p class="about-text">
+                        My work has been featured in National Geographic, Outside Magazine, and adventure brands worldwide. But beyond the accolades, it's the moments—the sunrise at 20,000 feet, the eye contact with a wild predator, the camaraderie of fellow explorers—that fuel my passion.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">67+</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">142</div>
+                            <div class="stat-label">Expeditions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">12K+</div>
+                            <div class="stat-label">Photos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">Professional Adventure Photography</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in-up">
+                    <i class="fas fa-mountain service-icon"></i>
+                    <h3 class="service-name">Expedition Photography</h3>
+                    <p class="service-description">
+                        Document your team's journey to the world's most extreme locations with cinematic storytelling and technical precision.
+                    </p>
+                    <ul class="service-features">
+                        <li>Multi-day expedition coverage</li>
+                        <li>Drone & ground photography</li>
+                        <li>Weather-resistant equipment</li>
+                        <li>Post-production & editing</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Book Expedition</a>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <i class="fas fa-bullseye service-icon"></i>
+                    <h3 class="service-name">Brand Collaborations</h3>
+                    <p class="service-description">
+                        Create authentic, adventure-driven content that resonates with outdoor enthusiasts and elevates your brand narrative.
+                    </p>
+                    <ul class="service-features">
+                        <li>Campaign concept development</li>
+                        <li>Product photography in action</li>
+                        <li>Social media content packages</li>
+                        <li>Influencer partnerships</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Collaborate</a>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <i class="fas fa-compass service-icon"></i>
+                    <h3 class="service-name">Adventure Tours</h3>
+                    <p class="service-description">
+                        Join me on curated photography expeditions where you'll learn shooting techniques while exploring breathtaking locations.
+                    </p>
+                    <ul class="service-features">
+                        <li>Small group workshops (max 8)</li>
+                        <li>Hands-on technical training</li>
+                        <li>All logistics handled</li>
+                        <li>Portfolio review sessions</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Join Tour</a>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <i class="fas fa-bolt service-icon"></i>
+                    <h3 class="service-name">Extreme Sports Shoots</h3>
+                    <p class="service-description">
+                        High-speed action photography for athletes pushing limits in climbing, skiing, surfing, and extreme sports.
+                    </p>
+                    <ul class="service-features">
+                        <li>Fast-paced action capture</li>
+                        <li>Multiple camera angles</li>
+                        <li>Slow-motion capabilities</li>
+                        <li>Athlete portfolio creation</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expeditions Section -->
+    <section id="expeditions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Expeditions</h2>
+                <p class="section-subtitle">Stories From The Field</p>
+            </div>
+            
+            <div class="expeditions-scroll">
+                <div class="expeditions-wrapper">
+                    <div class="expedition-card">
+                        <img src="https://images.pexels.com/photos/2859169/pexels-photo-2859169.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Patagonia" class="expedition-image">
+                        <div class="expedition-overlay">
+                            <p class="expedition-location">📍 Patagonia, Chile</p>
+                            <h3 class="expedition-title">Edge of the World</h3>
+                            <p class="expedition-story">
+                                Three weeks trekking through Torres del Paine, documenting the raw power of glaciers, wind-carved peaks, and the resilient wildlife of South America's wildest frontier.
+                            </p>
+                            <p class="expedition-date">December 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="expedition-card">
+                        <img src="https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Nepal" class="expedition-image">
+                        <div class="expedition-overlay">
+                            <p class="expedition-location">📍 Everest Region, Nepal</p>
+                            <h3 class="expedition-title">Roof of the World</h3>
+                            <p class="expedition-story">
+                                Ascending to Everest Base Camp, capturing the Sherpa culture, treacherous ice falls, and the breathtaking beauty that awaits at 17,600 feet above sea level.
+                            </p>
+                            <p class="expedition-date">October 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="expedition-card">
+                        <img src="https://images.pexels.com/photos/2128028/pexels-photo-2128028.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Iceland" class="expedition-image">
+                        <div class="expedition-overlay">
+                            <p class="expedition-location">📍 Vatnajökull, Iceland</p>
+                            <h3 class="expedition-title">Ice & Fire</h3>
+                            <p class="expedition-story">
+                                Exploring Europe's largest glacier while documenting ice cave formations, volcanic landscapes, and the surreal beauty of Iceland's winter wilderness.
+                            </p>
+                            <p class="expedition-date">February 2026</p>
+                        </div>
+                    </div>
+                    
+                    <div class="expedition-card">
+                        <img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Africa Safari" class="expedition-image">
+                        <div class="expedition-overlay">
+                            <p class="expedition-location">📍 Serengeti, Tanzania</p>
+                            <h3 class="expedition-title">Wild Kingdom</h3>
+                            <p class="expedition-story">
+                                Witnessing the great migration, tracking predators on the hunt, and capturing intimate moments of Africa's most iconic wildlife in their natural habitat.
+                            </p>
+                            <p class="expedition-date">July 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="expedition-card">
+                        <img src="https://images.pexels.com/photos/1438404/pexels-photo-1438404.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Norwegian Fjords" class="expedition-image">
+                        <div class="expedition-overlay">
+                            <p class="expedition-location">📍 Lofoten Islands, Norway</p>
+                            <h3 class="expedition-title">Arctic Light</h3>
+                            <p class="expedition-story">
+                                Chasing the Northern Lights across dramatic fjords and jagged peaks, documenting the ethereal beauty of the Arctic Circle during polar night.
+                            </p>
+                            <p class="expedition-date">March 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Ready For Your Next Adventure?</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-heading">Book Your<br>Expedition</h3>
+                    <p class="contact-text">
+                        Whether you're planning an expedition, need a photographer for your brand, or want to join one of my adventure tours, I'd love to hear from you. Currently booking for 2026-2027.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span class="contact-item-text">alex@wildlens.photo</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span class="contact-item-text">+1 (555) 123-WILD</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="contact-item-text">Based in Denver, CO · Available Worldwide</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-calendar"></i>
+                            <span class="contact-item-text">Next Available: Summer 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Service Interested In</label>
+                        <input type="text" class="form-input" placeholder="e.g., Expedition Photography, Brand Collaboration" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Project Details</label>
+                        <textarea class="form-textarea" placeholder="Tell me about your adventure, timeline, location, and vision..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">&copy; 2026 Wild Lens Photography. All rights reserved. | Capturing <span>Adventure</span> Worldwide</p>
+    </footer>
+
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // ===== PARALLAX EFFECT FOR HERO =====
+        window.addEventListener('scroll', () => {
+            const heroBackground = document.querySelector('.hero-background');
+            const scrolled = window.scrollY;
+            if (heroBackground) {
+                heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // ===== PORTFOLIO FILTER =====
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // ===== LIGHTBOX FUNCTIONALITY =====
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('.portfolio-image').src;
+                lightboxImage.src = imgSrc;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .about-content, .contact-info, .contact-form').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== CONTACT FORM =====
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for reaching out! I\'ll get back to you within 24 hours to discuss your adventure.');
+            contactForm.reset();
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== HORIZONTAL SCROLL HINT =====
+        const expeditionsScroll = document.querySelector('.expeditions-scroll');
+        if (expeditionsScroll) {
+            // Add touch support for mobile
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            expeditionsScroll.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - expeditionsScroll.offsetLeft;
+                scrollLeft = expeditionsScroll.scrollLeft;
+            });
+
+            expeditionsScroll.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            expeditionsScroll.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            expeditionsScroll.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - expeditionsScroll.offsetLeft;
+                const walk = (x - startX) * 2;
+                expeditionsScroll.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        // ===== INITIALIZE =====
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>

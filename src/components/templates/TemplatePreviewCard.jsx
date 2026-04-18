@@ -13,7 +13,10 @@ import {
 import { motion, useReducedMotion } from 'framer-motion'
 
 function TemplatePreviewCard({ template, index = 0 }) {
-  const demoHref = `${import.meta.env.BASE_URL}templates/${template.id}/demo`
+  const isSpaHtml = template.type === 'spa-html'
+  const demoHref = isSpaHtml
+    ? template.demoUrl
+    : `${import.meta.env.BASE_URL}templates/${template.id}/demo`
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const reduceMotion = useReducedMotion()
@@ -41,6 +44,7 @@ function TemplatePreviewCard({ template, index = 0 }) {
           width: '100%',
           height: 185,
           objectFit: 'cover',
+          objectPosition: 'top',
           display: 'block',
         }}
       />

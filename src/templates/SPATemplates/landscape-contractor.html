@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenScape Contractors | Professional Landscape & Hardscape Design</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2a3d2f;
+            background-color: #faf8f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== COLOR VARIABLES ===== */
+        :root {
+            --forest-green: #2d5016;
+            --moss-green: #5a7c4d;
+            --sage: #9dab86;
+            --earth-brown: #6b4e3d;
+            --terracotta: #c17152;
+            --copper: #b8714f;
+            --sand: #e8dcc8;
+            --stone: #d4c7b0;
+            --charcoal: #2a3d2f;
+            --cream: #faf8f5;
+            --white: #ffffff;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 1.2rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(45, 80, 22, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 0.8rem 5%;
+            box-shadow: 0 5px 30px rgba(45, 80, 22, 0.1);
+            background: rgba(250, 248, 245, 0.98);
+        }
+        
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .nav-logo i {
+            font-size: 2rem;
+            color: var(--moss-green);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--forest-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--forest-green);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+            color: var(--white);
+            border: none;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 80, 22, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 2px solid var(--forest-green);
+            color: var(--forest-green);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem 0.8rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--charcoal);
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            background-image: url('https://images.pexels.com/photos/1416530/pexels-photo-1416530.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.7) 0%, rgba(42, 61, 47, 0.6) 100%);
+        }
+        
+        .hero-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="leaf" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(157,171,134,0.08)"/><circle cx="30" cy="25" r="1.5" fill="rgba(157,171,134,0.06)"/><circle cx="45" cy="15" r="1" fill="rgba(157,171,134,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23leaf)"/></svg>');
+            opacity: 0.4;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 5%;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.5rem;
+            background: rgba(250, 248, 245, 0.15);
+            border: 1px solid rgba(250, 248, 245, 0.3);
+            color: var(--sand);
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+        }
+        
+        .hero-badge i {
+            color: var(--copper);
+            font-size: 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'Lora', serif;
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero-title span {
+            color: var(--sage);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--sand);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border-radius: 4px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--copper), var(--terracotta));
+            color: var(--white);
+            border: 2px solid transparent;
+            box-shadow: 0 5px 20px rgba(193, 113, 82, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(193, 113, 82, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 8rem 5%;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: rgba(45, 80, 22, 0.08);
+            border: 1px solid rgba(45, 80, 22, 0.2);
+            color: var(--forest-green);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-radius: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .section-title {
+            font-family: 'Lora', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title span {
+            color: var(--forest-green);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--earth-brown);
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        #about {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+        
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border: 1px solid rgba(45, 80, 22, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            border-color: var(--forest-green);
+            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .trust-badge i {
+            font-size: 2.5rem;
+            color: var(--copper);
+        }
+        
+        .trust-badge-text h4 {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        
+        .trust-badge-text p {
+            font-size: 0.9rem;
+            color: var(--earth-brown);
+            margin: 0;
+        }
+        
+        .about-collage {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .collage-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 3px solid var(--stone);
+        }
+        
+        .collage-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .collage-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        .collage-image:first-child {
+            grid-column: span 2;
+            height: 350px;
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        #services {
+            background: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background: var(--cream);
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(45, 80, 22, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--forest-green), var(--moss-green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(45, 80, 22, 0.15);
+            border-color: var(--moss-green);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--white);
+            font-size: 2.2rem;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-title {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+        
+        .service-description {
+            font-size: 1rem;
+            color: var(--earth-brown);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-benefits {
+            list-style: none;
+        }
+        
+        .service-benefits li {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin-bottom: 0.7rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        
+        .service-benefits li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+            font-size: 1rem;
+        }
+        
+        /* ===== FEATURED PROJECTS SECTION ===== */
+        #projects {
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+        }
+        
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: var(--white);
+            border: 2px solid rgba(45, 80, 22, 0.2);
+            color: var(--charcoal);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 30px;
+            font-size: 0.95rem;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--forest-green);
+            color: var(--white);
+            border-color: var(--forest-green);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .project-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 3px solid var(--stone);
+        }
+        
+        .project-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .project-item:hover img {
+            transform: scale(1.15);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(45, 80, 22, 0.9) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+        }
+        
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-label {
+            font-size: 0.85rem;
+            color: var(--sage);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-title {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        /* ===== WHY CHOOSE US ===== */
+        #why-choose {
+            background: var(--white);
+        }
+        
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            border: 2px solid rgba(45, 80, 22, 0.1);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .comparison-col h3 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .comparison-col:first-child h3 {
+            color: var(--forest-green);
+        }
+        
+        .comparison-col:last-child h3 {
+            color: var(--earth-brown);
+        }
+        
+        .comparison-list {
+            list-style: none;
+        }
+        
+        .comparison-list li {
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: var(--white);
+            border-radius: 6px;
+            border-left: 4px solid transparent;
+            font-size: 1rem;
+        }
+        
+        .comparison-col:first-child .comparison-list li {
+            border-left-color: var(--forest-green);
+        }
+        
+        .comparison-col:last-child .comparison-list li {
+            border-left-color: #ccc;
+            opacity: 0.7;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--cream);
+            border-radius: 8px;
+            border: 1px solid rgba(45, 80, 22, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(45, 80, 22, 0.12);
+            border-color: var(--moss-green);
+        }
+        
+        .benefit-card i {
+            font-size: 3.5rem;
+            color: var(--copper);
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-card h4 {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .benefit-card p {
+            font-size: 1rem;
+            color: var(--earth-brown);
+            line-height: 1.8;
+        }
+        
+        /* ===== PROCESS SECTION ===== */
+        #process {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss-green) 100%);
+            color: var(--white);
+        }
+        
+        #process .section-badge {
+            background: rgba(250, 248, 245, 0.15);
+            border-color: rgba(250, 248, 245, 0.3);
+            color: var(--sand);
+        }
+        
+        #process .section-title {
+            color: var(--white);
+        }
+        
+        #process .section-title span {
+            color: var(--sand);
+        }
+        
+        #process .section-subtitle {
+            color: var(--stone);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: rgba(250, 248, 245, 0.3);
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .process-number {
+            width: 100px;
+            height: 100px;
+            background: rgba(250, 248, 245, 0.15);
+            border: 3px solid var(--copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover .process-number {
+            background: var(--copper);
+            transform: scale(1.1);
+        }
+        
+        .process-step h4 {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .process-step p {
+            font-size: 0.95rem;
+            color: var(--stone);
+            line-height: 1.7;
+        }
+        
+        /* ===== SEASONAL BANNER ===== */
+        #seasonal {
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--copper) 100%);
+            padding: 5rem 5%;
+            text-align: center;
+            border-top: 4px solid var(--forest-green);
+            border-bottom: 4px solid var(--forest-green);
+        }
+        
+        .seasonal-icons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .seasonal-icon {
+            font-size: 4rem;
+            color: var(--white);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .seasonal-icon:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .seasonal-icon:nth-child(3) {
+            animation-delay: 1s;
+        }
+        
+        .seasonal-icon:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+        
+        .seasonal-title {
+            font-family: 'Lora', serif;
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .seasonal-text {
+            font-size: 1.3rem;
+            color: var(--sand);
+            margin-bottom: 2.5rem;
+        }
+        
+        .seasonal-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.3rem 3rem;
+            background: var(--white);
+            color: var(--charcoal);
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        
+        .seasonal-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        #testimonials {
+            background: var(--cream);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(45, 80, 22, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: 0 15px 40px rgba(45, 80, 22, 0.12);
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-quote {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 5rem;
+            color: rgba(45, 80, 22, 0.08);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-stars {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-stars i {
+            color: var(--copper);
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.15rem;
+            color: var(--charcoal);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: var(--earth-brown);
+        }
+        
+        .testimonial-project {
+            font-size: 0.85rem;
+            color: var(--copper);
+            font-style: italic;
+        }
+        
+        /* ===== SERVICE AREA MAP ===== */
+        #service-area {
+            background: var(--white);
+        }
+        
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.05), rgba(90, 124, 77, 0.05));
+            border-radius: 12px;
+            border: 2px solid rgba(45, 80, 22, 0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        .map-placeholder {
+            height: 500px;
+            background: var(--cream);
+            border: 2px solid rgba(45, 80, 22, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .map-placeholder i {
+            font-size: 5rem;
+            color: var(--forest-green);
+        }
+        
+        .map-placeholder h3 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            font-weight: 700;
+        }
+        
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .coverage-item {
+            padding: 1.5rem;
+            background: var(--white);
+            border: 1px solid rgba(45, 80, 22, 0.15);
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .coverage-item:hover {
+            border-color: var(--forest-green);
+            box-shadow: 0 5px 20px rgba(45, 80, 22, 0.1);
+        }
+        
+        .coverage-item i {
+            font-size: 2rem;
+            color: var(--moss-green);
+            margin-bottom: 1rem;
+        }
+        
+        .coverage-item h4 {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        #contact {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            color: var(--forest-green);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            line-height: 1.9;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-details {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border: 1px solid rgba(45, 80, 22, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            border-color: var(--forest-green);
+            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.1);
+        }
+        
+        .contact-item-icon {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        
+        .contact-item-text h4 {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        
+        .contact-item-text p {
+            font-size: 1rem;
+            color: var(--earth-brown);
+            margin: 0;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            padding: 3.5rem 3rem;
+            border-radius: 12px;
+            border: 2px solid rgba(45, 80, 22, 0.15);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.8rem;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.3rem;
+            background: var(--cream);
+            border: 2px solid rgba(45, 80, 22, 0.1);
+            color: var(--charcoal);
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--forest-green);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        
+        .form-upload {
+            padding: 2rem;
+            background: var(--cream);
+            border: 2px dashed rgba(45, 80, 22, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-upload:hover {
+            border-color: var(--forest-green);
+            background: rgba(45, 80, 22, 0.05);
+        }
+        
+        .form-upload i {
+            font-size: 2.5rem;
+            color: var(--moss-green);
+            margin-bottom: 1rem;
+        }
+        
+        .form-upload p {
+            color: var(--earth-brown);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.3rem;
+            background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+            color: var(--white);
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 80, 22, 0.3);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--forest-green) 100%);
+            padding: 6rem 5% 3rem;
+            color: var(--sand);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            max-width: 1600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-col h4 {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .footer-logo {
+            font-family: 'Lora', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .footer-logo i {
+            color: var(--copper);
+        }
+        
+        .footer-tagline {
+            font-size: 1rem;
+            color: var(--stone);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(250, 248, 245, 0.1);
+            border: 1px solid rgba(250, 248, 245, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sand);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .footer-social-icon:hover {
+            background: var(--copper);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--stone);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--sage);
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--stone);
+            font-size: 0.95rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .footer-bottom span {
+            color: var(--sage);
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .contact-container,
+            .about-content,
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(250, 248, 245, 0.98);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                border-top: 1px solid rgba(45, 80, 22, 0.2);
+                align-items: flex-start;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .projects-grid,
+            .benefits-grid,
+            .coverage-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-badges {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            section {
+                padding: 5rem 5%;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>GreenScape</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-texture"></div>
+        <div class="hero-content">
+            <div class="hero-badges">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Fully Licensed & Insured</span>
+                </div>
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>5-Star Customer Rating</span>
+                </div>
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    <span>20+ Years Experience</span>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                Transform Your<br><span>Outdoor Living</span>
+            </h1>
+            <p class="hero-subtitle">
+                Professional landscape design, hardscaping, and year-round property care. Crafting beautiful, functional outdoor spaces with expert craftsmanship.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn-primary">
+                    <span>Request Free Quote</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#projects" class="btn-secondary">
+                    <span>View Our Work</span>
+                    <i class="fas fa-image"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Story</div>
+                <h2 class="section-title">Crafting <span>Outdoor Excellence</span></h2>
+                <p class="section-subtitle">
+                    Family-owned landscape contractor dedicated to turning your outdoor vision into reality
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Building Beautiful Landscapes Since 2004</h3>
+                    <p>
+                        GreenScape Contractors is a locally-owned landscape design and build company specializing in residential and commercial outdoor transformations. From elegant hardscaping and lush garden installations to year-round maintenance, we bring expertise, reliability, and passion to every project.
+                    </p>
+                    <p>
+                        Our team of certified landscape professionals uses commercial-grade equipment, premium materials, and proven techniques to create outdoor spaces that enhance your property value and quality of life. Every project is owner-supervised from consultation to completion.
+                    </p>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-certificate"></i>
+                            <div class="trust-badge-text">
+                                <h4>Fully Certified</h4>
+                                <p>Licensed landscape contractors</p>
+                            </div>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="trust-badge-text">
+                                <h4>$2M Insurance</h4>
+                                <p>Full liability & WSIB coverage</p>
+                            </div>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-handshake"></i>
+                            <div class="trust-badge-text">
+                                <h4>Warranties</h4>
+                                <p>2-year workmanship guarantee</p>
+                            </div>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-leaf"></i>
+                            <div class="trust-badge-text">
+                                <h4>Eco-Conscious</h4>
+                                <p>Sustainable practices & materials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-collage fade-in">
+                    <div class="collage-image">
+                        <img src="https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Landscape team at work">
+                    </div>
+                    <div class="collage-image">
+                        <img src="https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Garden design">
+                    </div>
+                    <div class="collage-image">
+                        <img src="https://images.pexels.com/photos/1251176/pexels-photo-1251176.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hardscaping project">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">What We Do</div>
+                <h2 class="section-title">Premium <span>Landscape Services</span></h2>
+                <p class="section-subtitle">
+                    Comprehensive outdoor design, construction, and care for every season
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="service-title">Lawn Care & Maintenance</h3>
+                    <p class="service-description">
+                        Professional lawn cutting, edging, fertilization, and seasonal treatments to keep your grass healthy and vibrant year-round.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>Weekly or bi-weekly cutting</li>
+                        <li>Organic fertilization programs</li>
+                        <li>Aeration & dethatching</li>
+                        <li>Weed & pest control</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="service-title">Garden Design & Planting</h3>
+                    <p class="service-description">
+                        Custom garden designs with native plantings, perennials, shrubs, and seasonal color to create stunning outdoor aesthetics.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>Custom planting plans</li>
+                        <li>Native & drought-tolerant plants</li>
+                        <li>Perennial gardens</li>
+                        <li>Seasonal flower beds</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <h3 class="service-title">Interlocking & Hardscaping</h3>
+                    <p class="service-description">
+                        Expert installation of patios, walkways, driveways, retaining walls, and stone features using premium interlocking pavers and natural stone.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>Interlocking patios & driveways</li>
+                        <li>Natural stone walkways</li>
+                        <li>Retaining walls & borders</li>
+                        <li>Custom outdoor kitchens</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title">Decks, Fences & Pergolas</h3>
+                    <p class="service-description">
+                        Beautiful custom-built decks, privacy fences, pergolas, and outdoor structures using cedar, composite, and pressure-treated materials.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>Custom deck design & build</li>
+                        <li>Cedar & composite materials</li>
+                        <li>Privacy & decorative fencing</li>
+                        <li>Pergolas & arbors</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="service-title">Sod Installation & Grading</h3>
+                    <p class="service-description">
+                        Professional grading, topsoil delivery, and premium sod installation for instant green lawns that establish quickly and beautifully.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>Site grading & leveling</li>
+                        <li>Premium sod varieties</li>
+                        <li>Topsoil delivery & spreading</li>
+                        <li>Instant green lawns</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="service-title">Mulch & Seasonal Cleanups</h3>
+                    <p class="service-description">
+                        Spring and fall cleanups, premium mulch installation, leaf removal, and property preparation for every season.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>Spring cleanup & bed prep</li>
+                        <li>Cedar & hardwood mulch</li>
+                        <li>Fall leaf removal</li>
+                        <li>Garden bed refreshing</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-title">Landscape Lighting</h3>
+                    <p class="service-description">
+                        Low-voltage LED landscape lighting design and installation to enhance beauty, safety, and curb appeal after dark.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>Path & driveway lighting</li>
+                        <li>Accent & uplighting</li>
+                        <li>Low-voltage LED systems</li>
+                        <li>Timer & smart controls</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="service-title">Drainage & Erosion Control</h3>
+                    <p class="service-description">
+                        Solve water management issues with French drains, catch basins, grading solutions, and erosion control systems.
+                    </p>
+                    <ul class="service-benefits">
+                        <li>French drain installation</li>
+                        <li>Catch basins & downspouts</li>
+                        <li>Grading & slope correction</li>
+                        <li>Erosion prevention</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Work</div>
+                <h2 class="section-title">Featured <span>Transformations</span></h2>
+                <p class="section-subtitle">
+                    Real projects showcasing our craftsmanship and outdoor expertise
+                </p>
+            </div>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="hardscaping">Hardscaping</button>
+                <button class="filter-btn" data-filter="softscaping">Softscaping</button>
+                <button class="filter-btn" data-filter="lighting">Lighting</button>
+                <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-item fade-in" data-category="hardscaping">
+                    <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Interlocking patio">
+                    <div class="project-overlay">
+                        <div class="project-label">Hardscaping</div>
+                        <h3 class="project-title">Elegant Backyard Patio</h3>
+                    </div>
+                </div>
+                
+                <div class="project-item fade-in" data-category="softscaping">
+                    <img src="https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Garden design">
+                    <div class="project-overlay">
+                        <div class="project-label">Softscaping</div>
+                        <h3 class="project-title">Perennial Garden Design</h3>
+                    </div>
+                </div>
+                
+                <div class="project-item fade-in" data-category="lighting">
+                    <img src="https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Landscape lighting">
+                    <div class="project-overlay">
+                        <div class="project-label">Lighting</div>
+                        <h3 class="project-title">Pathway LED Lighting</h3>
+                    </div>
+                </div>
+                
+                <div class="project-item fade-in" data-category="hardscaping">
+                    <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stone walkway">
+                    <div class="project-overlay">
+                        <div class="project-label">Hardscaping</div>
+                        <h3 class="project-title">Natural Stone Walkway</h3>
+                    </div>
+                </div>
+                
+                <div class="project-item fade-in" data-category="softscaping">
+                    <img src="https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Front yard landscaping">
+                    <div class="project-overlay">
+                        <div class="project-label">Softscaping</div>
+                        <h3 class="project-title">Front Yard Transformation</h3>
+                    </div>
+                </div>
+                
+                <div class="project-item fade-in" data-category="maintenance">
+                    <img src="https://images.pexels.com/photos/1105019/pexels-photo-1105019.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lawn care">
+                    <div class="project-overlay">
+                        <div class="project-label">Maintenance</div>
+                        <h3 class="project-title">Premium Lawn Care</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">The GreenScape Difference</div>
+                <h2 class="section-title">Why Choose <span>Our Team</span></h2>
+                <p class="section-subtitle">
+                    Professional craftsmanship, clear communication, and total satisfaction
+                </p>
+            </div>
+            
+            <div class="comparison-container fade-in">
+                <div class="comparison-grid">
+                    <div class="comparison-col">
+                        <h3>GreenScape Contractors</h3>
+                        <ul class="comparison-list">
+                            <li>Owner-supervised on every project</li>
+                            <li>Detailed design plans & 3D mockups</li>
+                            <li>Premium materials & commercial equipment</li>
+                            <li>Daily cleanup & site maintenance</li>
+                            <li>2-year workmanship warranty</li>
+                            <li>Clear timeline & budget communication</li>
+                            <li>$2M liability insurance</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-col">
+                        <h3>Typical Contractor</h3>
+                        <ul class="comparison-list">
+                            <li>Minimal supervision or oversight</li>
+                            <li>Verbal estimates, no plans</li>
+                            <li>Budget materials, rental equipment</li>
+                            <li>Messy job sites, poor cleanup</li>
+                            <li>No warranty or short coverage</li>
+                            <li>Poor communication, delays</li>
+                            <li>Minimal or no insurance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-award"></i>
+                    <h4>Certified Expertise</h4>
+                    <p>Licensed landscape professionals with 20+ years of combined experience in design, construction, and horticulture.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-truck"></i>
+                    <h4>Professional Equipment</h4>
+                    <p>Commercial-grade machinery, specialized tools, and premium materials for superior results and efficiency.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-smile"></i>
+                    <h4>100% Satisfaction</h4>
+                    <p>We don't consider the job complete until you're thrilled with your new outdoor space. Guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">How We Work</div>
+                <h2 class="section-title">Simple, Clear <span>Process</span></h2>
+                <p class="section-subtitle">
+                    From consultation to completion, we guide you every step of the way
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="process-number">1</div>
+                    <h4>Consultation</h4>
+                    <p>Free on-site visit to discuss your vision, assess the space, and understand your needs.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">2</div>
+                    <h4>Design & Plan</h4>
+                    <p>Detailed proposal with design mockups, material options, and transparent pricing.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">3</div>
+                    <h4>Material Selection</h4>
+                    <p>Choose from premium pavers, plants, stone, wood, and finishing materials.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">4</div>
+                    <h4>Build & Install</h4>
+                    <p>Expert crew completes your project with precision, care, and daily cleanup.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">5</div>
+                    <h4>Final Walkthrough</h4>
+                    <p>Review the completed project, receive care instructions, and discuss maintenance options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Services Banner -->
+    <section id="seasonal">
+        <div class="seasonal-icons">
+            <i class="fas fa-leaf seasonal-icon"></i>
+            <i class="fas fa-sun seasonal-icon"></i>
+            <i class="fas fa-cloud-rain seasonal-icon"></i>
+            <i class="fas fa-snowflake seasonal-icon"></i>
+        </div>
+        <h2 class="seasonal-title">Year-Round Services</h2>
+        <p class="seasonal-text">Spring Cleanups • Fall Leaf Removal • Aeration • Dethatching • Snow Removal Available</p>
+        <a href="#contact" class="seasonal-cta">
+            <span>Book Seasonal Service</span>
+            <i class="fas fa-calendar-check"></i>
+        </a>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Client Reviews</div>
+                <h2 class="section-title">What Clients <span>Say</span></h2>
+                <p class="section-subtitle">
+                    Trusted by homeowners and businesses across the region
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "GreenScape transformed our backyard into an absolute oasis. The interlocking patio is stunning, and the garden design is beyond our expectations. Professional, reliable, and meticulous about every detail."
+                    </p>
+                    <div class="testimonial-author">Sarah & Michael Thompson</div>
+                    <div class="testimonial-location">Oakville</div>
+                    <div class="testimonial-project">Backyard Patio & Garden Design</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "We've used GreenScape for lawn care and seasonal maintenance for 5 years. Always on time, always pristine work. They treat our property like it's their own. Highly recommend!"
+                    </p>
+                    <div class="testimonial-author">Jennifer Martinez</div>
+                    <div class="testimonial-location">Burlington</div>
+                    <div class="testimonial-project">Lawn Care & Seasonal Maintenance</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "From design to installation, the entire process was seamless. The cedar deck and privacy fence exceeded our expectations. These guys are true craftsmen with an eye for detail."
+                    </p>
+                    <div class="testimonial-author">David & Lisa Chen</div>
+                    <div class="testimonial-location">Milton</div>
+                    <div class="testimonial-project">Deck & Fence Construction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Map Section -->
+    <section id="service-area">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Coverage Area</div>
+                <h2 class="section-title">Where We <span>Serve</span></h2>
+                <p class="section-subtitle">
+                    Proudly serving residential and commercial properties across the region
+                </p>
+            </div>
+            
+            <div class="map-container fade-in">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Greater Toronto & Halton Region</h3>
+                    <p style="color: var(--earth-brown); font-size: 1.1rem;">Full-service coverage with free consultations</p>
+                </div>
+                
+                <div class="coverage-grid">
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Oakville</h4>
+                    </div>
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Burlington</h4>
+                    </div>
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Milton</h4>
+                    </div>
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Mississauga</h4>
+                    </div>
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Brampton</h4>
+                    </div>
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Georgetown</h4>
+                    </div>
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Acton</h4>
+                    </div>
+                    <div class="coverage-item">
+                        <i class="fas fa-map-pin"></i>
+                        <h4>Surrounding Areas</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Get Started</div>
+                <h2 class="section-title">Request Your <span>Free Quote</span></h2>
+                <p class="section-subtitle">
+                    Let's discuss your outdoor vision and create a custom plan for your property
+                </p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Let's Create Something Beautiful</h3>
+                    <p>
+                        Whether you're planning a complete backyard transformation or need reliable seasonal maintenance, we're here to help. Get in touch for a free consultation and detailed quote.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Phone</h4>
+                                <p>(905) 555-LAWN (5296)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Email</h4>
+                                <p>info@greenscapecontractors.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Office</h4>
+                                <p>2450 Green Valley Road, Oakville, ON</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Hours</h4>
+                                <p>Mon-Sat: 7am-6pm | Sun: By Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name</label>
+                            <input class="form-input" id="name" type="text" placeholder="John Smith" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input class="form-input" id="phone" type="tel" placeholder="(905) 555-1234" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input class="form-input" id="email" type="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="address">Property Address</label>
+                        <input class="form-input" id="address" type="text" placeholder="123 Main Street, Oakville, ON" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="service-type">Service Interested In</label>
+                        <select class="form-select" id="service-type" required>
+                            <option value="">Select a service...</option>
+                            <option value="hardscaping">Interlocking & Hardscaping</option>
+                            <option value="garden-design">Garden Design & Planting</option>
+                            <option value="lawn-care">Lawn Care & Maintenance</option>
+                            <option value="deck-fence">Deck & Fence Installation</option>
+                            <option value="sod">Sod Installation & Grading</option>
+                            <option value="lighting">Landscape Lighting</option>
+                            <option value="drainage">Drainage Solutions</option>
+                            <option value="seasonal">Seasonal Cleanup</option>
+                            <option value="other">Other / Multiple Services</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="details">Project Details</label>
+                        <textarea class="form-textarea" id="details" placeholder="Tell us about your project vision, timeline, property size, and any specific requirements..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Upload Photos (Optional)</label>
+                        <div class="form-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Click to upload current property photos or design inspiration</p>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Get Free Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>GreenScape</span>
+                </div>
+                <p class="footer-tagline">
+                    Professional landscape design, hardscaping, and property care. Creating beautiful outdoor living spaces since 2004.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-houzz"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Get Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Lawn Care</a></li>
+                    <li><a href="#services">Garden Design</a></li>
+                    <li><a href="#services">Hardscaping</a></li>
+                    <li><a href="#services">Decks & Fences</a></li>
+                    <li><a href="#services">Sod Installation</a></li>
+                    <li><a href="#services">Landscape Lighting</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:9055555296">(905) 555-LAWN</a></li>
+                    <li><a href="mailto:info@greenscapecontractors.com">info@greenscapecontractors.com</a></li>
+                    <li><a href="#">2450 Green Valley Road</a></li>
+                    <li><a href="#">Oakville, ON L6H 6R4</a></li>
+                    <li><a href="#">Licensed & Insured</a></li>
+                    <li><a href="#">WSIB Compliant</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>GreenScape Contractors</span>. All rights reserved. | Licensed Landscape Contractor</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // ===== PARALLAX EFFECT FOR HERO =====
+        window.addEventListener('scroll', () => {
+            const heroBackground = document.querySelector('.hero-background');
+            const scrolled = window.scrollY;
+            if (heroBackground) {
+                heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== PROJECT FILTERS =====
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter projects
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // ===== CONTACT FORM =====
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service-type').options[document.getElementById('service-type').selectedIndex].text;
+            
+            alert(`Thank you, ${name}! Your quote request for "${service}" has been received. Our team will contact you within 24 hours to schedule a free consultation.`);
+            contactForm.reset();
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>

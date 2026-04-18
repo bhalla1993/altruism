@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+  <title>Noir & Gold – Fine Dining Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-main: #050509;
+      --bg-alt: #0b0b12;
+      --bg-soft: #11111b;
+      --gold: #d4af37;
+      --gold-soft: #f1d27a;
+      --accent: #c77dff;
+      --text-main: #f5f5f5;
+      --text-muted: #a0a0b5;
+      --border-soft: #262637;
+      --nav-height: 72px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #181827 0, #050509 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+
+    /* Header / Nav */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(5, 5, 9, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Playfair Display", serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, var(--gold-soft), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #050509;
+      font-size: 0.9rem;
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
+    }
+
+    .logo span {
+      color: var(--gold-soft);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link.active {
+      color: var(--gold-soft);
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + 40px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background: rgba(5, 5, 9, 0.8);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-soft);
+      margin-bottom: 18px;
+    }
+
+    .hero-badge i {
+      color: var(--gold-soft);
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.6rem, 4vw, 3.6rem);
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      color: var(--gold-soft);
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 26px;
+      font-size: 0.95rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .hero-meta-item {
+      min-width: 130px;
+    }
+
+    .hero-meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-value {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 11px 22px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: #050509;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(212, 175, 55, 0.6);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(212, 175, 55, 0.5);
+      color: var(--gold-soft);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(212, 175, 55, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .hero-media {
+      position: relative;
+      perspective: 1200px;
+    }
+
+    .hero-card {
+      border-radius: 26px;
+      overflow: hidden;
+      background: #11111b;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.9);
+      position: relative;
+      isolation: isolate;
+      transform-style: preserve-3d;
+      transform: rotateY(-8deg) rotateX(4deg);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+    }
+
+    .hero-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(5, 5, 9, 0.9));
+    }
+
+    .hero-tag {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(5, 5, 9, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-soft);
+    }
+
+    .hero-tag i {
+      color: var(--gold-soft);
+    }
+
+    .hero-floating {
+      position: absolute;
+      top: -18px;
+      right: -10px;
+      padding: 10px 16px;
+      border-radius: 18px;
+      background: rgba(5, 5, 9, 0.96);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    .hero-floating span:first-child {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-floating span:last-child {
+      font-weight: 600;
+      color: var(--gold-soft);
+    }
+
+    /* Ambient particles */
+    .particle {
+      position: absolute;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, rgba(241, 210, 122, 0.9), rgba(212, 175, 55, 0.1));
+      opacity: 0.4;
+      filter: blur(1px);
+      animation: float 18s linear infinite;
+      pointer-events: none;
+    }
+
+    .particle.p1 {
+      width: 220px;
+      height: 220px;
+      top: -60px;
+      right: 10%;
+    }
+
+    .particle.p2 {
+      width: 160px;
+      height: 160px;
+      bottom: -40px;
+      left: 5%;
+      animation-duration: 22s;
+    }
+
+    .particle.p3 {
+      width: 120px;
+      height: 120px;
+      top: 40%;
+      left: 50%;
+      animation-duration: 26s;
+    }
+
+    @keyframes float {
+      0% { transform: translate3d(0, 0, 0); opacity: 0.4; }
+      50% { transform: translate3d(10px, -20px, 0); opacity: 0.7; }
+      100% { transform: translate3d(-10px, 10px, 0); opacity: 0.4; }
+    }
+
+    /* Grid / Cards */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), rgba(11, 11, 18, 0.96));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 18px 18px 20px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(241, 210, 122, 0.18), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      border-color: rgba(241, 210, 122, 0.7);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold-soft);
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(5, 5, 9, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      font-size: 0.75rem;
+      color: var(--gold-soft);
+    }
+
+    /* Tasting menu */
+    #menu {
+      background: radial-gradient(circle at top, #151521 0, #050509 55%);
+    }
+
+    .course-timeline {
+      border-left: 1px solid rgba(212, 175, 55, 0.4);
+      padding-left: 20px;
+      margin-left: 6px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .course-item {
+      position: relative;
+    }
+
+    .course-item::before {
+      content: "";
+      position: absolute;
+      left: -21px;
+      top: 10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle, var(--gold-soft), var(--gold));
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    }
+
+    .course-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .course-meta {
+      font-size: 0.8rem;
+      color: var(--gold-soft);
+      margin-bottom: 4px;
+    }
+
+    .course-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Chef */
+    #chef {
+      background: var(--bg-alt);
+    }
+
+    .chef-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .chef-photo {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
+      position: relative;
+    }
+
+    .chef-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .chef-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(5, 5, 9, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-soft);
+    }
+
+    .chef-badge i {
+      color: var(--gold-soft);
+    }
+
+    .chef-list {
+      list-style: none;
+      margin-top: 14px;
+      display: grid;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .chef-list li i {
+      color: var(--gold-soft);
+      margin-right: 8px;
+    }
+
+    /* Wine */
+    #wine {
+      background: radial-gradient(circle at top, #181827 0, #050509 55%);
+    }
+
+    .wine-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .wine-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .wine-list li span:first-child {
+      color: var(--gold-soft);
+      font-weight: 500;
+    }
+
+    .wine-list li span:last-child {
+      color: var(--text-muted);
+    }
+
+    .wine-card {
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), rgba(11, 11, 18, 0.96));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 18px 18px 20px;
+      backdrop-filter: blur(16px);
+    }
+
+    /* Gallery */
+    #gallery {
+      background: var(--bg-alt);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 0.25s ease;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(5, 5, 9, 0.9));
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 12px;
+      bottom: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      border-color: rgba(241, 210, 122, 0.7);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Testimonials */
+    #reviews {
+      background: radial-gradient(circle at top, #181827 0, #050509 55%);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .testimonial-card {
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), rgba(11, 11, 18, 0.96));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 18px 18px 20px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+    }
+
+    .testimonial-quote {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-meta {
+      font-size: 0.8rem;
+      color: var(--gold-soft);
+    }
+
+    .testimonial-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 1.2rem;
+      color: rgba(212, 175, 55, 0.4);
+    }
+
+    /* Reservations */
+    #reservations {
+      background: var(--bg-alt);
+    }
+
+    .reservation-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .reservation-form {
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), rgba(11, 11, 18, 0.96));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 20px 18px;
+      backdrop-filter: blur(16px);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .form-control,
+    .form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: rgba(5, 5, 9, 0.9);
+      color: var(--text-main);
+      padding: 9px 11px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .form-control:focus,
+    .form-textarea:focus {
+      border-color: var(--gold-soft);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4);
+      background: #050509;
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .reservation-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .reservation-info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .reservation-info-item i {
+      color: var(--gold-soft);
+    }
+
+    .map-placeholder {
+      margin-top: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      overflow: hidden;
+      background: #11111b;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #050509;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 40px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 26px;
+      font-size: 0.85rem;
+    }
+
+    .footer-logo {
+      font-family: "Playfair Display", serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo span {
+      color: var(--gold-soft);
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-soft);
+      margin-bottom: 10px;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+
+    .footer-list a {
+      font-size: 0.85rem;
+      transition: color 0.18s ease;
+    }
+
+    .footer-list a:hover {
+      color: var(--gold-soft);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .footer-contact-item i {
+      color: var(--gold-soft);
+      margin-top: 2px;
+    }
+
+    .newsletter {
+      margin-top: 8px;
+    }
+
+    .newsletter-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: rgba(5, 5, 9, 0.9);
+      color: var(--text-main);
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--gold-soft);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4);
+      background: #050509;
+    }
+
+    .newsletter-btn {
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      background: transparent;
+      color: var(--gold-soft);
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
+    }
+
+    .newsletter-btn:hover {
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: #050509;
+      transform: translateY(-1px);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 5, 9, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--gold-soft);
+      transition: background 0.18s ease, transform 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .social-icon:hover {
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: #050509;
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    .footer-meta {
+      margin-top: 22px;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding-top: 10px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .footer-meta span strong {
+      color: var(--gold-soft);
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .hero-grid,
+      .chef-grid,
+      .wine-grid,
+      .reservation-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: calc(var(--nav-height) + 20px);
+      }
+
+      .hero-media {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .testimonial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 12px;
+        font-size: 0.7rem;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-3,
+      .grid-2,
+      .gallery-grid,
+      .testimonial-grid,
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        height: auto;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav-inner">
+      <div class="logo">
+        <div class="logo-mark">
+          <i class="fa-solid fa-wine-glass"></i>
+        </div>
+        Noir<span>&</span>Gold
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#menu" class="nav-link">Tasting Menu</a></li>
+          <li><a href="#chef" class="nav-link">Chef</a></li>
+          <li><a href="#wine" class="nav-link">Wine</a></li>
+          <li><a href="#gallery" class="nav-link">Ambience</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#reservations" class="nav-link">Reserve</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="hero-badge">
+          <i class="fa-solid fa-award"></i>
+          Contemporary Fine Dining · Seasonal Tasting Menus
+        </div>
+        <h1 class="hero-title">
+          An Evening of <span>Cinematic</span> Dining.
+        </h1>
+        <p class="hero-subtitle">
+          Noir & Gold is an intimate fine dining experience where seasonal ingredients, thoughtful wine pairings, and cinematic ambience come together for unforgettable nights.
+        </p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Tasting Menu</div>
+            <div class="hero-meta-value">7 & 10 Courses</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Wine Program</div>
+            <div class="hero-meta-value">Sommelier‑Curated</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Private Dining</div>
+            <div class="hero-meta-value">Up to 16 Guests</div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a href="#reservations" class="btn-primary">
+            Reserve Table
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#menu" class="btn-ghost">
+            View Tasting Menu
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media reveal delay-2">
+        <div class="hero-card">
+          <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Fine dining table" />
+          <div class="hero-card-overlay"></div>
+          <div class="hero-tag">
+            <i class="fa-solid fa-martini-glass-citrus"></i>
+            Chef’s Table · Limited Seating
+          </div>
+          <div class="hero-floating">
+            <span>Guest Rating</span>
+            <span>4.9 / 5 · 1,200+ Reviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tasting Menu -->
+  <section id="menu">
+    <div class="container">
+      <h2 class="section-title reveal">Chef’s Tasting Menu</h2>
+      <p class="section-subtitle reveal delay-1">
+        A seasonal progression of flavors, textures, and temperatures—crafted to be experienced as a narrative from first bite to final sip.
+      </p>
+
+      <div class="grid grid-2">
+        <div class="card reveal delay-1">
+          <div class="card-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3 class="card-title">Seven‑Course Experience</h3>
+          <p class="card-text">
+            A focused journey through the season’s highlights, ideal for weekday evenings and first‑time guests.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-wine-glass"></i> Optional wine pairing
+          </div>
+          <p class="card-text" style="margin-top:10px;">
+            From delicate crudo to slow‑braised mains and a composed dessert, each course is designed to build on the last.
+          </p>
+        </div>
+
+        <div class="card reveal delay-2">
+          <div class="card-icon">
+            <i class="fa-solid fa-champagne-glasses"></i>
+          </div>
+          <h3 class="card-title">Ten‑Course Signature</h3>
+          <p class="card-text">
+            Our most immersive menu, featuring off‑menu bites, chef’s counter exclusives, and extended wine pairings.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-star"></i> Limited nightly availability
+          </div>
+          <p class="card-text" style="margin-top:10px;">
+            Perfect for anniversaries, celebrations, and guests who want to experience the full expression of Noir & Gold.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:26px;">
+        <h3 class="card-title" style="margin-bottom:10px;">Sample Course Progression</h3>
+        <div class="course-timeline">
+          <div class="course-item">
+            <div class="course-name">Amuse‑Bouche · “First Light”</div>
+            <div class="course-meta">Champagne · Citrus · Sea Salt</div>
+            <div class="course-desc">
+              A bright, single‑bite introduction designed to awaken the palate and set the tone for the evening.
+            </div>
+          </div>
+          <div class="course-item">
+            <div class="course-name">Course II · Ocean Crudo</div>
+            <div class="course-meta">Albariño · Yuzu · Shiso</div>
+            <div class="course-desc">
+              Line‑caught fish, shaved radish, and citrus‑infused oil, finished with a whisper of smoked sea salt.
+            </div>
+          </div>
+          <div class="course-item">
+            <div class="course-name">Course IV · Hearth‑Roasted Main</div>
+            <div class="course-meta">Pinot Noir · Charred Alliums · Jus</div>
+            <div class="course-desc">
+              Slow‑roasted, bone‑in cut with ember‑kissed vegetables and a deeply reduced pan jus.
+            </div>
+          </div>
+          <div class="course-item">
+            <div class="course-name">Course VII · “Midnight Gold” Dessert</div>
+            <div class="course-meta">Sauternes · Dark Chocolate · Honeycomb</div>
+            <div class="course-desc">
+              A layered dessert of bitter chocolate, caramelized honey, and gold‑leaf accents to close the evening.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef -->
+  <section id="chef">
+    <div class="container chef-grid">
+      <div class="chef-photo reveal">
+        <img src="https://images.pexels.com/photos/8478050/pexels-photo-8478050.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Executive chef" />
+        <div class="chef-badge">
+          <i class="fa-solid fa-hat-chef"></i>
+          Executive Chef · Julien Moreau
+        </div>
+      </div>
+      <div class="reveal delay-1">
+        <h2 class="section-title">The Chef Behind the Curtain</h2>
+        <p class="section-subtitle">
+          Trained in Paris and seasoned in Michelin‑starred kitchens across Europe, Chef Julien Moreau brings a cinematic approach to fine dining—where every course is a scene, and every detail is intentional.
+        </p>
+        <p class="card-text" style="margin-bottom:10px;">
+          His cooking philosophy blends classical French technique with global influences, highlighting seasonal produce, sustainable sourcing, and unexpected flavor pairings.
+        </p>
+        <ul class="chef-list">
+          <li><i class="fa-solid fa-check"></i> Experience in multiple Michelin‑starred restaurants</li>
+          <li><i class="fa-solid fa-check"></i> Focus on seasonal, locally sourced ingredients</li>
+          <li><i class="fa-solid fa-check"></i> Dedicated vegetarian and pescatarian tasting menus</li>
+          <li><i class="fa-solid fa-check"></i> Personally curates each night’s menu progression</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wine -->
+  <section id="wine">
+    <div class="container">
+      <h2 class="section-title reveal">Wine & Pairings</h2>
+      <p class="section-subtitle reveal delay-1">
+        Our sommelier‑curated wine program is designed to echo, contrast, and elevate each course—featuring old‑world classics, new‑world discoveries, and limited allocations.
+      </p>
+
+      <div class="wine-grid">
+        <div class="reveal delay-1">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">
+            Featured Cellar Highlights
+          </h3>
+          <ul class="wine-list">
+            <li>
+              <span>Champagne, Grand Cru Blanc de Blancs</span><br />
+              <span>Precision, minerality, and fine mousse—often poured to open the evening.</span>
+            </li>
+            <li>
+              <span>Burgundy, Premier Cru Pinot Noir</span><br />
+              <span>Silky red fruit and earth, ideal with hearth‑roasted mains.</span>
+            </li>
+            <li>
+              <span>Napa Valley, Single‑Vineyard Cabernet</span><br />
+              <span>Structured, dark, and powerful—reserved for special pairings and private dinners.</span>
+            </li>
+            <li>
+              <span>Sauternes, Late Harvest</span><br />
+              <span>Honeyed stone fruit and balanced acidity, a natural partner for “Midnight Gold.”</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="wine-card reveal delay-2">
+          <div class="card-icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <h3 class="card-title">Sommelier’s Philosophy</h3>
+          <p class="card-text">
+            Our sommelier team believes in pairings that tell a story—sometimes in harmony, sometimes in contrast, always in service of the dish.
+          </p>
+          <p class="card-text">
+            Non‑alcoholic pairings are available, featuring house‑made infusions, teas, and zero‑proof cocktails crafted with the same care as our wine program.
+          </p>
+          <div class="chip" style="margin-top:8px;">
+            <i class="fa-solid fa-leaf"></i> Non‑alcoholic pairings available
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title reveal">Ambience & Interior</h2>
+      <p class="section-subtitle reveal delay-1">
+        Candlelit tables, velvet banquettes, and a soundtrack curated to match the pacing of your meal—every detail is designed to feel like stepping into a film.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal delay-1">
+          <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Dining room" />
+          <div class="gallery-caption">Main Dining Room</div>
+        </div>
+        <div class="gallery-item reveal delay-2">
+          <img src="https://images.pexels.com/photos/3217151/pexels-photo-3217151.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Plated dish" />
+          <div class="gallery-caption">Plated Courses</div>
+        </div>
+        <div class="gallery-item reveal delay-3">
+          <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Wine bar" />
+          <div class="gallery-caption">Wine Bar</div>
+        </div>
+        <div class="gallery-item reveal delay-1">
+          <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Private dining" />
+          <div class="gallery-caption">Private Dining</div>
+        </div>
+        <div class="gallery-item reveal delay-2">
+          <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cocktail" />
+          <div class="gallery-caption">Signature Cocktails</div>
+        </div>
+        <div class="gallery-item reveal delay-3">
+          <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Table setting" />
+          <div class="gallery-caption">Table Details</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="container">
+      <h2 class="section-title reveal">Guest Reviews</h2>
+      <p class="section-subtitle reveal delay-1">
+        Evenings that become traditions. Celebrations that become stories. Here’s what our guests are saying about Noir & Gold.
+      </p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal delay-1">
+          <div class="testimonial-badge">
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <p class="testimonial-quote">
+            “Every course felt like a scene change. The pacing, the pairings, the service—flawless from start to finish.”
+          </p>
+          <div class="testimonial-name">Amelia & Victor</div>
+          <div class="testimonial-meta">10‑Course Anniversary Tasting</div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="testimonial-badge">
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <p class="testimonial-quote">
+            “The vegetarian tasting menu was as thoughtful and layered as any fine dining experience we’ve had in Paris.”
+          </p>
+          <div class="testimonial-name">Priya S.</div>
+          <div class="testimonial-meta">7‑Course Vegetarian Menu</div>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <div class="testimonial-badge">
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <p class="testimonial-quote">
+            “We booked the private dining room for a milestone birthday. It felt like we had our own hidden restaurant.”
+          </p>
+          <div class="testimonial-name">Jonathan R.</div>
+          <div class="testimonial-meta">Private Dining · 14 Guests</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservations -->
+  <section id="reservations">
+    <div class="container">
+      <h2 class="section-title reveal">Reserve Your Evening</h2>
+      <p class="section-subtitle reveal delay-1">
+        Share a few details and our reservations team will confirm availability, tasting menu options, and any special requests.
+      </p>
+
+      <div class="reservation-grid">
+        <div class="reservation-form reveal delay-1">
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" id="name" type="text" placeholder="Your full name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" type="email" placeholder="you@example.com" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="date">Preferred Date</label>
+                <input class="form-control" id="date" type="date" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="time">Preferred Time</label>
+                <input class="form-control" id="time" type="time" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="guests">Guests</label>
+                <input class="form-control" id="guests" type="number" min="1" max="16" placeholder="2" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="occasion">Occasion</label>
+                <input class="form-control" id="occasion" type="text" placeholder="Anniversary, birthday, tasting, etc." />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="notes">Dietary & Special Requests</label>
+              <textarea class="form-textarea" id="notes" placeholder="Allergies, dietary preferences, celebrations, or anything we should know."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              Request Reservation
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="reservation-info reveal delay-2">
+          <div class="reservation-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            27 Noir Lane, 5th Floor · City Center District
+          </div>
+          <div class="reservation-info-item">
+            <i class="fa-solid fa-phone"></i>
+            +1 (555) 987‑4321
+          </div>
+          <div class="reservation-info-item">
+            <i class="fa-solid fa-envelope"></i>
+            reservations@noirandgold.com
+          </div>
+          <div class="reservation-info-item">
+            <i class="fa-solid fa-clock"></i>
+            Dinner Service: Tue–Sun · 5:30 PM – 10:30 PM · Closed Monday
+          </div>
+          <div class="reservation-info-item">
+            <i class="fa-solid fa-user-tie"></i>
+            Dress Code: Elevated evening attire
+          </div>
+
+          <div class="map-placeholder">
+            Map placeholder – embed your preferred map here
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="logo-mark">
+              <i class="fa-solid fa-wine-glass"></i>
+            </div>
+            Noir<span>&</span>Gold
+          </div>
+          <p class="footer-text">
+            A cinematic fine dining experience where every course, pairing, and detail is crafted to feel like a scene in an unforgettable evening.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigation</div>
+          <ul class="footer-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#menu">Tasting Menu</a></li>
+            <li><a href="#chef">Chef</a></li>
+            <li><a href="#wine">Wine Program</a></li>
+            <li><a href="#gallery">Ambience</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Experiences</div>
+          <ul class="footer-list">
+            <li><a href="#menu">7‑Course Tasting</a></li>
+            <li><a href="#menu">10‑Course Signature</a></li>
+            <li><a href="#wine">Wine Pairings</a></li>
+            <li><a href="#reservations">Private Dining</a></li>
+            <li><a href="#reservations">Chef’s Table</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Contact & Newsletter</div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>27 Noir Lane, 5th Floor<br />City Center District</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (555) 987‑4321</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>hello@noirandgold.com</span>
+          </div>
+
+          <div class="newsletter">
+            <div class="footer-text">Receive seasonal menu releases, cellar highlights, and special event invitations.</div>
+            <div class="newsletter-row">
+              <input class="newsletter-input" type="email" placeholder="Your email address" />
+              <button class="newsletter-btn" type="button">Join</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        <span>© <span id="year"></span> <strong>Noir & Gold</strong>. All rights reserved.</span>
+        <span>Thoughtfully sourced ingredients · Award‑winning culinary team · Designed with guest comfort and accessibility in mind.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Active nav link on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function onScroll() {
+      const scrollPos = window.scrollY + 90;
+      sections.forEach((section) => {
+        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const active = document.querySelector('.nav-link[href="#' + section.id + '"]');
+          if (active) active.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Élite Plumbing | Premium Home Services</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2a2a2a;
+            background-color: #0a0a0a;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* ===== COLOR VARIABLES ===== */
+        :root {
+            --gold: #d4af37;
+            --gold-light: #e5c158;
+            --gold-dark: #b8985f;
+            --navy: #0f1729;
+            --navy-light: #1a2332;
+            --black: #0a0a0a;
+            --ivory: #f5f3ed;
+            --cream: #ede9e0;
+            --metal: #b8b8b8;
+            --metal-light: #d4d4d4;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 6%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.4s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 1rem 6%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            border-bottom-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .nav-logo i {
+            font-size: 1.8rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border: none;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 0.5rem 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--black);
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            background-image: url('https://images.pexels.com/photos/1910472/pexels-photo-1910472.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(15, 23, 41, 0.7) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 6%;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.7rem 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        .hero-badge i {
+            font-size: 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5.5rem;
+            font-weight: 300;
+            color: var(--ivory);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+        
+        .hero-title span {
+            font-weight: 600;
+            color: var(--gold);
+            font-style: italic;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--cream);
+            margin-bottom: 3rem;
+            max-width: 650px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+        
+        .hero-stats {
+            position: absolute;
+            bottom: 8%;
+            left: 6%;
+            display: flex;
+            gap: 4rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.8s;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--cream);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 8rem 6%;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            color: var(--ivory);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .section-title span {
+            color: var(--gold);
+            font-style: italic;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--metal);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        #about {
+            background: linear-gradient(180deg, var(--black) 0%, var(--navy) 100%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--cream);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+        
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .trust-badge {
+            padding: 1.5rem;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .trust-badge i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .trust-badge h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--ivory);
+            margin-bottom: 0.5rem;
+        }
+        
+        .trust-badge p {
+            font-size: 0.9rem;
+            color: var(--metal);
+            margin: 0;
+        }
+        
+        .about-image {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--gold);
+            z-index: -1;
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        #services {
+            background: var(--navy);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .service-card {
+            background: rgba(245, 243, 237, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--black);
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card:hover .service-icon {
+            animation: rotate 0.6s ease;
+        }
+        
+        .service-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--ivory);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-description {
+            font-size: 1rem;
+            color: var(--metal);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-features {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-features li {
+            font-size: 0.95rem;
+            color: var(--cream);
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        
+        /* ===== EMERGENCY BANNER ===== */
+        #emergency {
+            background: linear-gradient(135deg, var(--navy-light), var(--black));
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            padding: 5rem 6%;
+        }
+        
+        .emergency-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .emergency-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+        }
+        
+        .emergency-icon i {
+            font-size: 3rem;
+            color: var(--black);
+        }
+        
+        .emergency-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--ivory);
+            margin-bottom: 1rem;
+        }
+        
+        .emergency-subtitle {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+        
+        .emergency-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 3rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .emergency-phone:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6);
+        }
+        
+        /* ===== WHY CHOOSE US ===== */
+        #why-choose {
+            background: var(--black);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(245, 243, 237, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+        
+        .feature-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            opacity: 0.3;
+        }
+        
+        .feature-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--ivory);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-text {
+            font-size: 1rem;
+            color: var(--metal);
+            line-height: 1.8;
+        }
+        
+        /* ===== GALLERY SECTION ===== */
+        #gallery {
+            background: linear-gradient(180deg, var(--black) 0%, var(--navy) 100%);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.7), rgba(15, 23, 41, 0.5));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            font-size: 3rem;
+            color: var(--gold);
+        }
+        
+        .gallery-caption {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--ivory);
+            text-align: center;
+        }
+        
+        /* ===== TESTIMONIALS SECTION ===== */
+        #testimonials {
+            background: var(--navy);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(245, 243, 237, 0.03);
+            padding: 3rem 2.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+        
+        .testimonial-quote {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 5rem;
+            color: rgba(212, 175, 55, 0.15);
+        }
+        
+        .testimonial-stars {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-stars i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--cream);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--ivory);
+            margin-bottom: 0.3rem;
+        }
+        
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: var(--gold);
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        #contact {
+            background: var(--black);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            color: var(--cream);
+            line-height: 1.9;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-details {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(245, 243, 237, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            border-color: var(--gold);
+        }
+        
+        .contact-item-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-item-text h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--ivory);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-item-text p {
+            font-size: 1rem;
+            color: var(--metal);
+            margin: 0;
+        }
+        
+        .contact-form {
+            background: rgba(245, 243, 237, 0.03);
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ivory);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(10, 10, 10, 0.5);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            color: var(--cream);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.3rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy);
+            padding: 6rem 6% 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            max-width: 1600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-col h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .footer-tagline {
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .footer-social-icon:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--metal);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--metal);
+            font-size: 0.95rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .footer-bottom span {
+            color: var(--gold);
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 60px rgba(212, 175, 55, 0.8);
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .contact-container,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 75px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                border-top: 1px solid var(--gold);
+                align-items: flex-start;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .features-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                position: static;
+                margin-top: 3rem;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            section {
+                padding: 5rem 5%;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .emergency-phone {
+                font-size: 1.5rem;
+                padding: 1.2rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <i class="fas fa-gem"></i>
+                <span>Élite Plumbing</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Portfolio</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                Premium Plumbing Services
+            </div>
+            <h1 class="hero-title">
+                Craftsmanship Meets <span>Luxury</span>
+            </h1>
+            <p class="hero-subtitle">
+                Elevating residential plumbing with precision engineering, designer fixtures, and white-glove service for discerning homeowners.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn-primary">
+                    <span>Schedule Consultation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#services" class="btn-secondary">
+                    <span>View Services</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2,500+</div>
+                <div class="stat-label">Luxury Homes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Story</div>
+                <h2 class="section-title">Excellence in Every <span>Detail</span></h2>
+                <p class="section-subtitle">
+                    Where artisan craftsmanship meets modern luxury plumbing solutions
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Redefining Premium Home Services</h3>
+                    <p>
+                        For over two decades, Élite Plumbing has been the trusted partner for homeowners who demand perfection. We specialize in high-end residential installations, spa-quality bathroom renovations, and precision repairs that honor your investment.
+                    </p>
+                    <p>
+                        Every project receives our signature white-glove treatment: master craftsmen, designer-grade fixtures, meticulous attention to detail, and a commitment to leaving your home cleaner than we found it.
+                    </p>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Master Certified</h4>
+                            <p>Licensed, bonded, and insured with master plumbing credentials</p>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Lifetime Warranty</h4>
+                            <p>Our work is guaranteed for life with comprehensive coverage</p>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-clock"></i>
+                            <h4>24/7 Available</h4>
+                            <p>Emergency response team on call every day of the year</p>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Eco-Conscious</h4>
+                            <p>Sustainable solutions and water-saving technologies</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in">
+                    <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury bathroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">What We Offer</div>
+                <h2 class="section-title">Premium <span>Services</span></h2>
+                <p class="section-subtitle">
+                    Bespoke plumbing solutions tailored to luxury living
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3 class="service-title">Spa Bathrooms</h3>
+                    <p class="service-description">
+                        Transform your bathroom into a private sanctuary with designer fixtures, heated floors, and custom installations.
+                    </p>
+                    <ul class="service-features">
+                        <li>Rainfall showerheads & body jets</li>
+                        <li>Soaking tubs & whirlpools</li>
+                        <li>Heated towel racks</li>
+                        <li>Smart temperature control</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title">Whole-Home Repiping</h3>
+                    <p class="service-description">
+                        Complete copper or PEX repiping with minimal disruption and precision craftsmanship for lasting performance.
+                    </p>
+                    <ul class="service-features">
+                        <li>Premium copper piping</li>
+                        <li>Advanced PEX systems</li>
+                        <li>Pressure optimization</li>
+                        <li>Full system testing</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3 class="service-title">Designer Fixtures</h3>
+                    <p class="service-description">
+                        Professional installation of high-end faucets, sinks, and luxury fixtures from premier manufacturers.
+                    </p>
+                    <ul class="service-features">
+                        <li>Kohler, Moen, Delta</li>
+                        <li>Custom finishes</li>
+                        <li>Touchless technology</li>
+                        <li>Expert calibration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Kitchen Renovations</h3>
+                    <p class="service-description">
+                        Gourmet kitchen plumbing featuring pot fillers, disposal systems, and premium appliance installations.
+                    </p>
+                    <ul class="service-features">
+                        <li>Pot filler faucets</li>
+                        <li>Undermount sinks</li>
+                        <li>Instant hot water</li>
+                        <li>Water filtration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-temperature-high"></i>
+                    </div>
+                    <h3 class="service-title">Tankless Systems</h3>
+                    <p class="service-description">
+                        Energy-efficient tankless water heaters providing endless hot water and reducing your carbon footprint.
+                    </p>
+                    <ul class="service-features">
+                        <li>On-demand hot water</li>
+                        <li>Energy savings</li>
+                        <li>Compact design</li>
+                        <li>Long lifespan</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="service-title">Precision Repairs</h3>
+                    <p class="service-description">
+                        Expert diagnosis and repair of all plumbing systems with transparent pricing and guaranteed results.
+                    </p>
+                    <ul class="service-features">
+                        <li>Leak detection</li>
+                        <li>Drain clearing</li>
+                        <li>Valve replacement</li>
+                        <li>Emergency service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section id="emergency">
+        <div class="emergency-content">
+            <div class="emergency-icon">
+                <i class="fas fa-phone-volume"></i>
+            </div>
+            <h2 class="emergency-title">24/7 Emergency Service</h2>
+            <p class="emergency-subtitle">Expert Response When You Need It Most</p>
+            <a href="tel:5559876543" class="emergency-phone">
+                <i class="fas fa-phone-alt"></i>
+                <span>(555) 987-6543</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Why Élite</div>
+                <h2 class="section-title">The <span>Élite</span> Difference</h2>
+                <p class="section-subtitle">
+                    Premium service, precision work, and peace of mind
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-number">01</div>
+                    <h3 class="feature-title">Master Craftsmen</h3>
+                    <p class="feature-text">
+                        Our team consists of master plumbers with decades of experience in luxury home installations and renovations.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">02</div>
+                    <h3 class="feature-title">White-Glove Service</h3>
+                    <p class="feature-text">
+                        We treat your home with the utmost respect, protecting floors and furniture and leaving everything pristine.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">03</div>
+                    <h3 class="feature-title">Transparent Pricing</h3>
+                    <p class="feature-text">
+                        Detailed estimates with no hidden fees. You'll know exactly what to expect before work begins.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">04</div>
+                    <h3 class="feature-title">Designer Partners</h3>
+                    <p class="feature-text">
+                        We work seamlessly with architects and interior designers to bring your vision to life perfectly.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">05</div>
+                    <h3 class="feature-title">Lifetime Warranty</h3>
+                    <p class="feature-text">
+                        All our installations are backed by a comprehensive lifetime warranty for complete peace of mind.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-number">06</div>
+                    <h3 class="feature-title">Eco-Conscious</h3>
+                    <p class="feature-text">
+                        We prioritize sustainable solutions that save water, reduce energy, and protect the environment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Work</div>
+                <h2 class="section-title">Portfolio of <span>Excellence</span></h2>
+                <p class="section-subtitle">
+                    A curated selection of our finest luxury installations
+                </p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury bathroom">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="gallery-caption">Master Suite Renovation</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Modern faucet">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="gallery-caption">Designer Fixture Installation</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Spa bathroom">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="gallery-caption">Spa-Style Retreat</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.pexels.com/photos/1438834/pexels-photo-1438834.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury kitchen">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="gallery-caption">Gourmet Kitchen Plumbing</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Modern sink">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="gallery-caption">Contemporary Vanity Setup</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Elegant bathroom">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <div class="gallery-caption">Classic Elegance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Client Reviews</div>
+                <h2 class="section-title">Trusted by <span>Homeowners</span></h2>
+                <p class="section-subtitle">
+                    Hear what our clients say about the Élite experience
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-right testimonial-quote"></i>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Élite transformed our master bathroom into a spa-like sanctuary. The attention to detail was extraordinary, and their team treated our home with the utmost care. Absolutely worth every penny."
+                    </p>
+                    <div class="testimonial-author">Catherine Morrison</div>
+                    <div class="testimonial-location">Pacific Heights</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-right testimonial-quote"></i>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "We hired Élite for a complete home repiping and kitchen renovation. Their professionalism and craftsmanship exceeded our expectations. The project was completed on time and flawlessly executed."
+                    </p>
+                    <div class="testimonial-author">James & Sarah Chen</div>
+                    <div class="testimonial-location">Presidio Heights</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-right testimonial-quote"></i>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "When we had an emergency leak at midnight, Élite responded within the hour. Their emergency service is truly 24/7. Professional, courteous, and they fixed everything perfectly. Highly recommend."
+                    </p>
+                    <div class="testimonial-author">Michael Rodriguez</div>
+                    <div class="testimonial-location">Nob Hill</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Get in Touch</div>
+                <h2 class="section-title">Schedule Your <span>Consultation</span></h2>
+                <p class="section-subtitle">
+                    Let's discuss how we can elevate your home with premium plumbing
+                </p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Visit Our Showroom</h3>
+                    <p>
+                        Experience our curated selection of designer fixtures and meet with our master plumbers to discuss your project in person.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Phone</h4>
+                                <p>(555) 987-6543</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Email</h4>
+                                <p>concierge@eliteplumbing.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Showroom</h4>
+                                <p>2550 Van Ness Avenue, San Francisco, CA 94109</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Hours</h4>
+                                <p>Mon-Fri: 8AM-6PM | Sat: 10AM-4PM | Emergency: 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input class="form-input" id="name" type="text" placeholder="John Smith" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input class="form-input" id="email" type="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input class="form-input" id="phone" type="tel" placeholder="(555) 123-4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service Interest</label>
+                        <select class="form-select" id="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="spa-bathroom">Spa Bathroom Renovation</option>
+                            <option value="repiping">Whole-Home Repiping</option>
+                            <option value="fixtures">Designer Fixtures</option>
+                            <option value="kitchen">Kitchen Renovation</option>
+                            <option value="tankless">Tankless Water Heater</option>
+                            <option value="repair">Precision Repair</option>
+                            <option value="emergency">Emergency Service</option>
+                            <option value="consultation">General Consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Project Details</label>
+                        <textarea class="form-textarea" id="message" placeholder="Tell us about your project and vision..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Élite Plumbing</div>
+                <p class="footer-tagline">
+                    Luxury plumbing services for discerning homeowners. Premium craftsmanship, designer fixtures, and white-glove service since 1998.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-houzz"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Portfolio</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Spa Bathrooms</a></li>
+                    <li><a href="#services">Home Repiping</a></li>
+                    <li><a href="#services">Designer Fixtures</a></li>
+                    <li><a href="#services">Kitchen Renovations</a></li>
+                    <li><a href="#services">Tankless Systems</a></li>
+                    <li><a href="#services">Emergency Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:5559876543">(555) 987-6543</a></li>
+                    <li><a href="mailto:concierge@eliteplumbing.com">concierge@eliteplumbing.com</a></li>
+                    <li><a href="#">2550 Van Ness Avenue</a></li>
+                    <li><a href="#">San Francisco, CA 94109</a></li>
+                    <li><a href="#">Mon-Fri: 8AM-6PM</a></li>
+                    <li><a href="#">Emergency: 24/7</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>Élite Plumbing</span>. All rights reserved. | Licensed, Bonded & Insured | CA License #987654</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // ===== PARALLAX EFFECT FOR HERO =====
+        window.addEventListener('scroll', () => {
+            const heroBackground = document.querySelector('.hero-background');
+            const scrolled = window.scrollY;
+            if (heroBackground) {
+                heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== CONTACT FORM =====
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
+            
+            alert(`Thank you, ${name}! Your consultation request for "${service}" has been received. Our concierge team will contact you within 24 hours to schedule your appointment.`);
+            contactForm.reset();
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>
