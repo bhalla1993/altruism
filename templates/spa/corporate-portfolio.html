@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Consulting - Corporate Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== CORPORATE COLOR PALETTE ===== */
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --charcoal: #334155;
+            --silver: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-blue-dark: #2563eb;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --border: #e2e8f0;
+            --text-dark: #0f172a;
+            --text-medium: #475569;
+            --text-light: #64748b;
+        }
+        
+        /* ===== LAYOUT STRUCTURE ===== */
+        .layout-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* ===== LEFT SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--navy);
+            color: white;
+            padding: 3rem 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sidebar-logo {
+            padding: 0 2.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: block;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: var(--silver);
+            margin-top: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .sidebar-nav {
+            flex: 1;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2.5rem;
+            color: var(--silver);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--accent-blue);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            transform: scaleY(1);
+        }
+        
+        .nav-link i {
+            font-size: 1.1rem;
+            width: 20px;
+        }
+        
+        .sidebar-footer {
+            padding: 0 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+        
+        .sidebar-contact {
+            font-size: 0.85rem;
+            color: var(--silver);
+            line-height: 1.8;
+        }
+        
+        .sidebar-contact a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .sidebar-contact a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .sidebar-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+        
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 1001;
+            background: var(--navy);
+            color: white;
+            border: none;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            margin-left: 280px;
+            width: calc(100% - 280px);
+            min-height: 100vh;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--navy);
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 6%;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50px;
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+        }
+        
+        .hero-title.typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--accent-blue);
+            white-space: nowrap;
+            animation: typing 3s steps(40) 0.5s forwards, blink 0.75s step-end infinite;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--silver);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 1.2s;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 3rem;
+            background: var(--accent-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 1.5s;
+        }
+        
+        .hero-cta:hover {
+            background: var(--accent-blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 6rem 6%;
+            position: relative;
+        }
+        
+        section:nth-child(even) {
+            background: var(--off-white);
+        }
+        
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 4rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 50px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about-content {
+            max-width: 1200px;
+        }
+        
+        .mission-statement {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            line-height: 1.9;
+            margin-bottom: 4rem;
+            padding-left: 2rem;
+            border-left: 4px solid var(--accent-blue);
+            font-weight: 400;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .value-card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-title {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .value-description {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1400px;
+        }
+        
+        .service-card {
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent-blue);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .service-description {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        /* ===== CASE STUDIES SECTION ===== */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+        }
+        
+        .case-study-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .case-study-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .case-study-card:hover .case-study-image img {
+            transform: scale(1.08);
+        }
+        
+        .case-study-badge {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            padding: 0.5rem 1.2rem;
+            background: var(--accent-blue);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .case-study-content {
+            padding: 2.5rem;
+        }
+        
+        .case-study-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-summary {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-study-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .case-study-link:hover {
+            gap: 0.8rem;
+            color: var(--accent-blue-dark);
+        }
+        
+        /* ===== TEAM SECTION ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+        }
+        
+        .team-member {
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+        }
+        
+        .team-photo-wrapper {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent-blue);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-name {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            font-size: 1rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            max-width: 1400px;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-details {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-item-content h4 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .contact-item-content p,
+        .contact-item-content a {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .contact-item-content a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .contact-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--navy);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-social-link:hover {
+            background: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.3rem;
+            background: var(--off-white);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: white;
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-submit:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 3rem 6%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-text {
+            font-size: 0.95rem;
+            color: var(--silver);
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes blink {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: var(--accent-blue);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .values-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container,
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            section {
+                padding: 4rem 5%;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title.typewriter {
+                white-space: normal;
+                border-right: none;
+                animation: fadeInUp 0.8s ease forwards 0.8s;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .values-grid,
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="layout-wrapper">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <a href="#hero" class="logo-text">APEX</a>
+                <p class="logo-tagline">Consulting Group</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#hero" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#case-studies" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Case Studies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Team</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="sidebar-contact">
+                    <p><strong>Contact Us</strong></p>
+                    <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
+                    <p>Email: <a href="mailto:info@apexconsulting.com">info@apexconsulting.com</a></p>
+                </div>
+                <div class="sidebar-social">
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="hero">
+                <div class="hero-background"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="hero-badge">Industry-Leading Consulting</div>
+                    <h1 class="hero-title typewriter">Strategic Solutions for Modern Business</h1>
+                    <p class="hero-subtitle">
+                        We partner with forward-thinking organizations to drive transformation, 
+                        accelerate growth, and achieve sustainable competitive advantage.
+                    </p>
+                    <a href="#contact" class="hero-cta">
+                        <span>Start Your Journey</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <div class="about-content">
+                    <div class="section-header fade-in">
+                        <div class="section-badge">Who We Are</div>
+                        <h2 class="section-title">Empowering Organizations Through Strategic Excellence</h2>
+                        <p class="section-description">
+                            Since 2010, Apex Consulting has been the trusted partner for businesses seeking 
+                            transformational change and sustainable growth.
+                        </p>
+                    </div>
+                    
+                    <p class="mission-statement fade-in">
+                        Our mission is to deliver innovative, data-driven solutions that empower our clients 
+                        to navigate complexity, seize opportunities, and achieve exceptional results in an 
+                        ever-evolving business landscape.
+                    </p>
+                    
+                    <div class="values-grid">
+                        <div class="value-card fade-in">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="value-title">Innovation</h3>
+                            <p class="value-description">
+                                We leverage cutting-edge methodologies and technologies to deliver solutions 
+                                that keep you ahead of the competition.
+                            </p>
+                        </div>
+                        
+                        <div class="value-card fade-in">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="value-title">Partnership</h3>
+                            <p class="value-description">
+                                Your success is our success. We work alongside you as a trusted partner, 
+                                fully committed to achieving your objectives.
+                            </p>
+                        </div>
+                        
+                        <div class="value-card fade-in">
+                            <div class="value-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="value-title">Excellence</h3>
+                            <p class="value-description">
+                                We maintain the highest standards of quality in everything we do, 
+                                delivering measurable results that exceed expectations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services">
+                <div class="section-header fade-in">
+                    <div class="section-badge">What We Do</div>
+                    <h2 class="section-title">Comprehensive Business Solutions</h2>
+                    <p class="section-description">
+                        From strategy to execution, we provide end-to-end consulting services designed to 
+                        transform your business and drive sustainable growth.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="service-title">Strategy & Planning</h3>
+                        <p class="service-description">
+                            Develop comprehensive strategies aligned with your vision, market dynamics, 
+                            and competitive landscape to drive long-term success.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="service-title">Operations Optimization</h3>
+                        <p class="service-description">
+                            Streamline processes, reduce costs, and improve efficiency through 
+                            data-driven operational improvements and best practices.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="service-title">Change Management</h3>
+                        <p class="service-description">
+                            Navigate organizational transformation with structured change programs 
+                            that ensure adoption and minimize disruption.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-digital-tachograph"></i>
+                        </div>
+                        <h3 class="service-title">Digital Transformation</h3>
+                        <p class="service-description">
+                            Leverage emerging technologies to modernize operations, enhance customer 
+                            experience, and unlock new revenue streams.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3 class="service-title">Financial Advisory</h3>
+                        <p class="service-description">
+                            Optimize financial performance through strategic planning, risk management, 
+                            and value creation initiatives.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="service-title">Training & Development</h3>
+                        <p class="service-description">
+                            Build internal capabilities through customized training programs that 
+                            empower your teams to excel.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Studies Section -->
+            <section id="case-studies">
+                <div class="section-header fade-in">
+                    <div class="section-badge">Our Work</div>
+                    <h2 class="section-title">Client Success Stories</h2>
+                    <p class="section-description">
+                        Discover how we've helped leading organizations across industries achieve 
+                        transformational results and sustainable competitive advantage.
+                    </p>
+                </div>
+                
+                <div class="case-studies-grid">
+                    <div class="case-study-card fade-in">
+                        <div class="case-study-image">
+                            <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Manufacturing Case Study">
+                            <div class="case-study-badge">Manufacturing</div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3 class="case-study-title">Global Manufacturing Leader</h3>
+                            <p class="case-study-summary">
+                                Delivered a comprehensive digital transformation program that increased 
+                                operational efficiency by 35% and reduced costs by $12M annually through 
+                                smart automation and process optimization.
+                            </p>
+                            <a href="#" class="case-study-link">
+                                Read Full Case Study <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card fade-in">
+                        <div class="case-study-image">
+                            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Financial Services Case Study">
+                            <div class="case-study-badge">Financial Services</div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3 class="case-study-title">Regional Banking Institution</h3>
+                            <p class="case-study-summary">
+                                Led a strategic growth initiative that expanded market share by 18% 
+                                and improved customer satisfaction scores by 42% through enhanced 
+                                digital banking experiences.
+                            </p>
+                            <a href="#" class="case-study-link">
+                                Read Full Case Study <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card fade-in">
+                        <div class="case-study-image">
+                            <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Retail Case Study">
+                            <div class="case-study-badge">Retail</div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3 class="case-study-title">Multi-Channel Retail Chain</h3>
+                            <p class="case-study-summary">
+                                Orchestrated an omnichannel transformation that unified online and 
+                                in-store experiences, resulting in 28% revenue growth and improved 
+                                inventory turnover by 40%.
+                            </p>
+                            <a href="#" class="case-study-link">
+                                Read Full Case Study <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card fade-in">
+                        <div class="case-study-image">
+                            <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Healthcare Case Study">
+                            <div class="case-study-badge">Healthcare</div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3 class="case-study-title">Healthcare Provider Network</h3>
+                            <p class="case-study-summary">
+                                Implemented integrated care model and technology platform that 
+                                improved patient outcomes by 31% and reduced operational costs by 
+                                $8M while enhancing care coordination.
+                            </p>
+                            <a href="#" class="case-study-link">
+                                Read Full Case Study <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section id="team">
+                <div class="section-header fade-in">
+                    <div class="section-badge">Meet Our Team</div>
+                    <h2 class="section-title">Leadership Excellence</h2>
+                    <p class="section-description">
+                        Our team of seasoned professionals brings decades of combined experience 
+                        across industries, functions, and geographies.
+                    </p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member fade-in">
+                        <div class="team-photo-wrapper">
+                            <div class="team-photo">
+                                <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Michael Chen">
+                            </div>
+                        </div>
+                        <h3 class="team-name">Michael Chen</h3>
+                        <p class="team-role">Managing Partner</p>
+                        <p class="team-bio">
+                            20+ years leading transformation initiatives for Fortune 500 companies.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="team-photo-wrapper">
+                            <div class="team-photo">
+                                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sarah Williams">
+                            </div>
+                        </div>
+                        <h3 class="team-name">Sarah Williams</h3>
+                        <p class="team-role">Strategy Director</p>
+                        <p class="team-bio">
+                            Expert in corporate strategy and market entry with 15 years experience.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="team-photo-wrapper">
+                            <div class="team-photo">
+                                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="David Martinez">
+                            </div>
+                        </div>
+                        <h3 class="team-name">David Martinez</h3>
+                        <p class="team-role">Operations Lead</p>
+                        <p class="team-bio">
+                            Specializes in operational excellence and process optimization.
+                        </p>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="team-photo-wrapper">
+                            <div class="team-photo">
+                                <img src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Emily Thompson">
+                            </div>
+                        </div>
+                        <h3 class="team-name">Emily Thompson</h3>
+                        <p class="team-role">Digital Transformation</p>
+                        <p class="team-bio">
+                            Leads technology-enabled business transformation programs globally.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="section-header fade-in">
+                    <div class="section-badge">Get In Touch</div>
+                    <h2 class="section-title">Let's Start a Conversation</h2>
+                    <p class="section-description">
+                        Ready to transform your business? Contact us today to discuss how we can 
+                        help you achieve your strategic objectives.
+                    </p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info fade-in">
+                        <h3>Corporate Headquarters</h3>
+                        <p>
+                            We're here to answer your questions and explore how we can work together 
+                            to drive your business forward.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <h4>Address</h4>
+                                    <p>123 Business Plaza, Suite 500<br>New York, NY 10001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:info@apexconsulting.com">info@apexconsulting.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <a href="#" class="contact-social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="contact-social-link" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="contact-social-link" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="contact-social-link" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form fade-in" id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name</label>
+                            <input class="form-input" id="name" type="text" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="company">Company</label>
+                            <input class="form-input" id="company" type="text" placeholder="Your Company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input class="form-input" id="email" type="email" placeholder="john@company.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input class="form-input" id="phone" type="tel" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">How Can We Help?</label>
+                            <textarea class="form-textarea" id="message" placeholder="Tell us about your business challenges and objectives..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">Send Inquiry</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <p class="footer-text">© 2026 Apex Consulting Group. All rights reserved. | Driving excellence since 2010.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href').substring(1);
+                if (href === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 968) {
+                    sidebar.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== CONTACT FORM =====
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            
+            alert(`Thank you for your inquiry, ${name} from ${company}! While this is a demonstration form, in a real implementation, your message would be sent to our team. We'll be in touch within 24 hours to discuss how we can help your organization.`);
+            contactForm.reset();
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = window.innerWidth > 968 ? 0 : 80;
+                    window.scrollTo({
+                        top: target.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>

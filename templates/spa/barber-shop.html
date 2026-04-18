@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Cuts Barber Shop | Premium Men's Grooming</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #e8e8e8;
+            background-color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== COLORS ===== */
+        :root {
+            --gold: #d4a574;
+            --copper: #b87333;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --card-bg: #252525;
+            --text-light: #e8e8e8;
+            --text-muted: #999;
+            --brown: #4a3728;
+        }
+        
+        /* ===== GRAIN TEXTURE OVERLAY ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="300" height="300" filter="url(%23noise)" opacity="0.05"/></svg>');
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.3;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 0.8rem 5%;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+            border-bottom-color: rgba(212, 165, 116, 0.3);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        
+        .nav-logo i {
+            font-size: 2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--gold);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 0.5rem 0.8rem;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            background-image: url('https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.85) 0%, rgba(74, 55, 40, 0.6) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards 0.3s;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 0.6rem 1.8rem;
+            background: rgba(212, 165, 116, 0.15);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(212, 165, 116, 0.3);
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-title span {
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(212, 165, 116, 0.6);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-style: italic;
+            max-width: 700px;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary,
+        .btn-secondary {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--darker-bg);
+            box-shadow: 0 5px 25px rgba(212, 165, 116, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: var(--copper);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(212, 165, 116, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(212, 165, 116, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(212, 165, 116, 0.3);
+        }
+        
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 6rem 5%;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .section-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        #services {
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.3);
+        }
+        
+        .service-popular {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--gold);
+            color: var(--darker-bg);
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold), var(--copper));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--darker-bg);
+            font-size: 2rem;
+            box-shadow: 0 5px 25px rgba(212, 165, 116, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotateY(360deg);
+        }
+        
+        .service-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ===== BARBERS SECTION ===== */
+        #barbers {
+            background: var(--dark-bg);
+        }
+        
+        .barbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .barber-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .barber-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+        
+        .barber-image {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .barber-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: grayscale(20%);
+        }
+        
+        .barber-card:hover .barber-image img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+        
+        .barber-signature {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-style: italic;
+            color: rgba(212, 165, 116, 0.3);
+            font-weight: 700;
+        }
+        
+        .barber-content {
+            padding: 2rem;
+        }
+        
+        .barber-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .barber-title {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .barber-experience {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .barber-specialties {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .specialty-badge {
+            padding: 0.4rem 0.8rem;
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        /* ===== EXPERIENCE SECTION ===== */
+        #experience {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+            background-image: 
+                linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%234a3728" opacity="0.1"/></svg>');
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .experience-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(37, 37, 37, 0.5);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 30px rgba(212, 165, 116, 0.2);
+        }
+        
+        .experience-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold), var(--copper));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--darker-bg);
+            font-size: 2rem;
+            box-shadow: 0 5px 25px rgba(212, 165, 116, 0.4);
+        }
+        
+        .experience-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .experience-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        /* ===== GALLERY SECTION ===== */
+        #gallery {
+            background: var(--dark-bg);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.8), rgba(74, 55, 40, 0.6));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            font-size: 3rem;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(212, 165, 116, 0.8);
+        }
+        
+        /* ===== TESTIMONIALS SECTION ===== */
+        #testimonials {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 3rem 2.5rem;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+        
+        .testimonial-quote {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            color: rgba(212, 165, 116, 0.15);
+        }
+        
+        .testimonial-stars {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-stars i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px rgba(212, 165, 116, 0.5);
+        }
+        
+        .testimonial-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+        
+        .testimonial-service {
+            font-size: 0.85rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ===== BOOKING SECTION ===== */
+        #booking {
+            background: var(--dark-bg);
+        }
+        
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+        
+        .booking-info {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+        
+        .booking-info.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .booking-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .booking-text {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        
+        .walk-in-badge {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: rgba(212, 165, 116, 0.15);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+        }
+        
+        .contact-details {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.2rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+        }
+        
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--copper));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--darker-bg);
+            font-size: 1.3rem;
+        }
+        
+        .contact-item-text {
+            flex: 1;
+        }
+        
+        .contact-item-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-item-value {
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.05rem;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            color: var(--gold);
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+        }
+        
+        .booking-form {
+            background: var(--card-bg);
+            padding: 3rem;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .booking-form.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: var(--darker-bg);
+            border: 2px solid rgba(212, 165, 116, 0.2);
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gold);
+            color: var(--darker-bg);
+            border: none;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .form-submit:hover {
+            background: var(--copper);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(212, 165, 116, 0.5);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--darker-bg);
+            color: var(--text-muted);
+            padding: 5rem 5% 2rem;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-col h4 {
+            font-family: 'Oswald', sans-serif;
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .footer-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-badge {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .footer-social-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .footer-social-icon:hover {
+            background: var(--gold);
+            color: var(--darker-bg);
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+        
+        .newsletter {
+            margin-top: 1.5rem;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .newsletter-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--gold);
+            color: var(--darker-bg);
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background: var(--copper);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 165, 116, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-bottom span {
+            color: var(--gold);
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .slide-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(15, 15, 15, 0.98);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                border-top: 1px solid var(--gold);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid,
+            .barbers-grid,
+            .experience-grid,
+            .gallery-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            section {
+                padding: 4rem 5%;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <i class="fas fa-cut"></i>
+                <span>Prime Cuts</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#barbers" class="nav-link">Barbers</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#booking" class="nav-link">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Premium Men's Grooming</div>
+            <h1 class="hero-title">
+                Where Style Meets <span>Tradition</span>
+            </h1>
+            <p class="hero-subtitle">
+                Classic cuts, modern fades, and timeless grooming excellence since 1985
+            </p>
+            <div class="hero-cta-group">
+                <a href="#booking" class="btn-primary">Book Appointment</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Services</div>
+                <h2 class="section-title">Premium Grooming</h2>
+                <p class="section-subtitle">Expert cuts and classic styling for the modern gentleman</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card slide-in-up">
+                    <div class="service-popular">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-scissors"></i>
+                    </div>
+                    <h3 class="service-title">Signature Haircut</h3>
+                    <p class="service-description">
+                        Premium haircut with consultation, hot towel, and styling. Includes neck shave and shoulder massage.
+                    </p>
+                    <div class="service-price">$45</div>
+                </div>
+                
+                <div class="service-card slide-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="service-title">Beard Trim & Shape</h3>
+                    <p class="service-description">
+                        Professional beard sculpting with hot towel treatment and premium beard oil application.
+                    </p>
+                    <div class="service-price">$30</div>
+                </div>
+                
+                <div class="service-card slide-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="service-title">Hot Towel Shave</h3>
+                    <p class="service-description">
+                        Traditional straight razor shave with hot towels, pre-shave oil, and aftershave treatment.
+                    </p>
+                    <div class="service-price">$40</div>
+                </div>
+                
+                <div class="service-card slide-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="service-title">Fade Specialist</h3>
+                    <p class="service-description">
+                        Precision fades - low, mid, or high. Includes edge-up and styling with premium products.
+                    </p>
+                    <div class="service-price">$50</div>
+                </div>
+                
+                <div class="service-card slide-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-crop"></i>
+                    </div>
+                    <h3 class="service-title">Line-Up & Edge</h3>
+                    <p class="service-description">
+                        Crisp edge-up for hairline, beard, and sideburns. Perfect for maintaining your fresh look.
+                    </p>
+                    <div class="service-price">$25</div>
+                </div>
+                
+                <div class="service-card slide-in-up">
+                    <div class="service-popular">Best Value</div>
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="service-title">Royal Package</h3>
+                    <p class="service-description">
+                        Complete grooming: haircut, beard trim, hot towel shave, facial, and shoulder massage.
+                    </p>
+                    <div class="service-price">$95</div>
+                </div>
+                
+                <div class="service-card slide-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="service-title">Kids Cut</h3>
+                    <p class="service-description">
+                        Professional haircut for children 12 and under. Patient, experienced barbers.
+                    </p>
+                    <div class="service-price">$30</div>
+                </div>
+                
+                <div class="service-card slide-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="service-title">Senior Cut</h3>
+                    <p class="service-description">
+                        Discounted haircut for seniors 65+. Includes hot towel and neck shave.
+                    </p>
+                    <div class="service-price">$35</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Barbers Section -->
+    <section id="barbers">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Meet The Team</div>
+                <h2 class="section-title">Master Barbers</h2>
+                <p class="section-subtitle">Decades of combined experience crafting perfect cuts</p>
+            </div>
+            
+            <div class="barbers-grid">
+                <div class="barber-card slide-in-up">
+                    <div class="barber-image">
+                        <img src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Marcus Johnson">
+                        <div class="barber-signature">MJ</div>
+                    </div>
+                    <div class="barber-content">
+                        <h3 class="barber-name">Marcus Johnson</h3>
+                        <div class="barber-title">Master Barber & Owner</div>
+                        <p class="barber-experience">
+                            25+ years experience | Certified Master Barber | Classic & modern cuts specialist
+                        </p>
+                        <div class="barber-specialties">
+                            <span class="specialty-badge">Fades</span>
+                            <span class="specialty-badge">Straight Razor</span>
+                            <span class="specialty-badge">Beard Sculpting</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="barber-card slide-in-up">
+                    <div class="barber-image">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tony Rodriguez">
+                        <div class="barber-signature">TR</div>
+                    </div>
+                    <div class="barber-content">
+                        <h3 class="barber-name">Tony Rodriguez</h3>
+                        <div class="barber-title">Senior Barber</div>
+                        <p class="barber-experience">
+                            18+ years experience | Fade specialist | Competition winner
+                        </p>
+                        <div class="barber-specialties">
+                            <span class="specialty-badge">Precision Fades</span>
+                            <span class="specialty-badge">Line-Ups</span>
+                            <span class="specialty-badge">Designs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="barber-card slide-in-up">
+                    <div class="barber-image">
+                        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=800" alt="James Chen">
+                        <div class="barber-signature">JC</div>
+                    </div>
+                    <div class="barber-content">
+                        <h3 class="barber-name">James Chen</h3>
+                        <div class="barber-title">Barber & Stylist</div>
+                        <p class="barber-experience">
+                            12+ years experience | Traditional & modern styles | Grooming expert
+                        </p>
+                        <div class="barber-specialties">
+                            <span class="specialty-badge">Classic Cuts</span>
+                            <span class="specialty-badge">Hot Towel Shave</span>
+                            <span class="specialty-badge">Beard Care</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">The Prime Cuts Experience</div>
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">More than just a haircut - a complete grooming experience</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-item slide-in-up">
+                    <div class="experience-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="experience-title">Hot Towel Service</h3>
+                    <p class="experience-text">
+                        Complimentary hot towel treatment with every service for the ultimate relaxation experience.
+                    </p>
+                </div>
+                
+                <div class="experience-item slide-in-up">
+                    <div class="experience-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="experience-title">Premium Products</h3>
+                    <p class="experience-text">
+                        We use only top-tier grooming products. All products available for purchase in-store.
+                    </p>
+                </div>
+                
+                <div class="experience-item slide-in-up">
+                    <div class="experience-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <h3 class="experience-title">Walk-Ins Welcome</h3>
+                    <p class="experience-text">
+                        No appointment necessary. Book ahead or walk in - we're here to serve you.
+                    </p>
+                </div>
+                
+                <div class="experience-item slide-in-up">
+                    <div class="experience-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="experience-title">Classic & Modern</h3>
+                    <p class="experience-text">
+                        From vintage gentleman's cuts to contemporary fades - we master both worlds.
+                    </p>
+                </div>
+                
+                <div class="experience-item slide-in-up">
+                    <div class="experience-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="experience-title">Loyalty Rewards</h3>
+                    <p class="experience-text">
+                        Join our VIP program - earn points with every visit and unlock exclusive benefits.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Work</div>
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-subtitle">Precision cuts, perfect fades, and classic style</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item slide-in-up">
+                    <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barbershop interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item slide-in-up">
+                    <img src="https://images.pexels.com/photos/1570806/pexels-photo-1570806.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Precision fade">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item slide-in-up">
+                    <img src="https://images.pexels.com/photos/1319459/pexels-photo-1319459.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barber tools">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item slide-in-up">
+                    <img src="https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Classic cut">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item slide-in-up">
+                    <img src="https://images.pexels.com/photos/2061820/pexels-photo-2061820.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beard trim">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item slide-in-up">
+                    <img src="https://images.pexels.com/photos/1570807/pexels-photo-1570807.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern fade">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Client Reviews</div>
+                <h2 class="section-title">What They Say</h2>
+                <p class="section-subtitle">Trusted by gentlemen who demand excellence</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card slide-in-up">
+                    <i class="fas fa-quote-right testimonial-quote"></i>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Best barbershop in the city. Marcus knows exactly what I need every time. The hot towel shave is pure luxury. This is my place."
+                    </p>
+                    <div class="testimonial-author">David Thompson</div>
+                    <div class="testimonial-service">Royal Package</div>
+                </div>
+                
+                <div class="testimonial-card slide-in-up">
+                    <i class="fas fa-quote-right testimonial-quote"></i>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Tony's fade game is unmatched. Clean, precise, and always fresh. Been coming here for 5 years and won't go anywhere else."
+                    </p>
+                    <div class="testimonial-author">Michael Rodriguez</div>
+                    <div class="testimonial-service">Fade Specialist</div>
+                </div>
+                
+                <div class="testimonial-card slide-in-up">
+                    <i class="fas fa-quote-right testimonial-quote"></i>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Old-school barbershop vibes with modern expertise. James gave me the best beard trim I've ever had. Highly recommend!"
+                    </p>
+                    <div class="testimonial-author">Robert Chen</div>
+                    <div class="testimonial-service">Beard Trim & Shape</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Schedule Now</div>
+                <h2 class="section-title">Book Your Appointment</h2>
+                <p class="section-subtitle">Reserve your spot with our master barbers</p>
+            </div>
+            
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h3 class="booking-heading">Visit Prime Cuts</h3>
+                    <p class="booking-text">
+                        Step into a world of traditional barbering excellence. Whether you book ahead or walk in, our master barbers are ready to deliver the perfect cut.
+                    </p>
+                    
+                    <div class="walk-in-badge">
+                        <i class="fas fa-walking"></i> Walk-Ins Welcome
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <div class="contact-item-label">Call Us</div>
+                                <div class="contact-item-value">(555) 247-CUTS</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <div class="contact-item-label">Email</div>
+                                <div class="contact-item-value">book@primecutsbarber.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <div class="contact-item-label">Location</div>
+                                <div class="contact-item-value">456 Main Street, Downtown</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <div class="contact-item-label">Hours</div>
+                                <div class="contact-item-value">Mon-Sat: 9AM-7PM | Sun: 10AM-5PM</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p><strong>Downtown Location</strong></p>
+                        <p>Free Parking Available</p>
+                    </div>
+                </div>
+                
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input class="form-input" id="name" type="text" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input class="form-input" id="phone" type="tel" placeholder="(555) 123-4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-input" id="email" type="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service</label>
+                        <select class="form-select" id="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="signature">Signature Haircut - $45</option>
+                            <option value="beard">Beard Trim & Shape - $30</option>
+                            <option value="shave">Hot Towel Shave - $40</option>
+                            <option value="fade">Fade Specialist - $50</option>
+                            <option value="lineup">Line-Up & Edge - $25</option>
+                            <option value="royal">Royal Package - $95</option>
+                            <option value="kids">Kids Cut - $30</option>
+                            <option value="senior">Senior Cut - $35</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="barber">Barber Preference</label>
+                        <select class="form-select" id="barber" required>
+                            <option value="">Select a barber...</option>
+                            <option value="marcus">Marcus Johnson</option>
+                            <option value="tony">Tony Rodriguez</option>
+                            <option value="james">James Chen</option>
+                            <option value="any">Any Available</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="date">Preferred Date</label>
+                        <input class="form-input" id="date" type="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="time">Preferred Time</label>
+                        <select class="form-select" id="time" required>
+                            <option value="">Select a time...</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="notes">Special Requests</label>
+                        <textarea class="form-textarea" id="notes" placeholder="Any specific styling requests or concerns?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Prime Cuts</div>
+                <div class="footer-tagline">Where Tradition Meets Excellence</div>
+                <p class="footer-text">
+                    Since 1985, Prime Cuts has been the premier destination for gentlemen seeking exceptional grooming services in a classic barbershop atmosphere.
+                </p>
+                <div class="footer-badge">Veteran-Owned & Operated</div>
+                <p class="footer-text">
+                    <i class="fas fa-box"></i> Premium grooming products available in-store
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#barbers">Our Barbers</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Signature Haircut</a></li>
+                    <li><a href="#services">Beard Trim</a></li>
+                    <li><a href="#services">Hot Towel Shave</a></li>
+                    <li><a href="#services">Fade Specialist</a></li>
+                    <li><a href="#services">Royal Package</a></li>
+                    <li><a href="#services">Kids & Senior Cuts</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:5552472887">(555) 247-CUTS</a></li>
+                    <li><a href="mailto:book@primecutsbarber.com">book@primecutsbarber.com</a></li>
+                    <li><a href="#">456 Main Street, Downtown</a></li>
+                    <li><a href="#">Mon-Sat: 9AM-7PM</a></li>
+                    <li><a href="#">Sun: 10AM-5PM</a></li>
+                </ul>
+                
+                <div class="newsletter">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" id="newsletterEmail">
+                    <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>Prime Cuts Barber Shop</span>. All rights reserved. | Family-Owned Since 1985</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // ===== PARALLAX EFFECT FOR HERO =====
+        window.addEventListener('scroll', () => {
+            const heroBackground = document.querySelector('.hero-background');
+            const scrolled = window.scrollY;
+            if (heroBackground) {
+                heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-in-up, .booking-info, .booking-form').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== BOOKING FORM =====
+        const bookingForm = document.getElementById('bookingForm');
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
+            const barber = document.getElementById('barber').options[document.getElementById('barber').selectedIndex].text;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').options[document.getElementById('time').selectedIndex].text;
+            
+            alert(`Thanks ${name}! Your appointment is confirmed:\n\nService: ${service}\nBarber: ${barber}\nDate: ${date}\nTime: ${time}\n\nWe'll send a confirmation email shortly. See you soon!`);
+            bookingForm.reset();
+        });
+
+        // ===== NEWSLETTER SUBSCRIPTION =====
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                alert(`Thank you for subscribing! We'll send grooming tips and exclusive offers to ${email}`);
+                document.getElementById('newsletterEmail').value = '';
+            }
+        }
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== SET MIN DATE FOR BOOKING =====
+        window.addEventListener('load', () => {
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        });
+    </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>

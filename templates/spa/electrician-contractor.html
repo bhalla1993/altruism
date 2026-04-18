@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  PROPRIETARY TEMPLATE - Altru DigiTech
+  ================================================================
+  This HTML template is the exclusive intellectual property of
+  Altru DigiTech. Unauthorized copying, modification, distribution,
+  or use of this template in any other project without explicit
+  written permission is strictly prohibited.
+  Copyright 2026 Altru DigiTech. All rights reserved.
+  ================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="author" content="Altru DigiTech">
+    <meta name="copyright" content="Copyright 2026 Altru DigiTech. All rights reserved. Unauthorized use prohibited.">
+    <meta name="robots" content="noindex, nofollow">
+  <title>BrightCircuit Electrical – Certified Electrician Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-main: #050816;
+      --bg-alt: #0b1020;
+      --bg-panel: #0f172a;
+      --accent: #facc15;
+      --accent-soft: #fef9c3;
+      --accent-alt: #22c55e;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+      --radius-lg: 18px;
+      --nav-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(250, 204, 21, 0.35);
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #e5e7eb;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #ffffff, #facc15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0f1722;
+      font-size: 0.9rem;
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+    }
+
+    .logo-sub {
+      font-family: "Rajdhani", sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ca3af;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      color: #9ca3af;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), #f97316);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #e5e7eb;
+    }
+
+    .nav-link.active {
+      color: #ffffff;
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + 40px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top, rgba(250, 204, 21, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.6);
+      background: rgba(15, 23, 34, 0.9);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #fef9c3;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .hero-meta-item {
+      min-width: 130px;
+    }
+
+    .hero-meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-value {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 11px 22px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #facc15, #f97316);
+      color: #020617;
+      box-shadow: 0 10px 24px rgba(250, 204, 21, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(250, 204, 21, 0.7);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 34, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: 26px;
+      overflow: hidden;
+      background: #020617;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.03);
+    }
+
+    .hero-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.95));
+    }
+
+    .hero-tag {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(250, 204, 21, 0.9);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fef9c3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-floating {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 12px 18px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(250, 204, 21, 0.9);
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      color: #fef9c3;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-floating span:first-child {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+    }
+
+    .hero-floating span:last-child {
+      font-weight: 600;
+      color: var(--accent-soft);
+    }
+
+    /* Ambient lines */
+    .line {
+      position: absolute;
+      width: 1px;
+      height: 220px;
+      background: linear-gradient(to bottom, transparent, rgba(148, 163, 184, 0.5), transparent);
+      opacity: 0.4;
+      animation: pulse 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .line.l1 { left: 10%; top: 10%; }
+    .line.l2 { left: 50%; top: 0; animation-delay: 1.5s; }
+    .line.l3 { right: 12%; top: 18%; animation-delay: 3s; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.2; transform: translateY(0); }
+      50% { opacity: 0.7; transform: translateY(20px); }
+    }
+
+    /* Grid / Cards */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: radial-gradient(circle at top, #111827, #020617);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 18px 18px 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.9);
+      border-color: rgba(250, 204, 21, 0.9);
+    }
+
+    .card-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(250, 204, 21, 0.12);
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(250, 250, 250, 0.04);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.75rem;
+      color: var(--accent-soft);
+    }
+
+    /* Services */
+    #services {
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+    }
+
+    /* Residential / Commercial */
+    #segments {
+      background: #020617;
+    }
+
+    .segment-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 18px 18px 20px;
+      background: radial-gradient(circle at top, #111827, #020617);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .segment-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-soft);
+      margin-bottom: 6px;
+    }
+
+    .segment-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .segment-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: grid;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .segment-list li i {
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
+    /* Safety & Certifications */
+    #safety {
+      background: #020617;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .cert-item {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cert-item i {
+      color: var(--accent);
+    }
+
+    /* Gallery */
+    #gallery {
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+      position: relative;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    /* Reviews */
+    #reviews {
+      background: #020617;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .testimonial-card {
+      background: radial-gradient(circle at top, #111827, #020617);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 18px 18px 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .testimonial-quote {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-meta {
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+    }
+
+    .testimonial-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 1.2rem;
+      color: rgba(250, 204, 21, 0.4);
+    }
+
+    /* Contact */
+    #contact {
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .contact-form {
+      background: #020617;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 20px 18px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .form-control,
+    .form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+      color: var(--text-main);
+      padding: 9px 11px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .form-control:focus,
+    .form-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.5);
+      background: #020617;
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info-item i {
+      color: var(--accent);
+    }
+
+    .emergency-badge {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(248, 113, 113, 0.12);
+      color: #fecaca;
+      font-size: 0.8rem;
+      border: 1px solid rgba(248, 113, 113, 0.4);
+    }
+
+    .map-placeholder {
+      margin-top: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      overflow: hidden;
+      background: #020617;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 40px 0 26px;
+      color: #9ca3af;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 26px;
+      font-size: 0.85rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .footer-logo-main {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .footer-logo-sub {
+      font-family: "Rajdhani", sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #6b7280;
+    }
+
+    .footer-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-soft);
+      margin-bottom: 10px;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      color: #9ca3af;
+    }
+
+    .footer-list a {
+      font-size: 0.85rem;
+      transition: color 0.18s ease;
+    }
+
+    .footer-list a:hover {
+      color: #e5e7eb;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #9ca3af;
+    }
+
+    .footer-contact-item i {
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #020617;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--accent-soft);
+      transition: background 0.18s ease, transform 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .social-icon:hover {
+      background: linear-gradient(135deg, #facc15, #f97316);
+      color: #020617;
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    .footer-meta {
+      margin-top: 22px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 10px;
+      font-size: 0.75rem;
+      color: #6b7280;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .footer-meta span strong {
+      color: var(--accent-soft);
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: calc(var(--nav-height) + 20px);
+      }
+
+      .hero-media {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .testimonial-grid,
+      .cert-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 12px;
+        font-size: 0.7rem;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-3,
+      .testimonial-grid,
+      .cert-grid,
+      .gallery-grid,
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        height: auto;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav-inner">
+      <div class="logo">
+        <div class="logo-mark">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div>
+          <div>BrightCircuit</div>
+          <div class="logo-sub">Licensed Electrical Services</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#segments" class="nav-link">Residential & Commercial</a></li>
+          <li><a href="#safety" class="nav-link">Safety</a></li>
+          <li><a href="#gallery" class="nav-link">Projects</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="line l1"></div>
+    <div class="line l2"></div>
+    <div class="line l3"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="hero-badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          Licensed · Bonded · Insured Electrician
+        </div>
+        <h1 class="hero-title">
+          Safe, Code‑Compliant <span class="hero-highlight">Electrical</span> Work for Your Home & Business.
+        </h1>
+        <p class="hero-subtitle">
+          BrightCircuit Electrical delivers clean, reliable installations and repairs—from panel upgrades and EV chargers to lighting design and emergency troubleshooting.
+        </p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Experience</div>
+            <div class="hero-meta-value">10+ Years in the Trade</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Coverage</div>
+            <div class="hero-meta-value">Residential & Commercial</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Guarantee</div>
+            <div class="hero-meta-value">Workmanship Warranty</div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a href="tel:+15551234567" class="btn-primary">
+            Call for Service
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <a href="#contact" class="btn-ghost">
+            Request a Quote
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media reveal delay-2">
+        <div class="hero-card">
+          <img src="https://images.pexels.com/photos/298018/pexels-photo-298018.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Electrician working on panel" />
+          <div class="hero-card-overlay"></div>
+          <div class="hero-tag">
+            <i class="fa-solid fa-plug-circle-bolt"></i>
+            Panel Upgrades · EV Chargers · Lighting
+          </div>
+          <div class="hero-floating">
+            <span>Safety First</span>
+            <span>Every job inspected, tested, and documented before we leave.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title reveal">Electrical Services</h2>
+      <p class="section-subtitle reveal delay-1">
+        From small fixes to full rewires, we handle electrical work with precision, safety, and clear communication.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card reveal delay-1">
+          <div class="card-icon">
+            <i class="fa-solid fa-house-chimney"></i>
+          </div>
+          <h3 class="card-title">Panel & Service Upgrades</h3>
+          <p class="card-text">
+            Upgrade old fuse boxes and undersized panels to modern, safe, and properly sized electrical service.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-gauge-high"></i> 100A · 200A · 400A
+          </div>
+        </div>
+
+        <div class="card reveal delay-2">
+          <div class="card-icon">
+            <i class="fa-solid fa-car-battery"></i>
+          </div>
+          <h3 class="card-title">EV Charger Installation</h3>
+          <p class="card-text">
+            Dedicated circuits and EV charger installs that meet manufacturer specs and local code requirements.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-car"></i> Level 2 home charging
+          </div>
+        </div>
+
+        <div class="card reveal delay-3">
+          <div class="card-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="card-title">Lighting & Fixtures</h3>
+          <p class="card-text">
+            Pot lights, feature lighting, exterior fixtures, and smart switches to transform your space.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-sun"></i> Indoor & outdoor lighting
+          </div>
+        </div>
+
+        <div class="card reveal delay-1">
+          <div class="card-icon">
+            <i class="fa-solid fa-plug-circle-check"></i>
+          </div>
+          <h3 class="card-title">Troubleshooting & Repairs</h3>
+          <p class="card-text">
+            Track down tripping breakers, dead outlets, flickering lights, and other electrical issues safely.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-stethoscope"></i> System diagnostics
+          </div>
+        </div>
+
+        <div class="card reveal delay-2">
+          <div class="card-icon">
+            <i class="fa-solid fa-fire-extinguisher"></i>
+          </div>
+          <h3 class="card-title">Code Corrections</h3>
+          <p class="card-text">
+            Bring older wiring and DIY work up to current code for insurance, inspections, or peace of mind.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-clipboard-check"></i> Inspection‑ready work
+          </div>
+        </div>
+
+        <div class="card reveal delay-3">
+          <div class="card-icon">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <h3 class="card-title">Small Commercial</h3>
+          <p class="card-text">
+            Retail, office, and light industrial electrical work, including circuits, lighting, and equipment power.
+          </p>
+          <div class="chip">
+            <i class="fa-solid fa-briefcase"></i> Business‑ready solutions
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Residential & Commercial -->
+  <section id="segments">
+    <div class="container">
+      <h2 class="section-title reveal">Tailored for Your Space</h2>
+      <p class="section-subtitle reveal delay-1">
+        Whether you’re upgrading a home or outfitting a workspace, we design electrical solutions around how you actually live and work.
+      </p>
+
+      <div class="grid grid-2">
+        <div class="segment-card reveal delay-1">
+          <div class="segment-label">Residential</div>
+          <div class="segment-title">Homes, Condos & Renovations</div>
+          <p class="card-text">
+            Clean, careful work in finished spaces—respecting your home, schedule, and budget.
+          </p>
+          <ul class="segment-list">
+            <li><i class="fa-solid fa-check"></i> Kitchen & bathroom renovations</li>
+            <li><i class="fa-solid fa-check"></i> Basement finishing & suites</li>
+            <li><i class="fa-solid fa-check"></i> Knob‑and‑tube & aluminum rewiring</li>
+            <li><i class="fa-solid fa-check"></i> Smoke & CO detector circuits</li>
+            <li><i class="fa-solid fa-check"></i> Surge protection & whole‑home safety</li>
+          </ul>
+          <div class="chip">
+            <i class="fa-solid fa-house"></i> Ideal for homeowners & landlords
+          </div>
+        </div>
+
+        <div class="segment-card reveal delay-2">
+          <div class="segment-label">Commercial</div>
+          <div class="segment-title">Shops, Offices & Small Industrial</div>
+          <p class="card-text">
+            Reliable power and lighting for spaces where downtime costs money.
+          </p>
+          <ul class="segment-list">
+            <li><i class="fa-solid fa-check"></i> Retail & office lighting layouts</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated equipment circuits</li>
+            <li><i class="fa-solid fa-check"></i> Panel labeling & load balancing</li>
+            <li><i class="fa-solid fa-check"></i> Emergency & exit lighting</li>
+            <li><i class="fa-solid fa-check"></i> Maintenance & service contracts</li>
+          </ul>
+          <div class="chip">
+            <i class="fa-solid fa-building"></i> Ideal for small business owners
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety & Certifications -->
+  <section id="safety">
+    <div class="container">
+      <h2 class="section-title reveal">Safety, Compliance & Documentation</h2>
+      <p class="section-subtitle reveal delay-1">
+        Electrical work is about more than lights turning on—it’s about long‑term safety, reliability, and clear records for your home or business.
+      </p>
+
+      <div class="grid grid-2">
+        <div class="card reveal delay-1">
+          <h3 class="card-title">Licensing & Insurance</h3>
+          <p class="card-text">
+            Every job is completed by a licensed electrician with proper permits and inspections where required.
+          </p>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <i class="fa-solid fa-id-card-clip"></i>
+              Licensed Electrical Contractor
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              Fully Insured & Bonded
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-helmet-safety"></i>
+              Safety‑first work practices
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-clipboard-check"></i>
+              Permit & inspection support
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-book"></i>
+              Up‑to‑date with local code
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-file-circle-check"></i>
+              Documentation for insurance
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal delay-2">
+          <h3 class="card-title">Testing & Verification</h3>
+          <p class="card-text">
+            We don’t just install—we test, label, and document so you know exactly what was done and why.
+          </p>
+          <ul class="segment-list">
+            <li><i class="fa-solid fa-check"></i> Circuit testing & verification</li>
+            <li><i class="fa-solid fa-check"></i> GFCI & AFCI protection checks</li>
+            <li><i class="fa-solid fa-check"></i> Load calculations & balancing</li>
+            <li><i class="fa-solid fa-check"></i> Panel schedules & labeling</li>
+            <li><i class="fa-solid fa-check"></i> Photos & notes for your records</li>
+          </ul>
+          <div class="chip">
+            <i class="fa-solid fa-circle-info"></i>
+            Ask about digital job reports for your files.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title reveal">Recent Projects</h2>
+      <p class="section-subtitle reveal delay-1">
+        A glimpse into the kind of clean, organized electrical work we bring to every project.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal delay-1">
+          <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Panel upgrade" />
+          <div class="gallery-caption">200A panel upgrade with full labeling and surge protection.</div>
+        </div>
+        <div class="gallery-item reveal delay-2">
+          <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lighting install" />
+          <div class="gallery-caption">Kitchen pot lights and under‑cabinet lighting for a full renovation.</div>
+        </div>
+        <div class="gallery-item reveal delay-3">
+          <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Commercial wiring" />
+          <div class="gallery-caption">Small office fit‑out with dedicated equipment circuits and LED lighting.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="container">
+      <h2 class="section-title reveal">What Clients Say</h2>
+      <p class="section-subtitle reveal delay-1">
+        Clear explanations, tidy work, and no surprises on the invoice—that’s what we aim for on every job.
+      </p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal delay-1">
+          <div class="testimonial-badge">
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <p class="testimonial-quote">
+            “They upgraded our old panel and added an EV charger. Everything was labeled, explained, and inspected without any hassle.”
+          </p>
+          <div class="testimonial-name">Laura & James P.</div>
+          <div class="testimonial-meta">Panel upgrade & EV charger</div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="testimonial-badge">
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <p class="testimonial-quote">
+            “We had random breaker trips in our shop. They found the issue, balanced the loads, and we haven’t had a problem since.”
+          </p>
+          <div class="testimonial-name">Northside Print Co.</div>
+          <div class="testimonial-meta">Small commercial troubleshooting</div>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <div class="testimonial-badge">
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <p class="testimonial-quote">
+            “They treated our home with respect—drop cloths, vacuuming, and everything put back. The new lighting looks incredible.”
+          </p>
+          <div class="testimonial-name">Amrita S.</div>
+          <div class="testimonial-meta">Residential lighting & switches</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Request Electrical Service</h2>
+      <p class="section-subtitle reveal delay-1">
+        Tell us a bit about your project or issue and we’ll follow up with options, timelines, and clear pricing.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-form reveal delay-1">
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" id="name" type="text" placeholder="Your full name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" type="email" placeholder="you@example.com" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone</label>
+                <input class="form-control" id="phone" type="tel" placeholder="+1 (555) 123‑4567" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="service">Service Type</label>
+                <select class="form-control" id="service">
+                  <option>Panel / Service Upgrade</option>
+                  <option>EV Charger Install</option>
+                  <option>Lighting / Fixtures</option>
+                  <option>Troubleshooting / Repairs</option>
+                  <option>Commercial Project</option>
+                  <option>Other / Not Sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="details">Project / Issue Details</label>
+              <textarea class="form-textarea" id="details" placeholder="Describe what you’d like done, any issues you’re seeing, and your ideal timeline."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              Submit Request
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-info reveal delay-2">
+          <div class="contact-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            Serving Oshawa, Whitby, Ajax, Pickering & surrounding Durham Region
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-phone"></i>
+            Main Line: +1 (555) 123‑4567
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-envelope"></i>
+            projects@brightcircuit.ca
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-clock"></i>
+            Mon–Fri: 8:00 AM – 6:00 PM · Sat by appointment
+          </div>
+
+          <div class="emergency-badge">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Burning smell, sparks, or repeated tripping? Shut off power and call immediately.
+          </div>
+
+          <div class="map-placeholder">
+            Service area map placeholder – embed your preferred map here.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="logo-mark">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="footer-logo-text">
+              <div class="footer-logo-main">BrightCircuit Electrical</div>
+              <div class="footer-logo-sub">Licensed Electrical Services</div>
+            </div>
+          </div>
+          <p>
+            Professional electrical work for homes and small businesses—focused on safety, clarity, and long‑term reliability.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigation</div>
+          <ul class="footer-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#segments">Residential & Commercial</a></li>
+            <li><a href="#safety">Safety</a></li>
+            <li><a href="#gallery">Projects</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Service Areas</div>
+          <ul class="footer-list">
+            <li>Oshawa</li>
+            <li>Whitby</li>
+            <li>Ajax & Pickering</li>
+            <li>Clarington</li>
+            <li>Surrounding Durham Region</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Licensing & Contact</div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-id-card-clip"></i>
+            <span>Licensed Electrical Contractor · ESA Registered</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Shop: 118 Circuit Lane, Oshawa, ON</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (555) 123‑4567</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>projects@brightcircuit.ca</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        <span>© <span id="year"></span> <strong>BrightCircuit Electrical</strong>. All rights reserved.</span>
+        <span>Licensed · Bonded · Insured · Workmanship Warranty on Completed Projects.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Active nav link on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function onScroll() {
+      const scrollPos = window.scrollY + 90;
+      sections.forEach((section) => {
+        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const active = document.querySelector('.nav-link[href="#' + section.id + '"]');
+          if (active) active.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+    <!-- Altru DigiTech Copyright Bar -->
+    <div id="altrudigitech-footer" style="position:fixed;bottom:0;left:0;right:0;padding:8px 24px;background:rgba(15,23,42,0.96);color:#94a3b8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:11px;line-height:1.5;text-align:center;z-index:2147483647;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.15);letter-spacing:0.03em;">
+      &copy; 2026 <strong style="color:#e2e8f0;font-weight:600;">Altru DigiTech</strong> &mdash; This template is proprietary. Unauthorized copying or redistribution is strictly prohibited.&nbsp;
+      <a href="https://altrudigitech.com" target="_blank" rel="noreferrer" style="color:#60a5fa;text-decoration:none;font-weight:500;">altrudigitech.com</a>
+    </div>
+</body>
+</html>
