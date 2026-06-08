@@ -39,7 +39,6 @@ function TemplatePreviewCard({ template, index = 0 }) {
         alt={template.title}
         loading="lazy"
         decoding="async"
-        fetchPriority="low"
         sx={{
           width: '100%',
           height: 185,

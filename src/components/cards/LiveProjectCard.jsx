@@ -43,7 +43,6 @@ function LiveProjectCard({ project, index = 0 }) {
             alt={project.title}
             loading="lazy"
             decoding="async"
-            fetchPriority="low"
             sx={{
               width: '100%',
               height: { xs: 210, md: 220 },

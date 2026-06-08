@@ -15,7 +15,7 @@ import {
   Toolbar,
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import { motion, useReducedMotion } from 'framer-motion'
+import { useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Link as RouterLink, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { business, navItems } from '../../utils/siteData'
@@ -28,12 +28,8 @@ const navLinkStyles = ({ isActive }) => ({
 })
 
 const brandContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.045 } },
-}
-const brandLetter = {
-  hidden: { opacity: 0, y: -14, rotateX: -60 },
-  visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } },
+  opacity: 1,
+  transform: 'translateY(0)',
 }
 
 function AnimatedBrand({ reduceMotion }) {
@@ -44,18 +40,22 @@ function AnimatedBrand({ reduceMotion }) {
   const shimmerMid  = theme.palette.primary.main
   const gradient = `linear-gradient(90deg, ${shimmerFrom} 0%, ${shimmerMid} 45%, ${shimmerFrom} 100%)`
 
-  const letters = business.name.split('')
   const gradientStyle = {
-    background: gradient,
+    backgroundImage: gradient,
     backgroundSize: '200% auto',
+    backgroundPosition: '0% center',
+    backgroundRepeat: 'repeat',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+    color: shimmerMid,
     display: 'inline-block',
     fontFamily: 'Space Grotesk, Sora, sans-serif',
     fontWeight: 800,
     fontSize: '1.22rem',
     letterSpacing: '-0.01em',
+    lineHeight: 1.1,
+    whiteSpace: 'nowrap',
   }
 
   return (
@@ -73,33 +73,23 @@ function AnimatedBrand({ reduceMotion }) {
         '& .brand-text': {
           animation: reduceMotion ? 'none' : 'brandShimmer 7s ease-in-out infinite',
         },
+        '& .brand-shell': reduceMotion
+          ? undefined
+          : {
+              opacity: 0,
+              transform: 'translateY(-10px)',
+              animation: 'brandReveal 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+        '@keyframes brandReveal': {
+          '100%': brandContainer,
+        },
         transition: 'opacity 200ms ease',
         '&:hover': { opacity: 0.78 },
       }}
     >
-      {reduceMotion ? (
-        <Box component="span" className="brand-text" sx={gradientStyle}>
-          {business.name}
-        </Box>
-      ) : (
-        <motion.span
-          style={{ display: 'inline-flex', perspective: 400 }}
-          variants={brandContainer}
-          initial="hidden"
-          animate="visible"
-        >
-          {letters.map((char, i) => (
-            <motion.span
-              key={i}
-              variants={brandLetter}
-              className="brand-text"
-              style={{ ...gradientStyle, display: 'inline-block' }}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </motion.span>
-          ))}
-        </motion.span>
-      )}
+      <Box component="span" className="brand-shell brand-text" sx={gradientStyle}>
+        {business.name}
+      </Box>
     </Box>
   )
 }
