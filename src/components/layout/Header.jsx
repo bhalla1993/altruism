@@ -39,6 +39,11 @@ function AnimatedBrand({ reduceMotion }) {
   const shimmerFrom = isDark ? '#e6edf8' : '#0f172a'
   const shimmerMid  = theme.palette.primary.main
   const gradient = `linear-gradient(90deg, ${shimmerFrom} 0%, ${shimmerMid} 45%, ${shimmerFrom} 100%)`
+  const shellBackground = isDark ? 'rgba(10, 15, 28, 0.58)' : 'rgba(255, 255, 255, 0.72)'
+  const shellBorder = isDark ? 'rgba(159, 177, 204, 0.2)' : 'rgba(15, 23, 42, 0.1)'
+  const shellShadow = isDark
+    ? '0 10px 24px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.04)'
+    : '0 8px 20px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9)'
 
   const gradientStyle = {
     backgroundImage: gradient,
@@ -55,6 +60,7 @@ function AnimatedBrand({ reduceMotion }) {
     fontSize: '1.22rem',
     letterSpacing: '-0.01em',
     lineHeight: 1.1,
+    textShadow: isDark ? '0 1px 12px rgba(45, 212, 191, 0.16)' : '0 1px 10px rgba(8, 145, 178, 0.14)',
     whiteSpace: 'nowrap',
   }
 
@@ -66,6 +72,14 @@ function AnimatedBrand({ reduceMotion }) {
         textDecoration: 'none',
         display: 'inline-flex',
         alignItems: 'center',
+        borderRadius: 999,
+        padding: '0.42rem 0.8rem',
+        backgroundColor: shellBackground,
+        border: '1px solid',
+        borderColor: shellBorder,
+        boxShadow: shellShadow,
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
         '@keyframes brandShimmer': {
           '0%':   { backgroundPosition: '0% center' },
           '100%': { backgroundPosition: '200% center' },
@@ -83,8 +97,14 @@ function AnimatedBrand({ reduceMotion }) {
         '@keyframes brandReveal': {
           '100%': brandContainer,
         },
-        transition: 'opacity 200ms ease',
-        '&:hover': { opacity: 0.78 },
+        transition: 'opacity 200ms ease, box-shadow 200ms ease, transform 200ms ease',
+        '&:hover': {
+          opacity: 0.92,
+          transform: 'translateY(-1px)',
+          boxShadow: isDark
+            ? '0 14px 30px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
+            : '0 12px 24px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95)',
+        },
       }}
     >
       <Box component="span" className="brand-shell brand-text" sx={gradientStyle}>

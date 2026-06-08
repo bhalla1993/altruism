@@ -32,6 +32,12 @@ const socialItems = [
   { label: 'LinkedIn', href: business.socialLinks.linkedin, Icon: LinkedInIcon },
 ]
 
+const heroTrustItems = [
+  'Starting at $99',
+  'Flat pricing, no hidden fees',
+  'Delivered in 48 hours',
+]
+
 function HomePage() {
   return (
     <>
@@ -51,8 +57,16 @@ function HomePage() {
                 <Typography variant="h1" sx={{ fontSize: { xs: '2.4rem', md: '3.7rem' }, lineHeight: 1.1 }}>
                   {business.tagline}
                 </Typography>
-                <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 680 }}>
-                  {business.shortDescription}
+                <Typography
+                  variant="h5"
+                  sx={{
+                    maxWidth: 760,
+                    fontWeight: 700,
+                    color: 'text.primary',
+                    lineHeight: 1.35,
+                  }}
+                >
+                  Modern Single-Page Websites for Students, Creators & Small Businesses - Delivered Fast & Affordably
                 </Typography>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
                   <Button component={RouterLink} to="/contact" variant="contained" size="large" endIcon={<ArrowForwardIcon />}>
@@ -61,6 +75,24 @@ function HomePage() {
                   <Button component={RouterLink} to="/services" variant="outlined" size="large">
                     Explore Services
                   </Button>
+                </Stack>
+                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ pt: 0.5 }}>
+                  {heroTrustItems.map((item) => (
+                    <Chip
+                      key={item}
+                      label={item}
+                      variant="filled"
+                      sx={{
+                        borderRadius: 999,
+                        px: 0.6,
+                        fontWeight: 700,
+                        bgcolor: 'action.hover',
+                        color: 'text.primary',
+                        border: '1px solid',
+                        borderColor: 'divider',
+                      }}
+                    />
+                  ))}
                 </Stack>
               </Stack>
             </Grid>

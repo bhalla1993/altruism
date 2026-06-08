@@ -62,6 +62,12 @@ function Footer() {
               <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 600 }}>
                 {business.tagline}
               </Typography>
+              <Typography
+                variant="overline"
+                sx={{ color: 'text.secondary', fontWeight: 700, letterSpacing: 1.1, lineHeight: 1.5 }}
+              >
+                Made in Ontario, Canada
+              </Typography>
               <Typography variant="body2" color="text.secondary">
                 We build websites, resume portfolios, and software systems that help professionals and small businesses ship confidently.
               </Typography>
@@ -170,12 +176,7 @@ function Footer() {
               color="text.secondary"
               sx={{ opacity: 0.82, maxWidth: { xs: '100%', md: 420 }, textWrap: 'balance' }}
             >
-              <Box component="span" sx={{ display: { xs: 'inline', md: 'none' } }}>
-                Serving clients across Canada, focused on the GTA.
-              </Box>
-              <Box component="span" sx={{ display: { xs: 'none', md: 'inline' } }}>
-                Serving clients across Canada, specializing in the Greater Toronto Area (GTA).
-              </Box>
+              Serving clients across Canada, specializing in the Greater Toronto Area (GTA).
             </Typography>
           </Stack>
         </Stack>
