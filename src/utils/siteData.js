@@ -8,9 +8,9 @@ export const business = {
   location: 'Toronto GTA',
   googleFormUrl: 'https://docs.google.com/forms',
   socialLinks: {
-    facebook: 'https://www.facebook.com/altruismdigitalstudio',
-    instagram: 'https://www.instagram.com/altruismdigitalstudio',
-    linkedin: 'https://www.linkedin.com/company/altruism-digital-studio',
+    facebook: 'https://www.facebook.com/altrudigitechbuilders',
+    instagram: 'https://www.instagram.com/altrudigitechbuilders?utm_source=qr',
+    linkedin: 'https://www.linkedin.com/company/altrudigitech-digital-builders/',
   },
 }
 
