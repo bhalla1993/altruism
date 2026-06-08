@@ -1,0 +1,1 @@
+import{j as e,n as t}from"./index-Csb4c7MY.js";import{r as a}from"./createSvgIcon-rFXNwz26.js";var r={},o=t;Object.defineProperty(r,"__esModule",{value:!0});var u=r.default=void 0,d=o(a()),i=e;u=r.default=(0,d.default)((0,i.jsx)("path",{d:"M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z"}),"ArrowOutward");export{u as d};
